@@ -1,0 +1,2 @@
+SPLIT_KEYBOARD = no
+BOOTLOADER = atmel-dfu
