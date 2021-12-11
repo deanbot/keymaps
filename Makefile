@@ -1,12 +1,8 @@
 USER = deanbot
 
-# KEYBOARDS = naked48 kyria
-KEYBOARDS = naked48
 PATH_naked48 = naked48
-BOOTLOADER_naked48 =
+BOOTLOADER_naked48 = dfu
 # PATH_kyria = splitkb/kyria
-
-all: $(KEYBOARDS)
 
 .PHONY: $(KEYBOARDS)
 $(KEYBOARDS):

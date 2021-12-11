@@ -1,7 +1,8 @@
 # Flash
 
+Flash a keyboard which has a same-named keymap folder and config added to Makefile.
+
 ```sh
-make all #or
 make naked48
 ```
 
@@ -26,3 +27,9 @@ TODO
 # Mentions
 
 - (Article) [Separate keymap repo for QMK](https://medium.com/@patrick.elmquist/separate-keymap-repo-for-qmk-136ff5a419bd)
+
+# Development
+
+## Update firmware
+
+TODO
