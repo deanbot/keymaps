@@ -1,33 +1,23 @@
-USER = deanbot
+naked48: setup
 
-KEYBOARDS = naked48
+	# run lint check
+	cd qmk_firmware; qmk lint -kb naked48 -km deanbot --strict
 
-PATH_naked48 = naked48
-BOOTLOADER_naked48 = dfu
-# PATH_kyria = splitkb/kyria
+	# run build
+	# make BUILD_DIR=$(shell pwd) -j1 -C qmk_firmware naked48:deanbot:dfu
+	qmk flash -kb naked48 -km deanbot -bl dfu
 
-.PHONY: $(KEYBOARDS)
-$(KEYBOARDS):
+install:
 	# init submodule
 	git submodule update --init --recursive
 
-	# cleanup old symlinks
-	for f in $(KEYBOARDS); do rm -rf qmk_firmware/keyboards/$(PATH_$@)/keymaps/$(USER); done
-	rm -rf qmk_firmware/users/$(USER)
+setup: install
+	test -L ./qmk_firmware/users/deanbot || ln -s $(shell pwd)/user ./qmk_firmware/users/deanbot
+	test -L ./qmk_firmware/keyboards/naked48/keymaps/deanbot || ln -s $(shell pwd)/naked48 ./qmk_firmware/keyboards/naked48/keymaps/deanbot
 
-	# add new symlinks
-	ln -s $(shell pwd)/user qmk_firmware/users/$(USER)
-	ln -s $(shell pwd)/$@ qmk_firmware/keyboards/$(PATH_$@)/keymaps/$(USER)
-
-	# run lint check
-	cd qmk_firmware; qmk lint -km $(USER) -kb $(PATH_$@) --strict
-
-	# run build
-	make BUILD_DIR=$(shell pwd) -j1 -C qmk_firmware $(PATH_$@):$(USER):$(BOOTLOADER_$@)
-
-	# cleanup symlinks
-	for f in $(KEYBOARDS); do rm -rf qmk_firmware/keyboards/$(PATH_$@)/keymaps/$(USER); done
-	rm -rf qmk_firmware/users/$(USER)
+unlink:
+	rm ./qmk_firmware/users/deanbot
+	rm ./qmk_firmware/keyboards/naked48/keymaps/deanbot
 
 clean:
 	rm -rf obj_*
