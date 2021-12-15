@@ -36,6 +36,7 @@ enum keycodes
 
 #define _MONAV_ MO(_NAV)
 #define _MOSYM_ MO(_SYM)
+#define _MMETA_ MO(_META)
 #define _SP_MK_ LT(_MOUSE, KC_SPACE)
 
 #define ___A___ KC_A
@@ -166,12 +167,6 @@ enum keycodes
 #define _BRDWN_ KC_BRIGHTNESS_DOWN
 #define _SLEEP_ KC_SYSTEM_SLEEP
 #define _RESET_ RESET
-
-// Meta tokens
-#define T_BASE TO(_BASE)
-#define T_MOUSE TO(_MOUSE)
-#define T_NAV TO(_NAV)
-#define M_META MO(_META)
 
 // workflow/app/browser
 #define _PRTSC_ LCMD(LSFT(___4___))
