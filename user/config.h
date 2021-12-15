@@ -1,0 +1,13 @@
+#define COMBO_TERM 50
+
+#define IGNORE_MOD_TAP_INTERRUPT
+#define PERMISSIVE_HOLD
+#define TAPPING_FORCE_HOLD
+
+#define TAPPING_TERM 175
+#define ONESHOT_TAP_TOGGLE 5
+#define ONESHOT_TIMEOUT 2085
+
+// reduce filesize
+#define NO_ACTION_MACRO
+#define NO_ACTION_FUNCTION

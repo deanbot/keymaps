@@ -1,5 +1,7 @@
 USER = deanbot
 
+KEYBOARDS = naked48
+
 PATH_naked48 = naked48
 BOOTLOADER_naked48 = dfu
 # PATH_kyria = splitkb/kyria
