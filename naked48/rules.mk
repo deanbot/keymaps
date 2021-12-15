@@ -1,4 +1,4 @@
-# BOOTLOADER = atmel-dfu
+BOOTLOADER = atmel-dfu
 SPLIT_KEYBOARD = no
 RGBLIGHT_ENABLE = no
 # RGB_MATRIX_ENABLE = no

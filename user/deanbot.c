@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
-#include <stdint.h>
-#include <stdbool.h>
-#include "quantum.h"
+// #include <stdint.h>
+// #include <stdbool.h>
+// #include "quantum.h"
 #include "deanbot.h"
 
 #ifdef CUSTOM_ONESHOT_ENABLE
@@ -67,19 +67,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 #ifdef CUSTOM_ONESHOT_ENABLE
   process_oneshot(
-    &os_shft_state, KC_LSHIFT, OS_SHFT,
+    &os_shft_state, KC_LSHIFT, _O_SFT_,
     keycode, record
   );
   process_oneshot(
-    &os_ctrl_state, KC_LCTL, OS_CTRL,
+    &os_ctrl_state, KC_LCTL, _O_CTL_,
     keycode, record
   );
   process_oneshot(
-    &os_opt_state, KC_LOPT, OS_OPT,
+    &os_opt_state, KC_LOPT, _O_OPT_,
     keycode, record
   );
   process_oneshot(
-    &os_cmd_state, KC_LCMD, OS_CMD,
+    &os_cmd_state, KC_LCMD, _O_CMD_,
     keycode, record
   );
 #endif

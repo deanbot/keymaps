@@ -1,8 +1,7 @@
 #pragma once
 
-#include "quantum.h"
-#include <stdint.h>
-#include "tmk_core/common/action.h"
+// #include "quantum.h"
+#include QMK_KEYBOARD_H
 
 uint16_t last_key;
 uint16_t last_mods;

@@ -1,6 +1,6 @@
 #include "oneshot.h"
 
-void update_oneshot(
+void process_oneshot(
     oneshot_state *state,
     uint16_t mod,
     uint16_t trigger,

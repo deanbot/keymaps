@@ -1,7 +1,6 @@
 #pragma once
 
-#include <stdint.h>
-#include "tmk_core/common/action.h"
+#include QMK_KEYBOARD_H
 
 // Represents the four states a oneshot key can be in
 typedef enum {

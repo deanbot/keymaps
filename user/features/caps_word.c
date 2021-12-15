@@ -1,4 +1,4 @@
-#include "capsword.h"
+#include "caps_word.h"
 
 static bool caps_word_enabled = false;
 void caps_word_enable(void) {
