@@ -1,10 +1,10 @@
 # Flash
 
-Flash a keyboard which has a same-named keymap folder and config added to Makefile.
+Flash: `make <keyboard>`
 
-```sh
-make naked48
-```
+Supported keyboards:
+
+- [naked48](https://github.com/qmk/qmk_firmware/tree/master/keyboards/naked48)
 
 # Install
 
