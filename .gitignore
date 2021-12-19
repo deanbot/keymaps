@@ -3,3 +3,7 @@ obj_*
 *.elf
 *.map
 error_occurred
+
+# add to global gitignore
+# users/deanbot
+# keyboards/**/keymaps/**/deanbot
