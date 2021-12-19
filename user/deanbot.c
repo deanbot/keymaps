@@ -56,11 +56,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 #ifdef CUSTOM_SWAPPER_ENABLED
   update_swapper(
-    &sw_win_active, KC_LGUI, KC_TAB, SW_WIN,
+    &sw_win_active, KC_LCMD, KC_TAB, _SWWIN_,
     keycode, record
   );
   update_swapper(
-    &sw_lang_active, KC_LSHIFT, KC_LALT, SW_LANG,
+    &sw_lang_active, KC_LSHIFT, KC_LOPT, _SWLNG_,
     keycode, record
   );
 #endif
@@ -84,9 +84,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   );
 #endif
 
-#ifdef CUSTOM_REPEAT_KEY_ENABLE
-  if (!process_repeat_last_key(keycode, record, REPEAT, M_NAV)) {
-      return false;
+#ifdef CUSTOM_REPEAT_ENABLE
+  if (!process_repeat_last_key(keycode, record, __RPT__, _MONAV_)) {
+    return false;
   }
 #endif
 
@@ -114,4 +114,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #endif
 
   return true;
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    return update_tri_layer_state(state, _NAV, _SYM, _NUM);
 }
