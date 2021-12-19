@@ -33,8 +33,16 @@ TODO
 
 # Development
 
-## Update firmware
+## Update qmk firmware
 
 ```sh
 git submodule foreach git pull origin master
+```
+
+## Unlink
+
+Remove symlinks in qmk firmware:
+
+```sh
+make unlink
 ```
