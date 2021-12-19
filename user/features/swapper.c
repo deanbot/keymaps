@@ -1,5 +1,4 @@
 #include "swapper.h"
-// via https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum
 
 void update_swapper(
     bool *active,

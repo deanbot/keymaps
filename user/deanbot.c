@@ -36,7 +36,7 @@ oneshot_state os_opt_state = os_up_unqueued;
 oneshot_state os_cmd_state = os_up_unqueued;
 #endif
 
-#ifdef CUSTOM_SWAPPER_ENABLED
+#ifdef CUSTOM_SWAPPER_ENABLE
 bool sw_win_active = false;
 bool sw_lang_active = false;
 #endif
@@ -54,7 +54,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
 #endif
 
-#ifdef CUSTOM_SWAPPER_ENABLED
+#ifdef CUSTOM_SWAPPER_ENABLE
   update_swapper(
     &sw_win_active, KC_LCMD, KC_TAB, _SWWIN_,
     keycode, record

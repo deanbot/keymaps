@@ -1,5 +1,4 @@
 #pragma once
-// via https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum
 
 #include QMK_KEYBOARD_H
 
