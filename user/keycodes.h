@@ -201,6 +201,7 @@ enum keycodes
 #define _ZOOMI_ LCMD(KC_PLUS)
 #define _ZOOMO_ LCMD(KC_MINUS)
 #define _ZOOMR_ LCMD(KC_0)
+#define _SAVE__ LCMD(KC_S)
 
 // android studio
 #define _HINT__ LCTL(KC_SPACE)
@@ -212,3 +213,4 @@ enum keycodes
 #define _COLS__ LCMD(LSFT(KC_8))
 #define _FORMA_ LCMD(LOPT(KC_L))
 #define __FIX__ LOPT(LSFT(KC_ENTER))
+#define _FINDF_ LCMD(LSFT(KC_O))
