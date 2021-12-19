@@ -214,3 +214,5 @@ enum keycodes
 #define _FORMA_ LCMD(LOPT(KC_L))
 #define __FIX__ LOPT(LSFT(KC_ENTER))
 #define _FINDF_ LCMD(LSFT(KC_O))
+#define _DTOP__ LCMD(KC_HOME)
+#define _DBTM__ LCMD(KC_END)
