@@ -216,3 +216,4 @@ enum keycodes
 #define _FINDF_ LCMD(LSFT(KC_O))
 #define _DTOP__ LCMD(KC_HOME)
 #define _DBTM__ LCMD(KC_END)
+#define _GOTOD_ LCMD(KC_B)
