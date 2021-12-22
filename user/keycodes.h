@@ -103,6 +103,8 @@ enum keycodes
 #define __ESC__ KC_ESCAPE
 #define _PGDWN_ KC_PGDOWN
 #define _PG_UP_ KC_PGUP
+#define _HOME__ KC_HOME
+#define __END__ KC_END
 
 #define _LSHFT_ KC_LSFT
 #define _LCTL__ KC_LCTL
@@ -213,6 +215,4 @@ enum keycodes
 #define _FORMA_ LCMD(LOPT(KC_L))
 #define __FIX__ LOPT(LSFT(KC_ENTER))
 #define _FINDF_ LCMD(LSFT(KC_O))
-#define _DTOP__ LCMD(KC_HOME)
-#define _DBTM__ LCMD(KC_END)
 #define _GOTOD_ LCMD(KC_B)
