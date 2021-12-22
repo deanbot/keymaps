@@ -216,3 +216,4 @@ enum keycodes
 #define __FIX__ LOPT(LSFT(KC_ENTER))
 #define _FINDF_ LCMD(LSFT(KC_O))
 #define _GOTOD_ LCMD(KC_B)
+#define _GOTOE_ LCMD(KC_F2)
