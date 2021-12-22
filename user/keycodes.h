@@ -161,8 +161,7 @@ enum keycodes
 #define __VUP__ KC_AUDIO_VOL_UP
 #define _VDWN__ KC_AUDIO_VOL_DOWN
 #define _MUTE__ KC_AUDIO_MUTE
-#define _STOP__ KC_MEDIA_STOP
-#define _PAUSE_ KC_MEDIA_PLAY_PAUSE
+#define _PLYPS_ KC_MEDIA_PLAY_PAUSE
 #define _BRUP__ KC_BRIGHTNESS_UP
 #define _BRDWN_ KC_BRIGHTNESS_DOWN
 #define _SLEEP_ KC_SYSTEM_SLEEP
