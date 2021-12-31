@@ -17,6 +17,9 @@ enum keycodes
 {
   _SEL_L_ = SAFE_RANGE,
 
+  // ${} macro
+  _STRIN_,
+
   // swapper
   _SWWIN_,
   _SWLNG_,
@@ -203,17 +206,21 @@ enum keycodes
 #define _ZOOMO_ LCMD(KC_MINUS)
 #define _ZOOMR_ LCMD(KC_0)
 #define _SAVE__ LCMD(KC_S)
+#define _SPOTL_ LCMD(KC_SPACE)
 
 // android studio
 #define _HINT__ LCTL(KC_SPACE)
 #define _TERM__ LALT(KC_F12)
 #define _NEWFL_ LCMD(LOPT(KC_N))
-#define _PROJ__ LCMD(KC_1)
 #define _DRTAN_ LCMD(KC_SCOLON)
+#define _PROJ__ LCMD(KC_1)
+#define _DEBUG_ LCMD(KC_5)
+#define _COMMT_ LCMD(KC_0)
 #define _RNAME_ LSFT(KC_F6)
 #define _COLS__ LCMD(LSFT(KC_8))
 #define _FORMA_ LCMD(LOPT(KC_L))
 #define __FIX__ LOPT(LSFT(KC_ENTER))
 #define _FINDF_ LCMD(LSFT(KC_O))
 #define _GOTOD_ LCMD(KC_B)
-#define _GOTOE_ LCMD(KC_F2)
+#define _GOTOE_ KC_F2
+#define _HTRST_ LCMD(LSFT(KC_BSLASH))

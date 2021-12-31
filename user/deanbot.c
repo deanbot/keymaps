@@ -98,6 +98,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       break;
 
+    // ${} then tap left
+    case _STRIN_:
+      if (record->event.pressed) {
+        SEND_STRING("${}" SS_TAP(X_LEFT));
+      }
+      break;
+
   #ifdef CUSTOM_CAPS_WORD_ENABLE
     case _CAPSW_:
       if (record->event.pressed) {
