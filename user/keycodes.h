@@ -207,6 +207,7 @@ enum keycodes
 #define _ZOOMR_ LCMD(KC_0)
 #define _SAVE__ LCMD(KC_S)
 #define _SPOTL_ LCMD(KC_SPACE)
+#define _CLALL_ LCMD(LSFT(KC_W))
 
 // android studio
 #define _HINT__ LCTL(KC_SPACE)
@@ -214,7 +215,7 @@ enum keycodes
 #define _NEWFL_ LCMD(LOPT(KC_N))
 #define _DRTAN_ LCMD(KC_SCOLON)
 #define _PROJ__ LCMD(KC_1)
-#define _DEBUG_ LCMD(KC_5)
+#define _DEBGR_ LCMD(KC_5)
 #define _COMMT_ LCMD(KC_0)
 #define _RNAME_ LSFT(KC_F6)
 #define _COLS__ LCMD(LSFT(KC_8))
@@ -224,3 +225,5 @@ enum keycodes
 #define _GOTOD_ LCMD(KC_B)
 #define _GOTOE_ KC_F2
 #define _HTRST_ LCMD(LSFT(KC_BSLASH))
+#define _DEBUG_ LCTL(KC_D)
+#define _STPDB_ LCMD(KC_F2)
