@@ -175,6 +175,7 @@ enum keycodes
 // workflow/app/browser
 #define _PRTSC_ LCMD(LSFT(___4___))
 #define _CMD_W_ LCMD(KC_W)
+#define _CMD_R_ LCMD(KC_R)
 #define _COPY__ LCMD(KC_C)
 #define __CUT__ LCMD(KC_X)
 #define _UNDO__ LCMD(KC_Z)
