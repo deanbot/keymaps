@@ -1,6 +1,6 @@
 #pragma once
 
-#include "quantum.h"
+#include QMK_KEYBOARD_H
 
 enum layers
 {
@@ -208,7 +208,6 @@ enum keycodes
 #define _ZOOMR_ LCMD(KC_0)
 #define _SAVE__ LCMD(KC_S)
 #define _SPOTL_ LCMD(KC_SPACE)
-#define _CLALL_ LCMD(LSFT(KC_W))
 
 // android studio
 #define _HINT__ LCTL(KC_SPACE)
@@ -228,3 +227,4 @@ enum keycodes
 #define _HTRST_ LCMD(LSFT(KC_BSLASH))
 #define _DEBUG_ LCTL(KC_D)
 #define _STPDB_ LCMD(KC_F2)
+#define _RSUME_ LOPT(LCMD(KC_R))

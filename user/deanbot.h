@@ -1,4 +1,5 @@
 #include "./keycodes.h"
+#include "./keymap.h"
 
 #ifdef CUSTOM_ONESHOT_ENABLE
 # include "features/oneshot.h"

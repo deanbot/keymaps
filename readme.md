@@ -5,6 +5,7 @@ Flash: `make <keyboard>`
 Supported keyboards:
 
 - [naked48](https://github.com/qmk/qmk_firmware/tree/master/keyboards/naked48)
+- [ferris](https://github.com/qmk/qmk_firmware/tree/master/keyboards/naked48)
 
 # Install
 

@@ -1,7 +1,5 @@
 #pragma once
 
-// #include <stdint.h>
-// #include <stdbool.h>
 #include QMK_KEYBOARD_H
 
 void caps_word_enable(void);
