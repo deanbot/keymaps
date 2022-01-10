@@ -1,13 +1,13 @@
-# .PHONY:ferris
+.PHONY:ferris
 ferris: setup
 
 	# run lint check
 	cd qmk_firmware; qmk lint -kb ferris/0_2/bling -km deanbot --strict
 
 	# run build
-	qmk flash -kb ferris/0_2 -km deanbot -bl dfu
+	qmk flash -kb ferris/0_2/bling -km deanbot
 
-.PHONY: naked48
+# .PHONY: naked48
 naked48: setup
 
 	# run lint check

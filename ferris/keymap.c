@@ -23,7 +23,7 @@
 
 #define LAYOUT_ferris(...)       LAYOUT(__VA_ARGS__)
 
-cons t uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BASE] = LAYOUT_ferris(
 //---------                     ---------//

@@ -47,9 +47,9 @@
 #define META_L2  _______ , _BRUP__ , _BRDWN_ , _PRTSC_ , _______
 #define META_L3  _RESET_ , _______ , _______ , _______ , _______
 //              +--------+---------+---------+---------+--------+
-#define META_R1  _______ , __PRV__ , _PLYPS_ , __NXT__ , _______
-#define META_R2  _MUTE__ , _TMSMU_ , _VDWN__ , __VUP__ , _______
-#define META_R3  _______ , _______ , _______ , _______ , _______
+#define META_R1  RGB_VAD , __PRV__ , _PLYPS_ , __NXT__ , RGB_VAI
+#define META_R2  _MUTE__ , _TMSMU_ , _VDWN__ , __VUP__ , RGB_TOG
+#define META_R3  RGB_HUD , RGB_MOD , RGB_SPD , RGB_SPI , RGB_HUI
 //              +--------+---------+---------+---------+--------+
 
 // Bottom Row
