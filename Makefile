@@ -5,9 +5,10 @@ ferris: setup
 	cd qmk_firmware; qmk lint -kb ferris/0_2/bling -km deanbot --strict
 
 	# run build
+	# qmk compile -kb ferris/0_2/bling -km deanbot
 	qmk flash -kb ferris/0_2/bling -km deanbot
 
-# .PHONY: naked48
+.PHONY: naked48
 naked48: setup
 
 	# run lint check

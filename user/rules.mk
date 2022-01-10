@@ -20,6 +20,6 @@ ifeq ($(strip $(CUSTOM_SWAPPER_ENABLE)), yes)
 	OPT_DEFS += -DCUSTOM_SWAPPER_ENABLE
 endif
 
-# ifeq ($(strip $(COMBO_ENABLE)), yes)
-# 	SRC += combos.c
-# endif
+ifeq ($(strip $(COMBO_ENABLE)), yes)
+	SRC += combos.c
+endif
