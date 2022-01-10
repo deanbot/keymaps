@@ -5,9 +5,7 @@ ferris: setup
 	cd qmk_firmware; qmk lint -kb ferris/0_2/bling -km deanbot --strict
 
 	# run build
-	# make BUILD_DIR=$(shell pwd) -j1 -C qmk_firmware naked48:deanbot:dfu
-	# make ferris/0_2/bling:deanbot:flash
-	qmk flash -kb ferris/0_2/bling -km deanbot -bl dfu
+	qmk flash -kb ferris/0_2 -km deanbot -bl dfu
 
 .PHONY: naked48
 naked48: setup
@@ -16,7 +14,6 @@ naked48: setup
 	cd qmk_firmware; qmk lint -kb naked48 -km deanbot --strict
 
 	# run build
-	# make BUILD_DIR=$(shell pwd) -j1 -C qmk_firmware naked48:deanbot:dfu
 	qmk flash -kb naked48 -km deanbot -bl dfu
 
 setup: install
