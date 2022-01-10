@@ -34,7 +34,10 @@ enum keycodes
   __RPT__,
 
   // capsword
-  _CAPSW_
+  _CAPSW_,
+
+  // mb1 combo
+  _C_MB1_
 };
 
 #define _MONAV_ MO(_NAV)

@@ -112,11 +112,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
       }
   #endif
+
+  case _C_MB1_:
+    if (record->event.pressed) {
+      register_code(KC_MS_BTN1);
+    } else {
+      unregister_code(KC_MS_BTN1);
+    }
+    break;
   }
 
 #ifdef CUSTOM_CAPS_WORD_ENABLE
   process_caps_word(keycode, record);
 #endif
+
+
 
   return true;
 }

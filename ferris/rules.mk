@@ -2,7 +2,7 @@
 SPLIT_KEYBOARD = no
 
 CONSOLE_ENABLE = no
-BOOTMAGIC_ENABLE = yes
+BOOTMAGIC_ENABLE = no
 
 # reduce filesize
 # COMMAND_ENABLE = no
