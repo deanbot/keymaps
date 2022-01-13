@@ -113,13 +113,35 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
   #endif
 
+  // letting go of nav doesn't unregister
   case _C_MB1_:
     if (record->event.pressed) {
       register_code(KC_MS_BTN1);
     } else {
       unregister_code(KC_MS_BTN1);
     }
-    break;
+    return false;
+  case _C_MB2_:
+    if (record->event.pressed) {
+      register_code(KC_MS_BTN2);
+    } else {
+      unregister_code(KC_MS_BTN2);
+    }
+    return false;
+  case _C_MWD_:
+    if (record->event.pressed) {
+      register_code(KC_MS_WH_DOWN);
+    } else {
+      unregister_code(KC_MS_WH_DOWN);
+    }
+    return false;
+  case _C_MWU_:
+    if (record->event.pressed) {
+      register_code(KC_MS_WH_UP);
+    } else {
+      unregister_code(KC_MS_WH_UP);
+    }
+    return false;
   }
 
 #ifdef CUSTOM_CAPS_WORD_ENABLE

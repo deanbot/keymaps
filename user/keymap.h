@@ -3,21 +3,29 @@
 #include QMK_KEYBOARD_H
 
 //              +--------+---------+---------+---------+--------+
-#define BASE_L1  ___Q___ , ___W___ , ___F___ , ___P___ , ___B___
-#define BASE_L2  ___A___ , ___R___ , ___S___ , ___T___ , ___G___
-#define BASE_L3  ___Z___ , ___X___ , ___C___ , ___D___ , ___V___
+#define CMDH_L1  ___Q___ , ___W___ , ___F___ , ___P___ , ___B___
+#define CMDH_L2  ___A___ , ___R___ , ___S___ , ___T___ , ___G___
+#define CMDH_L3  ___Z___ , ___X___ , ___C___ , ___D___ , ___V___
 //              +--------+---------+---------+---------+--------+
-#define BASE_R1  ___J___ , ___L___ , ___U___ , ___Y___ , _SQUOT_
-#define BASE_R2  ___M___ , ___N___ , ___E___ , ___I___ , ___O___
-#define BASE_R3  ___K___ , ___H___ , _COMMA_ , __DOT__ , _SCOLN_
+#define CMDH_R1  ___J___ , ___L___ , ___U___ , ___Y___ , _SQUOT_
+#define CMDH_R2  ___M___ , ___N___ , ___E___ , ___I___ , ___O___
+#define CMDH_R3  ___K___ , ___H___ , _COMMA_ , __DOT__ , _SCOLN_
+//              +--------+---------+---------+---------+--------+
+#define APT__L1  ___W___ , ___G___ , ___D___ , ___F___ , ___B___
+#define APT__L2  ___R___ , ___S___ , ___T___ , ___H___ , ___K___
+#define APT__L3  ___X___ , ___C___ , ___M___ , ___P___ , ___V___
+//              +--------+---------+---------+---------+--------+
+#define APT__R1  ___Q___ , ___L___ , ___U___ , ___O___ , ___Y___
+#define APT__R2  ___J___ , ___N___ , ___E___ , ___A___ , ___I___
+#define APT__R3  ___Z___ , _COMMA_ , __DOT__ , _SQUOT_ , _SCOLN__ // _BSLSH_
 //              +--------+---------+---------+---------+--------+
 #define NAV__L1  _NEWFL_ , __CUT__ , _COPY__ , _PASTE_ , _REDO__
 #define NAV__L2  _O_CMD_ , _O_CTL_ , _O_OPT_ , _O_SFT_ , _SWWIN_
 #define NAV__L3  _UNDO__ , __ESC__ , _FORMA_ , __TAB__ , _RNAME_
 //              +--------+---------+---------+---------+--------+
-#define NAV__R1  _COLS__ , _BEGLN_ , _GOTOD_ , _ENDLN_ , _PROJ__
+#define NAV__R1  _COLS__ , _PGDWN_ , _GOTOD_ , _PG_UP_ , __MB2__
 #define NAV__R2  _SEL_L_ , _LEFT__ , _DOWN__ , __UP___ , _RIGHT_
-#define NAV__R3  _CAPSW_ , _ENTER_ , _GOTOE_ , __DEL__ , _FINDF_
+#define NAV__R3  _CAPSW_ , _ENTER_ , _GOTOE_ , __DEL__ , __MB1__
 //              +--------+---------+---------+---------+--------+
 #define SYM__L1  _TILDE_ , _LCBRC_ , _LBRAC_ , _LPARN_ , _SCOLN_
 #define SYM__L2  _MINUS_ , _PLUS__ , _EQUAL_ , _UNDRS_ , _HASH__
@@ -43,7 +51,7 @@
 #define MOUS_R2  __FWD__ , _O_SFT_ , _O_CTL_ , _O_OPT_ , _O_CMD_
 #define MOUS_R3  _N_TAB_ , _ZOOMO_ , __BTM__ , _ZOOMI_ , _ZOOMR_
 //              +--------+---------+---------+---------+--------+
-#define META_L1  _SLEEP_ , _______ , _______ , _______ , _______
+#define META_L1  _SLEEP_ , _______ , _______ , _COLMK_ , _APT___
 #define META_L2  _______ , _BRUP__ , _BRDWN_ , _PRTSC_ , _______
 #define META_L3  _RESET_ , _______ , _______ , _______ , _______
 //              +--------+---------+---------+---------+--------+

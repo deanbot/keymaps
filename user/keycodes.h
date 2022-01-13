@@ -4,7 +4,8 @@
 
 enum layers
 {
-  _BASE,
+  _COLEMAK_DH,
+  _APT,
   _FN,
   _NAV,
   _MOUSE,
@@ -36,14 +37,19 @@ enum keycodes
   // capsword
   _CAPSW_,
 
-  // mb1 combo
-  _C_MB1_
+  // mousekey combos
+  _C_MB1_,
+  _C_MB2_,
+  _C_MWU_,
+  _C_MWD_
 };
 
 #define _MONAV_ MO(_NAV)
 #define _MOSYM_ MO(_SYM)
 #define _MMETA_ MO(_META)
 #define _SP_MK_ LT(_MOUSE, KC_SPACE)
+#define _APT___ DF(_APT)
+#define _COLMK_ DF(_COLEMAK_DH)
 
 #define ___A___ KC_A
 #define ___B___ KC_B
@@ -178,6 +184,7 @@ enum keycodes
 // workflow/app/browser
 #define _PRTSC_ LCMD(LSFT(___4___))
 #define _CMD_W_ LCMD(KC_W)
+#define _CMD_Q_ LCMD(KC_Q)
 #define _CMD_R_ LCMD(KC_R)
 #define _COPY__ LCMD(KC_C)
 #define __CUT__ LCMD(KC_X)

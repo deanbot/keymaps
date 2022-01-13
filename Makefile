@@ -1,21 +1,18 @@
-.PHONY:ferris
+.PHONY: ferris naked48
+
+# qmk flash -kb ferris/0_2/bling -km deanbot -bl dfu
 ferris: setup
 
-	# run lint check
 	cd qmk_firmware; qmk lint -kb ferris/0_2/bling -km deanbot --strict
 
-	# run build
-	# qmk compile -kb ferris/0_2/bling -km deanbot
 	qmk flash -kb ferris/0_2/bling -km deanbot
 
-.PHONY: naked48
+# qmk flash -kb naked48 -km deanbot -bl dfu
 naked48: setup
 
-	# run lint check
 	cd qmk_firmware; qmk lint -kb naked48 -km deanbot --strict
 
-	# run build
-	qmk flash -kb naked48 -km deanbot -bl dfu
+	qmk flash -kb naked48 -km deanbot
 
 setup: install
 	test -L ./qmk_firmware/users/deanbot || ln -s $(shell pwd)/user ./qmk_firmware/users/deanbot

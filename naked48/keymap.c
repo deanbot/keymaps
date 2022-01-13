@@ -26,16 +26,26 @@ extern uint8_t is_master;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-[_BASE] = LAYOUT_naked48(
+[_COLEMAK_DH] = LAYOUT_naked48(
 //---------+---------                     ---------+---------//
-   __HUD__ , BASE_L1           ,           BASE_R1 , _SPOTL_ ,
-   _MWDWN_ , BASE_L2           ,           BASE_R2 , _MWUP__ ,
-   _SAVE__ , BASE_L3           ,           BASE_R3 , _TMSMU_ ,
+   __HUD__ , CMDH_L1           ,           CMDH_R1 , _SPOTL_ ,
+   _MWDWN_ , CMDH_L2           ,           CMDH_R2 , _MWUP__ ,
+   _SAVE__ , CMDH_L3           ,           CMDH_R3 , _TMSMU_ ,
 //---------+---------                     ---------+---------//
    _LEFT__ , _RIGHT_ ,
    BASEx_L , BASExLT , __MB2__ ,
    __MB3__ , BASExRT , BASEx_R ,
    _DOWN__ , __UP___
+//---------+---------//
+),
+
+[_APT] = LAYOUT_naked48(
+//---------+---------                     ---------+---------//
+   __HUD__ , APT__L1           ,           APT__R1 , _SPOTL_ ,
+   _MWDWN_ , APT__L2           ,           APT__R2 , _MWUP__ ,
+   _SAVE__ , APT__L3           ,           APT__R3 , _TMSMU_ ,
+//---------+---------                     ---------+---------//
+   BLANKx_
 //---------+---------//
 ),
 
