@@ -17,9 +17,12 @@ enum combos {
   CLOSE,
   SAVE,
   FIND,
+  DUP,
   TERM,
   FINDF,
   FORMAT,
+
+  DISCO,
 
 	COMBO_LENGTH
 };
@@ -34,9 +37,12 @@ const uint16_t PROGMEM quit_combo[] = {KC_W, KC_Q, COMBO_END};
 const uint16_t PROGMEM close_combo[] = {KC_J, KC_L, COMBO_END};
 const uint16_t PROGMEM save_combo[] = {KC_S, KC_SCOLON, COMBO_END};
 const uint16_t PROGMEM find_combo[] = {KC_F, KC_SCOLON, COMBO_END};
+const uint16_t PROGMEM dup_combo[] = {KC_D, KC_SCOLON, COMBO_END};
 const uint16_t PROGMEM term_combo[] = {KC_T, KC_SCOLON, COMBO_END};
 const uint16_t PROGMEM findf_combo[] = {KC_F, KC_H, COMBO_END};
 const uint16_t PROGMEM format_combo[] = {KC_F, KC_COMMA, COMBO_END};
+
+const uint16_t PROGMEM disco_combo[] = {KC_D, KC_H, COMBO_END};
 
 const uint16_t PROGMEM navat_mb1_combo[] = {_MONAV_, KC_A, KC_T, COMBO_END};
 const uint16_t PROGMEM navag_mb2_combo[] = {_MONAV_, KC_A, KC_G, COMBO_END};
@@ -52,9 +58,12 @@ combo_t key_combos[] = {
   [CLOSE] = COMBO(close_combo, _CLOSE_),
   [SAVE] = COMBO(save_combo, _SAVE__),
   [FIND] = COMBO(find_combo, _FIND__),
+  [DUP] = COMBO(dup_combo, __DUP__),
   [TERM] = COMBO(term_combo, _TERM__),
   [FINDF] = COMBO(findf_combo, _FINDF_),
   [FORMAT] = COMBO(format_combo, _FORMA_),
+
+  [DISCO] = COMBO(disco_combo, _DISCO_),
 
   [MB1] = COMBO(navat_mb1_combo, _C_MB1_),
   [MB2] = COMBO(navag_mb2_combo, _C_MB2_),

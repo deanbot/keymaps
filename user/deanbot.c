@@ -88,6 +88,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
 #endif
 
+  // TODO : replace send string with tap_code to save space
   switch (keycode) {
     // select line
     case _SEL_L_:
@@ -100,6 +101,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case _STRIN_:
       if (record->event.pressed) {
         SEND_STRING("${}" SS_TAP(X_LEFT));
+      }
+      break;
+
+    // open discord
+    case _DISCO_:
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "d" SS_DELAY(100) SS_TAP(X_ENTER));
       }
       break;
 
@@ -147,8 +155,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CUSTOM_CAPS_WORD_ENABLE
   process_caps_word(keycode, record);
 #endif
-
-
 
   return true;
 }

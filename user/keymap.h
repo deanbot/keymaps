@@ -21,7 +21,7 @@
 //              +--------+---------+---------+---------+--------+
 #define NAV__L1  _NEWFL_ , __CUT__ , _COPY__ , _PASTE_ , _REDO__
 #define NAV__L2  _O_CMD_ , _O_CTL_ , _O_OPT_ , _O_SFT_ , _SWWIN_
-#define NAV__L3  _UNDO__ , __ESC__ , _FORMA_ , __TAB__ , _RNAME_
+#define NAV__L3  _UNDO__ , __ESC__ , _HINT__ , __TAB__ , _RNAME_
 //              +--------+---------+---------+---------+--------+
 #define NAV__R1  _COLS__ , _PG_UP_ , _GOTOD_ , _PGDWN_ , _PROJ__
 #define NAV__R2  _SEL_L_ , _LEFT__ , _DOWN__ , __UP___ , _RIGHT_

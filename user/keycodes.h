@@ -186,6 +186,7 @@ enum keycodes
 #define _CLOSE_ LCMD(KC_W)
 #define _QUIT__ LCMD(KC_Q)
 #define _FIND__ LCMD(KC_F)
+#define __DUP__ LCMD(KC_D)
 #define _RFSH__ LCMD(KC_R)
 #define _COPY__ LCMD(KC_C)
 #define __CUT__ LCMD(KC_X)
@@ -219,6 +220,7 @@ enum keycodes
 #define _ZOOMR_ LCMD(KC_0)
 #define _SAVE__ LCMD(KC_S)
 #define _SPOTL_ LCMD(KC_SPACE)
+#define _DISCO_ HYPR(KC_D)
 
 // android studio
 #define _HINT__ LCTL(KC_SPACE)
