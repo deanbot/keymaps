@@ -41,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_APT] = LAYOUT_naked48(
 //---------+---------                     ---------+---------//
-   __HUD__ , APT__L1           ,           APT__R1 , _SPOTL_ ,
-   _MWDWN_ , APT__L2           ,           APT__R2 , _MWUP__ ,
-   _SAVE__ , APT__L3           ,           APT__R3 , _TMSMU_ ,
+   _______ , APT__L1           ,           APT__R1 , _______ ,
+   _______ , APT__L2           ,           APT__R2 , _______ ,
+   _______ , APT__L3           ,           APT__R3 , _______ ,
 //---------+---------                     ---------+---------//
    BLANKx_
 //---------+---------//
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_MOUSE] = LAYOUT_naked48(
 //---------+---------                     ---------+---------//
    _______ , MOUS_L1           ,           MOUS_R1 , _______ ,
-   _CMD_R_ , MOUS_L2           ,           MOUS_R2 , _______ ,
+   _RFSH__ , MOUS_L2           ,           MOUS_R2 , _______ ,
    _______ , MOUS_L3           ,           MOUS_R3 , _______ ,
 //---------+---------                     ---------+---------//
    BLANKx_

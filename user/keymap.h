@@ -17,13 +17,13 @@
 //              +--------+---------+---------+---------+--------+
 #define APT__R1  ___Q___ , ___L___ , ___U___ , ___O___ , ___Y___
 #define APT__R2  ___J___ , ___N___ , ___E___ , ___A___ , ___I___
-#define APT__R3  ___Z___ , _COMMA_ , __DOT__ , _SQUOT_ , _SCOLN__ // _BSLSH_
+#define APT__R3  ___Z___ , _COMMA_ , __DOT__ , _SQUOT_ , _SCOLN_
 //              +--------+---------+---------+---------+--------+
 #define NAV__L1  _NEWFL_ , __CUT__ , _COPY__ , _PASTE_ , _REDO__
 #define NAV__L2  _O_CMD_ , _O_CTL_ , _O_OPT_ , _O_SFT_ , _SWWIN_
 #define NAV__L3  _UNDO__ , __ESC__ , _FORMA_ , __TAB__ , _RNAME_
 //              +--------+---------+---------+---------+--------+
-#define NAV__R1  _COLS__ , _PGDWN_ , _GOTOD_ , _PG_UP_ , __MB2__
+#define NAV__R1  _COLS__ , _PG_UP_ , _GOTOD_ , _PGDWN_ , _PROJ__
 #define NAV__R2  _SEL_L_ , _LEFT__ , _DOWN__ , __UP___ , _RIGHT_
 #define NAV__R3  _CAPSW_ , _ENTER_ , _GOTOE_ , __DEL__ , __MB1__
 //              +--------+---------+---------+---------+--------+
@@ -47,7 +47,7 @@
 #define MOUS_L2  _MLFT__ , __MUP__ , _MDWN__ , _MRGT__ , _BACK__
 #define MOUS_L3  _SRCHW_ , _MWLFT_ , _MWDWN_ , _MWRGT_ , _JUMP__
 //              +--------+---------+---------+---------+--------+
-#define MOUS_R1  _CMD_W_ , _TAB_L_ , __TOP__ , _TAB_R_ , _RETAB_
+#define MOUS_R1  _CLOSE_, _TAB_L_ , __TOP__ , _TAB_R_ , _RETAB_
 #define MOUS_R2  __FWD__ , _O_SFT_ , _O_CTL_ , _O_OPT_ , _O_CMD_
 #define MOUS_R3  _N_TAB_ , _ZOOMO_ , __BTM__ , _ZOOMI_ , _ZOOMR_
 //              +--------+---------+---------+---------+--------+

@@ -183,9 +183,10 @@ enum keycodes
 
 // workflow/app/browser
 #define _PRTSC_ LCMD(LSFT(___4___))
-#define _CMD_W_ LCMD(KC_W)
-#define _CMD_Q_ LCMD(KC_Q)
-#define _CMD_R_ LCMD(KC_R)
+#define _CLOSE_ LCMD(KC_W)
+#define _QUIT__ LCMD(KC_Q)
+#define _FIND__ LCMD(KC_F)
+#define _RFSH__ LCMD(KC_R)
 #define _COPY__ LCMD(KC_C)
 #define __CUT__ LCMD(KC_X)
 #define _UNDO__ LCMD(KC_Z)
