@@ -19,13 +19,13 @@
 #define APT__R2  ___J___ , ___N___ , ___E___ , ___A___ , ___I___
 #define APT__R3  ___Z___ , _COMMA_ , __DOT__ , _SQUOT_ , _SCOLN_
 //              +--------+---------+---------+---------+--------+
-#define NAV__L1  _NEWFL_ , __CUT__ , _COPY__ , _PASTE_ , _REDO__
+#define NAV__L1  _______ , __CUT__ , _COPY__ , _PASTE_ , _REDO__
 #define NAV__L2  _O_CMD_ , _O_CTL_ , _O_OPT_ , _O_SFT_ , _SWWIN_
-#define NAV__L3  _UNDO__ , __ESC__ , _MATCH_ , __TAB__ , _RNAME_
+#define NAV__L3  _UNDO__ , __ESC__ , _______ , __TAB__ , _RNAME_
 //              +--------+---------+---------+---------+--------+
 #define NAV__R1  _COLS__ , _GOTOD_ , _PGDWN_ , _PG_UP_ , _GOTOE_
 #define NAV__R2  _SEL_L_ , _LEFT__ , _DOWN__ , __UP___ , _RIGHT_
-#define NAV__R3  _______ , _ENTER_ , _HINT__ , __DEL__ , __MB1__
+#define NAV__R3  _MATCH_ , _ENTER_ , _HINT__ , __DEL__ , __MB1__
 //              +--------+---------+---------+---------+--------+
 #define SYM__L1  _TILDE_ , _LCBRC_ , _LBRAC_ , _LPARN_ , _SCOLN_
 #define SYM__L2  _MINUS_ , _PLUS__ , _EQUAL_ , _UNDRS_ , _HASH__

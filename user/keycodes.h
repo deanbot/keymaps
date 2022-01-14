@@ -221,7 +221,9 @@ enum keycodes
 #define _ZOOMR_ LCMD(KC_0)
 #define _SAVE__ LCMD(KC_S)
 #define _SPOTL_ LCMD(KC_SPACE)
-#define _DISCO_ HYPR(KC_D)
+
+// apps
+#define _DISCO_ HYPR(KC_D) // discord
 
 // ide
 #define _HINT__ LCTL(KC_SPACE) // prompt complete

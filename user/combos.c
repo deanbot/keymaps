@@ -4,9 +4,10 @@
 #include "keycodes.h"
 
 enum combos {
-	COMMADOT_ENTER,
-	HCOMMA_TAB,
-	HSCOLON_ESC,
+	ENTER,
+	TAB,
+	ESC,
+  BSPACE,
 
   SAVE,
   FIND,
@@ -14,15 +15,18 @@ enum combos {
   QUIT,
   CLOSE,
   HIDE,
+  HUD,
 
   CAPSW,
 
   DUPL,
-  TERM,
-  PROJ,
   FINDF,
   GOTOS,
+  NEWF,
   FORMAT,
+  RNAME,
+  TERM,
+  PROJ,
 
   DISCO,
 
@@ -39,21 +43,26 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 const uint16_t PROGMEM enter_combo[] = {KC_COMMA, KC_DOT, COMBO_END};
 const uint16_t PROGMEM tab_combo[] = {KC_H, KC_COMMA, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_H, KC_SCOLON, COMBO_END};
+const uint16_t PROGMEM bspace_combo[] = {KC_N, KC_I, COMBO_END};
 
 const uint16_t PROGMEM save_combo[] = {KC_C, KC_D, COMBO_END};
 const uint16_t PROGMEM find_combo[] = {KC_F, KC_P, COMBO_END};
 
 const uint16_t PROGMEM quit_combo[] = {KC_W, KC_Q, COMBO_END};
 const uint16_t PROGMEM close_combo[] = {KC_J, KC_L, COMBO_END};
+const uint16_t PROGMEM hide_combo[] = {KC_K, KC_H, COMBO_END};
+const uint16_t PROGMEM hud_combo[] = {KC_Z, KC_X, COMBO_END};
 
-const uint16_t PROGMEM capsw_combo[] = {KC_N, KC_H, COMBO_END};
+const uint16_t PROGMEM capsw_combo[] = {KC_L, KC_U, KC_Y, COMBO_END};
 
 const uint16_t PROGMEM dupl_combo[] = {KC_T, KC_D, COMBO_END};
-const uint16_t PROGMEM term_combo[] = {KC_U, KC_Y, COMBO_END};
-const uint16_t PROGMEM proj_combo[] = {KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM findf_combo[] = {KC_P, KC_T, COMBO_END};
 const uint16_t PROGMEM gotos_combo[] = {KC_F, KC_S, COMBO_END};
 const uint16_t PROGMEM format_combo[] = {KC_F, KC_H, COMBO_END};
+const uint16_t PROGMEM rname_combo[] = {KC_X, KC_C, KC_D, COMBO_END};
+const uint16_t PROGMEM newf_combo[] = {KC_W, KC_P, COMBO_END};
+const uint16_t PROGMEM term_combo[] = {KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM proj_combo[] = {KC_W, KC_F, COMBO_END};
 
 const uint16_t PROGMEM disco_combo[] = {KC_D, KC_H, COMBO_END};
 
@@ -63,9 +72,10 @@ const uint16_t PROGMEM dv_mwd_combo[] = {KC_D, KC_V, COMBO_END};
 const uint16_t PROGMEM pb_mwu_combo[] = {KC_P, KC_B, COMBO_END};
 
 combo_t key_combos[] = {
-    [COMMADOT_ENTER] = COMBO(enter_combo, KC_ENTER),
-    [HCOMMA_TAB] = COMBO(tab_combo, KC_TAB),
-    [HSCOLON_ESC] = COMBO(esc_combo, KC_ESCAPE),
+    [ENTER] = COMBO(enter_combo, KC_ENTER),
+    [TAB] = COMBO(tab_combo, KC_TAB),
+    [ESC] = COMBO(esc_combo, KC_ESCAPE),
+    [BSPACE] = COMBO(bspace_combo, KC_BSPACE),
 
     // basic
     [SAVE] = COMBO(save_combo, _SAVE__),
@@ -75,6 +85,7 @@ combo_t key_combos[] = {
     [QUIT] = COMBO(quit_combo, _QUIT__),
     [CLOSE] = COMBO(close_combo, _CLOSE_),
     [HIDE] = COMBO(hide_combo, _CLOSE_),
+    [HUD] = COMBO(hud_combo, __HUD__),
 
     // custom
     [CAPSW] = COMBO(capsw_combo, _CAPSW_),
@@ -84,6 +95,8 @@ combo_t key_combos[] = {
     [FINDF] = COMBO(findf_combo, _FINDF_),
     [GOTOS] = COMBO(gotos_combo, _GOTOS_),
     [FORMAT] = COMBO(format_combo, _FORMA_),
+    [RNAME] = COMBO(rname_combo, _RNAME_),
+    [NEWF] = COMBO(newf_combo, _NEWFL_),
     [PROJ] = COMBO(proj_combo, _PROJ__),
     [TERM] = COMBO(term_combo, _TERM__),
 
