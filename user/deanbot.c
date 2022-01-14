@@ -90,6 +90,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   // TODO : replace send string with tap_code to save space
   switch (keycode) {
+    // rename symbol (from combo)
+    // case _C_RNM_:
+    //   if (record->event.pressed) {
+    //     register_code(_RNAME_);
+    //   }
+    //   break;
+
     // select line
     case _SEL_L_:
       if (record->event.pressed) {

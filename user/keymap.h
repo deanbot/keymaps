@@ -21,11 +21,11 @@
 //              +--------+---------+---------+---------+--------+
 #define NAV__L1  _NEWFL_ , __CUT__ , _COPY__ , _PASTE_ , _REDO__
 #define NAV__L2  _O_CMD_ , _O_CTL_ , _O_OPT_ , _O_SFT_ , _SWWIN_
-#define NAV__L3  _UNDO__ , __ESC__ , _HINT__ , __TAB__ , _RNAME_
+#define NAV__L3  _UNDO__ , __ESC__ , _MATCH_ , __TAB__ , _RNAME_
 //              +--------+---------+---------+---------+--------+
-#define NAV__R1  _COLS__ , _PG_UP_ , _GOTOD_ , _PGDWN_ , _PROJ__
+#define NAV__R1  _COLS__ , _GOTOD_ , _PGDWN_ , _PG_UP_ , _GOTOE_
 #define NAV__R2  _SEL_L_ , _LEFT__ , _DOWN__ , __UP___ , _RIGHT_
-#define NAV__R3  _CAPSW_ , _ENTER_ , _GOTOE_ , __DEL__ , __MB1__
+#define NAV__R3  _______ , _ENTER_ , _HINT__ , __DEL__ , __MB1__
 //              +--------+---------+---------+---------+--------+
 #define SYM__L1  _TILDE_ , _LCBRC_ , _LBRAC_ , _LPARN_ , _SCOLN_
 #define SYM__L2  _MINUS_ , _PLUS__ , _EQUAL_ , _UNDRS_ , _HASH__

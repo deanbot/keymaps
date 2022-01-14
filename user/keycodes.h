@@ -185,6 +185,7 @@ enum keycodes
 #define _PRTSC_ LCMD(LSFT(___4___))
 #define _CLOSE_ LCMD(KC_W)
 #define _QUIT__ LCMD(KC_Q)
+#define _HIDE__ LCMD(KC_H)
 #define _FIND__ LCMD(KC_F)
 #define __DUP__ LCMD(KC_D)
 #define _RFSH__ LCMD(KC_R)
@@ -222,22 +223,25 @@ enum keycodes
 #define _SPOTL_ LCMD(KC_SPACE)
 #define _DISCO_ HYPR(KC_D)
 
-// android studio
-#define _HINT__ LCTL(KC_SPACE)
-#define _TERM__ LALT(KC_F12)
-#define _NEWFL_ LCMD(LOPT(KC_N))
-#define _DRTAN_ LCMD(KC_SCOLON)
-#define _PROJ__ LCMD(KC_1)
-#define _DEBGR_ LCMD(KC_5)
-#define _COMMT_ LCMD(KC_0)
-#define _RNAME_ LSFT(KC_F6)
-#define _COLS__ LCMD(LSFT(KC_8))
-#define _FORMA_ LCMD(LOPT(KC_L))
-#define __FIX__ LOPT(LSFT(KC_ENTER))
-#define _FINDF_ LCMD(LSFT(KC_O))
-#define _GOTOD_ LCMD(KC_B)
-#define _GOTOE_ KC_F2
-#define _HTRST_ LCMD(LSFT(KC_BSLASH))
-#define _DEBUG_ LCTL(KC_D)
-#define _STPDB_ LCMD(KC_F2)
-#define _RSUME_ LOPT(LCMD(KC_R))
+// ide
+#define _HINT__ LCTL(KC_SPACE) // prompt complete
+#define __FIX__ LOPT(LSFT(KC_ENTER)) // autofix
+
+#define _TERM__ LALT(KC_F12) // toggle terminal
+#define _NEWFL_ LCMD(LOPT(KC_N)) // new file in directory
+#define _DRTAN_ LCMD(KC_SCOLON) // analysis
+#define _PROJ__ LCMD(KC_1) // project explorer
+#define _DEBGR_ LCMD(KC_5) // debugger panel
+#define _COMMT_ LCMD(KC_0) // git panel
+#define _RNAME_ LSFT(KC_F6) // rename
+#define _COLS__ LCMD(LSFT(KC_8)) // col selection
+#define _FORMA_ LCMD(LOPT(KC_L)) // format code
+#define _FINDF_ LCMD(LSFT(KC_O)) // find file in workspace
+#define _GOTOD_ LCMD(KC_B) // go to definition
+#define _GOTOE_ KC_F2 // go to next error
+#define _GOTOS_ LCMD(LOPT(KC_O)) // go to symbol in editor
+#define _HTRST_ LCMD(LSFT(KC_BSLASH)) // hot reset
+#define _DEBUG_ LCTL(KC_D) // start debugger
+#define _STPDB_ LCMD(KC_F2) // stop debugger
+#define _RSUME_ LOPT(LCMD(KC_R)) // resume execution
+#define _MATCH_ LCTL(KC_M) // match braceqa
