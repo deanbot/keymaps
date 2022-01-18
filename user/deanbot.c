@@ -111,10 +111,35 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       break;
 
+    case _REQU__:
+      if (record->event.pressed) {
+        SEND_STRING("required ");
+      }
+      break;
+
+    case __FIN__:
+      if (record->event.pressed) {
+        SEND_STRING("final ");
+      }
+      break;
+
     // open discord
     case _DISCO_:
       if (record->event.pressed) {
-        SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "d" SS_DELAY(100) SS_TAP(X_ENTER));
+        SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "disc" SS_DELAY(100) SS_TAP(X_ENTER));
+      }
+      break;
+
+    // open slack
+    case _SLACK_:
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "sla" SS_DELAY(100) SS_TAP(X_ENTER));
+      }
+      break;
+
+    case _TEAMS_:
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "tea" SS_DELAY(100) SS_TAP(X_ENTER));
       }
       break;
 

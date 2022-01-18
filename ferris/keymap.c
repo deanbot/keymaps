@@ -19,7 +19,6 @@
 **/
 
 #define _____BLANKx______  _______ , _______ , _______ , _______
-#define MOUSxLf  _______ , __MB1__
 
 #define LAYOUT_ferris(...)       LAYOUT(__VA_ARGS__)
 
@@ -81,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    MOUS_L2           ,           MOUS_R2 ,
    MOUS_L3           ,           MOUS_R3 ,
 //---------                     ---------//
-             MOUSxLf , MOUSx_R
+             MOUSx_L , MOUSx_R
           //---------+---------//
 ),
 

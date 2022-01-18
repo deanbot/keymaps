@@ -18,8 +18,9 @@ enum keycodes
 {
   _SEL_L_ = SAFE_RANGE,
 
-  // ${} macro
-  _STRIN_,
+  _STRIN_, // ${} macro
+  _REQU__, // "required"
+  __FIN__, // "final
 
   // swapper
   _SWWIN_,
@@ -182,6 +183,7 @@ enum keycodes
 #define _RESET_ RESET
 
 // workflow/app/browser
+#define _STAB__ LSFT(KC_TAB)
 #define _PRTSC_ LCMD(LSFT(___4___))
 #define _CLOSE_ LCMD(KC_W)
 #define _QUIT__ LCMD(KC_Q)
@@ -224,11 +226,13 @@ enum keycodes
 
 // apps
 #define _DISCO_ HYPR(KC_D) // discord
+#define _SLACK_ HYPR(KC_S)
+#define _TEAMS_ HYPR(KC_T)
 
 // ide
 #define _HINT__ LCTL(KC_SPACE) // prompt complete
 #define __FIX__ LOPT(LSFT(KC_ENTER)) // autofix
-
+#define _ACTIO_ LOPT(KC_ENTER) // actions
 #define _TERM__ LALT(KC_F12) // toggle terminal
 #define _NEWFL_ LCMD(LOPT(KC_N)) // new file in directory
 #define _DRTAN_ LCMD(KC_SCOLON) // analysis
@@ -238,6 +242,7 @@ enum keycodes
 #define _RNAME_ LSFT(KC_F6) // rename
 #define _COLS__ LCMD(LSFT(KC_8)) // col selection
 #define _FORMA_ LCMD(LOPT(KC_L)) // format code
+#define _SORTI_ LCTL(LOPT(KC_O)) // sort imports
 #define _FINDF_ LCMD(LSFT(KC_O)) // find file in workspace
 #define _GOTOD_ LCMD(KC_B) // go to definition
 #define _GOTOE_ KC_F2 // go to next error
@@ -246,4 +251,5 @@ enum keycodes
 #define _DEBUG_ LCTL(KC_D) // start debugger
 #define _STPDB_ LCMD(KC_F2) // stop debugger
 #define _RSUME_ LOPT(LCMD(KC_R)) // resume execution
-#define _MATCH_ LCTL(KC_M) // match braceqa
+#define _MATCH_ LCTL(KC_M) // match bracket
+#define _REPL__ LCMD(KC_R) // replace

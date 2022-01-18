@@ -19,13 +19,13 @@
 #define APT__R2  ___J___ , ___N___ , ___E___ , ___A___ , ___I___
 #define APT__R3  ___Z___ , _COMMA_ , __DOT__ , _SQUOT_ , _SCOLN_
 //              +--------+---------+---------+---------+--------+
-#define NAV__L1  _______ , __CUT__ , _COPY__ , _PASTE_ , _REDO__
+#define NAV__L1  _UNDO__ , __CUT__ , _COPY__ , _PASTE_ , _REDO__
 #define NAV__L2  _O_CMD_ , _O_CTL_ , _O_OPT_ , _O_SFT_ , _SWWIN_
-#define NAV__L3  _UNDO__ , __ESC__ , _______ , __TAB__ , _RNAME_
+#define NAV__L3  _ACTIO_ , __ESC__ , _MATCH_ , __TAB__ , _NEWFL_
 //              +--------+---------+---------+---------+--------+
-#define NAV__R1  _COLS__ , _GOTOD_ , _PGDWN_ , _PG_UP_ , _GOTOE_
+#define NAV__R1  _PROJ__ , _GOTOD_ , _PGDWN_ , _PG_UP_ , _GOTOE_
 #define NAV__R2  _SEL_L_ , _LEFT__ , _DOWN__ , __UP___ , _RIGHT_
-#define NAV__R3  _MATCH_ , _ENTER_ , _HINT__ , __DEL__ , __MB1__
+#define NAV__R3  _COLS__ , _ENTER_ , _HINT__ , __DEL__ , __MB1__
 //              +--------+---------+---------+---------+--------+
 #define SYM__L1  _TILDE_ , _LCBRC_ , _LBRAC_ , _LPARN_ , _SCOLN_
 #define SYM__L2  _MINUS_ , _PLUS__ , _EQUAL_ , _UNDRS_ , _HASH__
@@ -47,7 +47,7 @@
 #define MOUS_L2  _MLFT__ , __MUP__ , _MDWN__ , _MRGT__ , _BACK__
 #define MOUS_L3  _SRCHW_ , _MWLFT_ , _MWDWN_ , _MWRGT_ , _JUMP__
 //              +--------+---------+---------+---------+--------+
-#define MOUS_R1  _CLOSE_, _TAB_L_ , __TOP__ , _TAB_R_ , _RETAB_
+#define MOUS_R1  _CLOSE_ , _TAB_L_ , __TOP__ , _TAB_R_ , _RETAB_
 #define MOUS_R2  __FWD__ , _O_SFT_ , _O_CTL_ , _O_OPT_ , _O_CMD_
 #define MOUS_R3  _N_TAB_ , _ZOOMO_ , __BTM__ , _ZOOMI_ , _ZOOMR_
 //              +--------+---------+---------+---------+--------+
@@ -61,6 +61,8 @@
 //              +--------+---------+---------+---------+--------+
 
 // Bottom Row
+// L/R = Primary/Secondary
+// LT/RT = Tertiary
 #define BASEx_L  _MONAV_ , _O_SFT_
 #define BASExLT  __MB1__
 #define BASExRT  __RPT__
@@ -81,7 +83,7 @@
 #define NUMx_RT  _______
 #define NUMx__R  _______ , _______
 //
-#define MOUSx_L  _______ , _______
+#define MOUSx_L  _______ , __MB1__
 #define MOUSxLT  _______
 #define MOUSxRT  _______
 #define MOUSx_R  _______ , _______
