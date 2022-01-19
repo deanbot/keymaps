@@ -20,8 +20,6 @@ enum combos {
   HIDE,
   HUD,
 
-  CAPSW,
-
   DUPL,
   FINDF,
   GOTOS,
@@ -60,8 +58,8 @@ const uint16_t PROGMEM tab_combo[] = {KC_H, KC_COMMA, COMBO_END};
 const uint16_t PROGMEM stab_combo[] = {KC_H, KC_COMMA, KC_DOT, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_H, KC_SCOLON, COMBO_END};
 // const uint16_t PROGMEM bspace_combo[] = {KC_N, KC_I, COMBO_END};
-const uint16_t PROGMEM undo_combo[] = {KC_W, KC_Y, COMBO_END};
-const uint16_t PROGMEM redo_combo[] = {KC_F, KC_Y, COMBO_END};
+const uint16_t PROGMEM undo_combo[] = {KC_G, KC_V, COMBO_END};
+const uint16_t PROGMEM redo_combo[] = {KC_M, KC_K, COMBO_END};
 
 const uint16_t PROGMEM save_combo[] = {KC_C, KC_D, COMBO_END};
 const uint16_t PROGMEM find_combo[] = {KC_F, KC_P, COMBO_END};
@@ -70,8 +68,6 @@ const uint16_t PROGMEM quit_combo[] = {KC_Q, KC_A, COMBO_END};
 const uint16_t PROGMEM close_combo[] = {KC_QUOT, KC_O, COMBO_END};
 const uint16_t PROGMEM hide_combo[] = {KC_O, KC_SCOLON, COMBO_END};
 const uint16_t PROGMEM hud_combo[] = {KC_A, KC_Z, COMBO_END};
-
-const uint16_t PROGMEM capsw_combo[] = {KC_T, KC_M, COMBO_END};
 
 const uint16_t PROGMEM dupl_combo[] = {KC_T, KC_D, COMBO_END};
 const uint16_t PROGMEM findf_combo[] = {KC_P, KC_T, COMBO_END};
@@ -85,7 +81,7 @@ const uint16_t PROGMEM term_combo[] = {KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM proj_combo[] = {KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM repl_combo[] = {KC_L, KC_U, COMBO_END};
 
-//  const uint16_t PROGMEM tabl_combo[] = {KC_J, KC_M, COMBO_END};
+// const uint16_t PROGMEM tabl_combo[] = {KC_J, KC_M, COMBO_END};
 // const uint16_t PROGMEM tabr_combo[] = {KC_B, KC_G, COMBO_END};
 const uint16_t PROGMEM prtsc_combo[] = {KC_P, KC_SCOLON, COMBO_END};
 
@@ -120,15 +116,12 @@ combo_t key_combos[] = {
     [HIDE] = COMBO(hide_combo, _CLOSE_),
     [HUD] = COMBO(hud_combo, __HUD__),
 
-    // custom
-    [CAPSW] = COMBO(capsw_combo, _CAPSW_),
-
     // ide
     [DUPL] = COMBO(dupl_combo, __DUP__),
     [REPL] = COMBO(repl_combo, _REPL__),
     [FINDF] = COMBO(findf_combo, _FINDF_),
     [GOTOS] = COMBO(gotos_combo, _GOTOS_),
-    [GOTOD] = COMBO(gotod_combo, _GOTOS_),
+    [GOTOD] = COMBO(gotod_combo, _GOTOD_),
     [FORMAT] = COMBO(format_combo, _FORMA_),
     [SORTI] = COMBO(sorti_combo, _SORTI_),
     [RNAME] = COMBO(rname_combo, _RNAME_),

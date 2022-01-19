@@ -253,3 +253,7 @@ enum keycodes
 #define _RSUME_ LOPT(LCMD(KC_R)) // resume execution
 #define _MATCH_ LCTL(KC_M) // match bracket
 #define _REPL__ LCMD(KC_R) // replace
+
+// terminal
+#define __BOL__ LCTL(KC_A)
+#define __EOL__ LCTL(KC_E)
