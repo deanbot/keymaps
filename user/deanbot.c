@@ -3,36 +3,44 @@
 #include "deanbot.h"
 
 #ifdef CUSTOM_ONESHOT_ENABLE
-bool is_oneshot_cancel_key(uint16_t keycode) {
-    switch (keycode) {
-    case _MOSYM_:
-    case _MONAV_:
-        return true;
-    default:
-        return false;
-    }
+
+bool is_oneshot_modifier_cancel_key(uint16_t keycode) {
+  switch (keycode) {
+  case _MONAV_:
+  case _MOSYM_:
+  case _MMETA_:
+  case __RPT__:
+  case _CAPSW_:
+    return true;
+  default:
+    return false;
+  }
 }
 
-bool is_oneshot_ignored_key(uint16_t keycode) {
-    switch (keycode) {
-    case _MOSYM_:
-    case _MONAV_:
-
-    case _O_SFT_:
-    case _O_OPT_:
-    case _O_CTL_:
-    case _O_CMD_:
-        return true;
-    default:
-        return false;
-    }
+bool is_oneshot_modifier_ignored_key(uint16_t keycode) {
+  switch (keycode) {
+  case _MONAV_:
+  case _MOSYM_:
+    return true;
+  }
+  return false;
 }
 
-oneshot_state os_shft_state = os_up_unqueued;
-oneshot_state os_ctrl_state = os_up_unqueued;
-oneshot_state os_opt_state = os_up_unqueued;
-oneshot_state os_cmd_state = os_up_unqueued;
+oneshot_mod get_modifier_for_trigger_key(uint16_t keycode) {
+  switch (keycode) {
+  case _O_SFT_:
+    return ONESHOT_LSFT;
+  case _O_CTL_:
+    return ONESHOT_LCTL;
+  case _O_ALT_:
+    return ONESHOT_LALT;
+  case _O_GUI_:
+    return ONESHOT_LGUI;
+  }
+  return ONESHOT_NONE;
+}
 #endif
+
 
 #ifdef CUSTOM_SWAPPER_ENABLE
 bool sw_win_active = false;
@@ -57,29 +65,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     &sw_win_active, KC_LCMD, KC_TAB, _SWWIN_,
     keycode, record
   );
-  update_swapper(
-    &sw_lang_active, KC_LSHIFT, KC_LOPT, _SWLNG_,
-    keycode, record
-  );
-#endif
-
-#ifdef CUSTOM_ONESHOT_ENABLE
-  process_oneshot(
-    &os_shft_state, KC_LSHIFT, _O_SFT_,
-    keycode, record
-  );
-  process_oneshot(
-    &os_ctrl_state, KC_LCTL, _O_CTL_,
-    keycode, record
-  );
-  process_oneshot(
-    &os_opt_state, KC_LOPT, _O_OPT_,
-    keycode, record
-  );
-  process_oneshot(
-    &os_cmd_state, KC_LCMD, _O_CMD_,
-    keycode, record
-  );
+  // update_swapper(
+  //   &sw_lang_active, KC_LSHIFT, KC_LOPT, _SWLNG_,
+  //   keycode, record
+  // );
 #endif
 
 #ifdef CUSTOM_REPEAT_ENABLE
@@ -90,38 +79,32 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   // TODO : replace send string with tap_code to save space
   switch (keycode) {
-    // rename symbol (from combo)
-    // case _C_RNM_:
-    //   if (record->event.pressed) {
-    //     register_code(_RNAME_);
-    //   }
-    //   break;
 
     // select line
     case _SEL_L_:
       if (record->event.pressed) {
         SEND_STRING(SS_TAP(X_HOME) SS_LSFT(SS_TAP(X_END)));
       }
-      break;
+      return false;
 
     // ${} then tap left
     case _STRIN_:
       if (record->event.pressed) {
         SEND_STRING("${}" SS_TAP(X_LEFT));
       }
-      break;
+      return false;
 
     case _REQU__:
       if (record->event.pressed) {
         SEND_STRING("required ");
       }
-      break;
+      return false;
 
     case __SS___:
       if (record->event.pressed) {
         SEND_STRING(SS_LALT("s"));
       }
-      break;
+      return false;
 
     case __UE___:
       if (record->event.pressed) {
@@ -132,7 +115,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           SEND_STRING(SS_LALT("u") "u");
         }
       }
-      break;
+      return false;
 
     case __OE___:
       if (record->event.pressed) {
@@ -143,7 +126,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           SEND_STRING(SS_LALT("u") "o");
         }
       }
-      break;
+      return false;
 
     case __AE___:
       if (record->event.pressed) {
@@ -154,42 +137,41 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           SEND_STRING(SS_LALT("u") "a");
         }
       }
-      break;
+      return false;
 
     case __ZE___:
       if (record->event.pressed) {
         SEND_STRING(SS_LALT(SS_LSFT("2")));
       }
-      break;
+      return false;
 
     // open discord
     case _DISCO_:
       if (record->event.pressed) {
         SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "disc" SS_DELAY(100) SS_TAP(X_ENTER));
       }
-      break;
+      return false;
 
     // open slack
     case _SLACK_:
       if (record->event.pressed) {
         SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "sla" SS_DELAY(100) SS_TAP(X_ENTER));
       }
-      break;
+      return false;
 
     case _TEAMS_:
       if (record->event.pressed) {
         SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "tea" SS_DELAY(100) SS_TAP(X_ENTER));
       }
-      break;
+      return false;
 
-  #ifdef CUSTOM_CAPS_WORD_ENABLE
+#ifdef CUSTOM_CAPS_WORD_ENABLE
     case _CAPSW_:
       if (record->event.pressed) {
-        return false;
       } else {
         caps_word_toggle();
-        return false;
       }
+      return false;
   #endif
 
   // letting go of nav doesn't unregister
@@ -223,8 +205,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return false;
   }
 
+  int8_t keycode_consumed = 0;
+
 #ifdef CUSTOM_CAPS_WORD_ENABLE
   process_caps_word(keycode, record);
+#endif
+
+#ifdef CUSTOM_ONESHOT_ENABLE
+  keycode_consumed +=
+      update_oneshot_modifiers(keycode, record, keycode_consumed);
 #endif
 
   return true;

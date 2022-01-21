@@ -34,16 +34,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           //---------+---------//
 ),
 
-[_APT] = LAYOUT_ferris(
-//---------                     ---------//
-   APT__L1           ,           APT__R1 ,
-   APT__L2           ,           APT__R2 ,
-   APT__L3           ,           APT__R3 ,
-//---------                     ---------//
-             _____BLANKx______
-          //---------+---------//
-),
-
 [_NAV] = LAYOUT_ferris(
 //---------                     ---------//
    NAV__L1           ,           NAV__R1 ,

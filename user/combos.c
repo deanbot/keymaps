@@ -61,7 +61,7 @@ const uint16_t PROGMEM enter_combo[] = {KC_COMMA, KC_DOT, COMBO_END};
 const uint16_t PROGMEM tab_combo[] = {KC_H, KC_COMMA, COMBO_END};
 const uint16_t PROGMEM stab_combo[] = {KC_H, KC_COMMA, KC_DOT, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_H, KC_SCOLON, COMBO_END};
-// const uint16_t PROGMEM bspace_combo[] = {KC_N, KC_I, COMBO_END};
+
 const uint16_t PROGMEM undo_combo[] = {KC_G, KC_V, COMBO_END};
 const uint16_t PROGMEM redo_combo[] = {KC_M, KC_K, COMBO_END};
 
@@ -119,10 +119,10 @@ combo_t key_combos[] = {
     [FIND] = COMBO(find_combo, _FIND__),
 
     // window
-    [QUIT] = COMBO(quit_combo, _QUIT__),
-    [CLOSE] = COMBO(close_combo, _CLOSE_),
-    [HIDE] = COMBO(hide_combo, _CLOSE_),
-    [HUD] = COMBO(hud_combo, __HUD__),
+    // [QUIT] = COMBO(quit_combo, _QUIT__),
+    // [CLOSE] = COMBO(close_combo, _CLOSE_),
+    // [HIDE] = COMBO(hide_combo, _CLOSE_),
+    // [HUD] = COMBO(hud_combo, __HUD__),
 
     // ide
     [DUPL] = COMBO(dupl_combo, __DUP__),
@@ -159,5 +159,5 @@ combo_t key_combos[] = {
     [AE] = COMBO(ae_combo, __AE___),
     [UE] = COMBO(ue_combo, __UE___),
     [OE] = COMBO(oe_combo, __OE___),
-    [ZE] = COMBO(ze_combo, __ZE___),
+    [ZE] = COMBO(ze_combo, __ZE___)
 };

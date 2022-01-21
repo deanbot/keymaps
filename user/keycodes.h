@@ -5,7 +5,6 @@
 enum layers
 {
   _COLEMAK_DH,
-  _APT,
   _FN,
   _NAV,
   _MOUSE,
@@ -32,8 +31,8 @@ enum keycodes
 
   // one shot
   _O_SFT_,
-  _O_OPT_,
-  _O_CMD_,
+  _O_ALT_,
+  _O_GUI_,
   _O_CTL_,
 
   // repeat
@@ -53,7 +52,6 @@ enum keycodes
 #define _MOSYM_ MO(_SYM)
 #define _MMETA_ MO(_META)
 #define _SP_MK_ LT(_MOUSE, KC_SPACE)
-#define _APT___ DF(_APT)
 #define _COLMK_ DF(_COLEMAK_DH)
 
 #define ___A___ KC_A
@@ -118,6 +116,7 @@ enum keycodes
 #define _BKSPC_ KC_BSPACE
 #define __DEL__ KC_DELETE
 #define __ESC__ KC_ESCAPE
+
 #define _PGDWN_ KC_PGDOWN
 #define _PG_UP_ KC_PGUP
 #define _HOME__ KC_HOME
@@ -238,6 +237,7 @@ enum keycodes
 #define __FIX__ LOPT(LSFT(KC_ENTER)) // autofix
 #define _ACTIO_ LOPT(KC_ENTER) // actions
 #define _TERM__ LALT(KC_F12) // toggle terminal
+#define _TERMQ_ LSFT(LALT(KC_F12))
 #define _NEWFL_ LCMD(LOPT(KC_N)) // new file in directory
 #define _DRTAN_ LCMD(KC_SCOLON) // analysis
 #define _PROJ__ LCMD(KC_1) // project explorer

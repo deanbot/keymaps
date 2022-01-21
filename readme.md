@@ -28,9 +28,10 @@ TODO
 # Mentions
 
 - (Article) [Separate keymap repo for QMK](https://medium.com/@patrick.elmquist/separate-keymap-repo-for-qmk-136ff5a419bd)
-- Keymap/userspace
+- Keymap/features/userspace
   - [alterecco/machine](https://github.com/alterecco/machine/tree/main/qmk)
   - [callum-oakley/qmk_firmware](https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum)
+  - [keymaps/jurgen-kluft](https://github.com/jurgen-kluft/qmk_firmware/blob/jurgen/keyboards/kyria/keymaps/jurgen-kluft/)
 
 # Development
 

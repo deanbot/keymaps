@@ -11,16 +11,8 @@
 #define CMDH_R2  ___M___ , ___N___ , ___E___ , ___I___ , ___O___
 #define CMDH_R3  ___K___ , ___H___ , _COMMA_ , __DOT__ , _SCOLN_
 //              +--------+---------+---------+---------+--------+
-#define APT__L1  ___W___ , ___G___ , ___D___ , ___F___ , ___B___
-#define APT__L2  ___R___ , ___S___ , ___T___ , ___H___ , ___K___
-#define APT__L3  ___X___ , ___C___ , ___M___ , ___P___ , ___V___
-//              +--------+---------+---------+---------+--------+
-#define APT__R1  ___Q___ , ___L___ , ___U___ , ___O___ , ___Y___
-#define APT__R2  ___J___ , ___N___ , ___E___ , ___A___ , ___I___
-#define APT__R3  ___Z___ , _COMMA_ , __DOT__ , _SQUOT_ , _SCOLN_
-//              +--------+---------+---------+---------+--------+
 #define NAV__L1  _NEWFL_ , __CUT__ , _COPY__ , _PASTE_ , _CAPSW_
-#define NAV__L2  _O_CMD_ , _O_CTL_ , _O_OPT_ , _O_SFT_ , _SWWIN_
+#define NAV__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , _SWWIN_
 #define NAV__L3  _ACTIO_ , __ESC__ , _HINT__ , __TAB__ , _COLS__
 //              +--------+---------+---------+---------+--------+
 #define NAV__R1  _PROJ__ , _GOTOD_ , _PGDWN_ , _PG_UP_ , _GOTOE_
@@ -32,15 +24,15 @@
 #define SYM__L3  _ASTER_ , _PIPE__ , __AT___ , _SLASH_ , _PERCT_
 //              +--------+---------+---------+---------+--------+
 #define SYM__R1  _CIRCF_ , _RPARN_ , _RBRAC_ , _RCBRC_ , _GRAVE_
-#define SYM__R2  _DOLLR_ , _O_SFT_ , _O_OPT_ , _O_CTL_ , _O_CMD_
+#define SYM__R2  _DOLLR_ , _O_SFT_ , _O_ALT_ , _O_CTL_ , _O_GUI_
 #define SYM__R3  _STRIN_ , _BSLSH_ , _AMPRS_ , _EXCLM_ , _QUEST_
 //              +--------+---------+---------+---------+--------+
 #define NUM__L1  ___7___ , ___5___ , ___3___ , ___1___ , ___9___
-#define NUM__L2  _O_CMD_ , _O_CTL_ , _O_OPT_ , _O_SFT_ , __F11__
+#define NUM__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , __F11__
 #define NUM__L3  __F7___ , __F5___ , __F3___ , __F1___ , __F9___
 //              +--------+---------+---------+---------+--------+
 #define NUM__R1  ___8___ , ___0___ , ___2___ , ___4___ , ___6___
-#define NUM__R2  __F12__ , _O_SFT_ , _O_OPT_ , _O_CTL_ , _O_CMD_
+#define NUM__R2  __F12__ , _O_SFT_ , _O_ALT_ , _O_CTL_ , _O_GUI_
 #define NUM__R3  __F8___ , __F1___ , __F2___ , __F4___ , __F6___
 //              +--------+---------+---------+---------+--------+
 #define MOUS_L1  _SELAD_ , __MB2__ , _MWUP__ , __MB3__ , _DEVT__
@@ -48,10 +40,10 @@
 #define MOUS_L3  _SRCHW_ , _MWLFT_ , _MWDWN_ , _MWRGT_ , _JUMP__
 //              +--------+---------+---------+---------+--------+
 #define MOUS_R1  _CLOSE_ , _TAB_L_ , __TOP__ , _TAB_R_ , _RETAB_
-#define MOUS_R2  __FWD__ , _O_SFT_ , _O_CTL_ , _O_OPT_ , _O_CMD_
+#define MOUS_R2  __FWD__ , _O_SFT_ , _O_CTL_ , _O_ALT_ , _O_GUI_
 #define MOUS_R3  _N_TAB_ , _ZOOMO_ , __BTM__ , _ZOOMI_ , _ZOOMR_
 //              +--------+---------+---------+---------+--------+
-#define META_L1  _SLEEP_ , _______ , _______ , _COLMK_ , _APT___
+#define META_L1  _SLEEP_ , _______ , _______ , CMB_TOG , _______
 #define META_L2  _______ , _BRUP__ , _BRDWN_ , _PRTSC_ , _______
 #define META_L3  _RESET_ , _______ , _______ , _______ , _______
 //              +--------+---------+---------+---------+--------+

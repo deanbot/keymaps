@@ -25,7 +25,7 @@ void caps_word_toggle(void) {
 
 void process_caps_word(uint16_t keycode, keyrecord_t *record) {
     if (caps_word_enabled) {
-        // first strip of the mod taps and layer taps if needed
+        // first strip off the mod taps and layer taps if needed
         switch (keycode) {
             case QK_MOD_TAP ... QK_MOD_TAP_MAX:
             case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
