@@ -18,9 +18,13 @@ enum keycodes
 {
   _SEL_L_ = SAFE_RANGE,
 
-  _STRIN_, // ${} macro
-  _REQU__, // "required"
-  __FIN__, // "final
+  _STRIN_, // ${}
+  _REQU__, // required
+  __SS___, // s umlaut
+  __AE___, // a umlaut
+  __UE___, // u umlaut
+  __OE___, // o umlaut
+  __ZE___, // euro
 
   // swapper
   _SWWIN_,

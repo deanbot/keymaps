@@ -117,9 +117,48 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       break;
 
-    case __FIN__:
+    case __SS___:
       if (record->event.pressed) {
-        SEND_STRING("final ");
+        SEND_STRING(SS_LALT("s"));
+      }
+      break;
+
+    case __UE___:
+      if (record->event.pressed) {
+        if (get_mods() & MOD_BIT(KC_LSHIFT)) {
+          unregister_code(KC_LSHIFT);
+          SEND_STRING(SS_LALT("u") "U");
+        } else {
+          SEND_STRING(SS_LALT("u") "u");
+        }
+      }
+      break;
+
+    case __OE___:
+      if (record->event.pressed) {
+        if (get_mods() & MOD_BIT(KC_LSHIFT)) {
+          unregister_code(KC_LSHIFT);
+          SEND_STRING(SS_LALT("u") "O");
+        } else {
+          SEND_STRING(SS_LALT("u") "o");
+        }
+      }
+      break;
+
+    case __AE___:
+      if (record->event.pressed) {
+        if (get_mods() & MOD_BIT(KC_LSHIFT)) {
+          unregister_code(KC_LSHIFT);
+          SEND_STRING(SS_LALT("u") "A");
+        } else {
+          SEND_STRING(SS_LALT("u") "a");
+        }
+      }
+      break;
+
+    case __ZE___:
+      if (record->event.pressed) {
+        SEND_STRING(SS_LALT(SS_LSFT("2")));
       }
       break;
 

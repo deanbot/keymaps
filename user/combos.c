@@ -46,7 +46,11 @@ enum combos {
   MWU,
 
   REQ,
-  FIN,
+  SS,
+  AE,
+  OE,
+  UE,
+  ZE,
 
 	COMBO_LENGTH
 };
@@ -76,7 +80,7 @@ const uint16_t PROGMEM gotod_combo[] = {KC_U, KC_E, COMBO_END};
 const uint16_t PROGMEM format_combo[] = {KC_L, KC_N, COMBO_END};
 const uint16_t PROGMEM sorti_combo[] = {KC_J, KC_M, COMBO_END};
 const uint16_t PROGMEM rname_combo[] = {KC_N, KC_H, COMBO_END};
-const uint16_t PROGMEM newf_combo[] = {KC_G, KC_N, COMBO_END};
+const uint16_t PROGMEM newf_combo[] = {KC_G, KC_V, COMBO_END};
 const uint16_t PROGMEM term_combo[] = {KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM proj_combo[] = {KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM repl_combo[] = {KC_L, KC_U, COMBO_END};
@@ -95,7 +99,11 @@ const uint16_t PROGMEM dv_mwd_combo[] = {KC_D, KC_V, COMBO_END};
 const uint16_t PROGMEM pb_mwu_combo[] = {KC_P, KC_B, COMBO_END};
 
 const uint16_t PROGMEM req_combo[] = {KC_Q, KC_E, COMBO_END};
-const uint16_t PROGMEM fin_combo[] = {KC_F, KC_N, COMBO_END};
+const uint16_t PROGMEM ss_combo[] = {KC_Z, KC_S, COMBO_END};
+const uint16_t PROGMEM ue_combo[] = {KC_Z, KC_QUOT, COMBO_END};
+const uint16_t PROGMEM ae_combo[] = {KC_Z, KC_O, COMBO_END};
+const uint16_t PROGMEM oe_combo[] = {KC_Z, KC_I, COMBO_END};
+const uint16_t PROGMEM ze_combo[] = {KC_Z, KC_E, COMBO_END};
 
 combo_t key_combos[] = {
     [ENTER] = COMBO(enter_combo, KC_ENTER),
@@ -135,9 +143,9 @@ combo_t key_combos[] = {
     [PRTSC] = COMBO(prtsc_combo, _PRTSC_),
 
     // apps
-    [DISCO] = COMBO(disco_combo, _DISCO_),
-    [SLACK] = COMBO(slack_combo, _SLACK_),
-    [TEAMS] = COMBO(teams_combo, _TEAMS_),
+    // [DISCO] = COMBO(disco_combo, _DISCO_),
+    // [SLACK] = COMBO(slack_combo, _SLACK_),
+    // [TEAMS] = COMBO(teams_combo, _TEAMS_),
 
     // mouse keys
     [MB1] = COMBO(navat_mb1_combo, _C_MB1_),
@@ -147,5 +155,9 @@ combo_t key_combos[] = {
 
     // words
     [REQ] = COMBO(req_combo, _REQU__),
-    [FIN] = COMBO(fin_combo, __FIN__),
+    [SS] = COMBO(ss_combo, __SS___),
+    [AE] = COMBO(ae_combo, __AE___),
+    [UE] = COMBO(ue_combo, __UE___),
+    [OE] = COMBO(oe_combo, __OE___),
+    [ZE] = COMBO(ze_combo, __ZE___),
 };
