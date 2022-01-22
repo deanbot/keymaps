@@ -2,7 +2,6 @@ BOOTLOADER = atmel-dfu
 SPLIT_KEYBOARD = no
 
 RGBLIGHT_ENABLE = no
-RGB_MATRIX_ENABLE = no
 CONSOLE_ENABLE = no
 
 # reduce filesize
@@ -32,4 +31,6 @@ CUSTOM_ONESHOT_ENABLE = yes
 CUSTOM_SWAPPER_ENABLE = yes
 CUSTOM_REPEAT_ENABLE = yes
 CUSTOM_CAPS_WORD_ENABLE = yes
+
+VPATH += keyboards/gboards/
 COMBO_ENABLE = yes

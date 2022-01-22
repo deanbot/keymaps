@@ -94,12 +94,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
 
-    case _REQU__:
-      if (record->event.pressed) {
-        SEND_STRING("required ");
-      }
-      return false;
-
     case __SS___:
       if (record->event.pressed) {
         SEND_STRING(SS_LALT("s"));
