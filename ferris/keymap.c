@@ -25,13 +25,23 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-[_COLEMAK_DH] = LAYOUT_ferris(
+[_BASE] = LAYOUT_ferris(
 //---------                     ---------//
    BASE_L1           ,           BASE_R1 ,
    BASE_L2           ,           BASE_R2 ,
    BASE_L3           ,           BASE_R3 ,
 //---------                     ---------//
              BASEx_L , BASEx_R
+          //---------+---------//
+),
+
+[_MIR] = LAYOUT_ferris(
+//---------                     ---------//
+   MIR__L1           ,           MIR__R1 ,
+   MIR__L2           ,           MIR__R2 ,
+   MIR__L3           ,           MIR__R3 ,
+//---------                     ---------//
+             _____BLANKx______
           //---------+---------//
 ),
 

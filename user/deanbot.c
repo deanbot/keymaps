@@ -21,6 +21,7 @@ bool is_oneshot_modifier_ignored_key(uint16_t keycode) {
   switch (keycode) {
   case _MONAV_:
   case _MOSYM_:
+  case _MOMIR_:
     return true;
   }
   return false;
@@ -50,6 +51,9 @@ void matrix_scan_user(void) {
     leader_end();
     SEQ_TWO_KEYS(KC_P, KC_W) {
       SEND_STRING("Myp@ssword1");
+    }
+    SEQ_TWO_KEYS(KC_R, KC_E) {
+      SEND_STRING("required ");
     }
   }
 }

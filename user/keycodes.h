@@ -14,7 +14,7 @@ enum layers
   _META
 };
 
-enum keycodes
+enum keycodesmm
 {
   _SEL_L_ = SAFE_RANGE,
 
