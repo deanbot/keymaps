@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 
 #include "deanbot.h"
+#include "g/keymap_combo.h"
 
 // clang-format off
 
@@ -26,9 +27,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_COLEMAK_DH] = LAYOUT_ferris(
 //---------                     ---------//
-   CMDH_L1           ,           CMDH_R1 ,
-   CMDH_L2           ,           CMDH_R2 ,
-   CMDH_L3           ,           CMDH_R3 ,
+   BASE_L1           ,           BASE_R1 ,
+   BASE_L2           ,           BASE_R2 ,
+   BASE_L3           ,           BASE_R3 ,
 //---------                     ---------//
              BASEx_L , BASEx_R
           //---------+---------//

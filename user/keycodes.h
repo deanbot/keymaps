@@ -4,7 +4,8 @@
 
 enum layers
 {
-  _COLEMAK_DH,
+  _BASE,
+  _MIR,
   _FN,
   _NAV,
   _MOUSE,
@@ -16,6 +17,9 @@ enum layers
 enum keycodes
 {
   _SEL_L_ = SAFE_RANGE,
+
+  _TERTL_,
+  _TERTR_,
 
   _STRIN_, // ${}
   _REQU__, // required
@@ -50,9 +54,10 @@ enum keycodes
 
 #define _MONAV_ MO(_NAV)
 #define _MOSYM_ MO(_SYM)
+#define _MOMIR_ MO(_MIR)
 #define _MMETA_ MO(_META)
 #define _SP_MK_ LT(_MOUSE, KC_SPACE)
-#define _COLMK_ DF(_COLEMAK_DH)
+#define _CLMK_ DF(_BASE)
 
 #define ___A___ KC_A
 #define ___B___ KC_B
@@ -186,6 +191,7 @@ enum keycodes
 #define _RESET_ RESET
 
 // workflow/app/browser
+#define _LEAD__ KC_LEAD
 #define _STAB__ LSFT(KC_TAB)
 #define _PRTSC_ LCMD(LSFT(___4___))
 #define _CLOSE_ LCMD(KC_W)

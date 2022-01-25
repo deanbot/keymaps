@@ -3,13 +3,21 @@
 #include QMK_KEYBOARD_H
 
 //              +--------+---------+---------+---------+--------+
-#define CMDH_L1  ___Q___ , ___W___ , ___F___ , ___P___ , ___B___
-#define CMDH_L2  ___A___ , ___R___ , ___S___ , ___T___ , ___G___
-#define CMDH_L3  ___Z___ , ___X___ , ___C___ , ___D___ , ___V___
+#define BASE_L1  ___Q___ , ___W___ , ___F___ , ___P___ , ___B___
+#define BASE_L2  ___A___ , ___R___ , ___S___ , ___T___ , ___G___
+#define BASE_L3  ___Z___ , ___X___ , ___C___ , ___D___ , ___V___
 //              +--------+---------+---------+---------+--------+
-#define CMDH_R1  ___J___ , ___L___ , ___U___ , ___Y___ , _SQUOT_
-#define CMDH_R2  ___M___ , ___N___ , ___E___ , ___I___ , ___O___
-#define CMDH_R3  ___K___ , ___H___ , _COMMA_ , __DOT__ , _SCOLN_
+#define BASE_R1  ___J___ , ___L___ , ___U___ , ___Y___ , _SQUOT_
+#define BASE_R2  ___M___ , ___N___ , ___E___ , ___I___ , ___O___
+#define BASE_R3  ___K___ , ___H___ , _COMMA_ , __DOT__ , _SCOLN_
+//              +--------+---------+---------+---------+--------+
+#define MIR__L1  _SQUOT_ , ___Y___ , ___U___ , ___L___ , ___J___
+#define MIR__L2  ___O___ , ___I___ , ___E___ , ___N___ , ___M___
+#define MIR__L3  _SCOLN_ , __DOT__ , _COMMA_ , ___H___ , ___K___
+//              +--------+---------+---------+---------+--------+
+#define MIR__R1  ___B___ , ___P___ , ___F___ , ___W___ , ___Q___
+#define MIR__R2  ___G___ , ___T___ , ___S___ , ___R___ , ___A___
+#define MIR__R3  ___V___ , ___D___ , ___C___ , ___X___ , ___Z___
 //              +--------+---------+---------+---------+--------+
 #define NAV__L1  _NEWFL_ , __CUT__ , _COPY__ , _PASTE_ , _CAPSW_
 #define NAV__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , _SWWIN_
@@ -56,8 +64,8 @@
 // L/R = Primary/Secondary
 // LT/RT = Tertiary
 #define BASEx_L  _MONAV_ , _O_SFT_
-#define BASExLT  __MB1__
-#define BASExRT  __RPT__
+#define BASExLT  _TERTL_
+#define BASExRT  _TERTR_
 #define BASEx_R  _SP_MK_ , _MOSYM_
 //
 #define NAVx__L  _______ , _______

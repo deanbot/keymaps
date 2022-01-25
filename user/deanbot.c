@@ -41,6 +41,19 @@ oneshot_mod get_modifier_for_trigger_key(uint16_t keycode) {
 }
 #endif
 
+#ifdef LEADER_ENABLE
+LEADER_EXTERNS();
+
+void matrix_scan_user(void) {
+  LEADER_DICTIONARY() {
+    leading = false;
+    leader_end();
+    SEQ_TWO_KEYS(KC_P, KC_W) {
+      SEND_STRING("Myp@ssword1");
+    }
+  }
+}
+#endif
 
 #ifdef CUSTOM_SWAPPER_ENABLE
 bool sw_win_active = false;
