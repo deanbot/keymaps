@@ -7,7 +7,7 @@
 // #undef TAPPING_FORCE_HOLD
 
 // Combos
-#define COMBO_TERM 50
+#define COMBO_TERM 30
 // #define COMBO_VARIABLE_LEN
 // #define COMBO_TERM_PER_COMBO
 

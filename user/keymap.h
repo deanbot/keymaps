@@ -11,6 +11,13 @@
 #define BASE_R2  ___M___ , ___N___ , ___E___ , ___I___ , ___O___
 #define BASE_R3  ___K___ , ___H___ , _COMMA_ , __DOT__ , _SCOLN_
 //              +--------+---------+---------+---------+--------+
+#define BOUT_L1  _QUIT__
+#define BOUT_L2  _MWDWN_
+#define BOUT_L3  __HUD__
+#define BOUT_R1  _CLOSE_
+#define BOUT_R2  _MWUP__
+#define BOUT_R3  _HIDE__
+//              +--------+---------+---------+---------+--------+
 #define MIR__L1  _SQUOT_ , ___Y___ , ___U___ , ___L___ , ___J___
 #define MIR__L2  ___O___ , ___I___ , ___E___ , ___N___ , ___M___
 #define MIR__L3  _SCOLN_ , __DOT__ , _COMMA_ , ___H___ , ___K___
@@ -18,6 +25,10 @@
 #define MIR__R1  ___B___ , ___P___ , ___F___ , ___W___ , ___Q___
 #define MIR__R2  ___G___ , ___T___ , ___S___ , ___R___ , ___A___
 #define MIR__R3  ___V___ , ___D___ , ___C___ , ___X___ , ___Z___
+//              +--------+---------+---------+---------+--------+
+#define MIOUT_1  _BKSPC_
+#define MIOUT_2  _SPACE_
+#define MIOUT_3  _O_SFT_
 //              +--------+---------+---------+---------+--------+
 #define NAV__L1  _NEWFL_ , __CUT__ , _COPY__ , _PASTE_ , _CAPSW_
 #define NAV__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , _SWWIN_
@@ -72,6 +83,11 @@
 #define NAVx_LT  _______
 #define NAVx_RT  _SPACE_
 #define NAVx__R  _BKSPC_ , _______
+//
+#define MIRx__L  _______ , _______
+#define MIRx_LT  _______
+#define MIRx_RT  _______
+#define MIRx__R  _______ , _______
 //
 #define SYMx__L  _______ , _MMETA_
 #define SYMx_LT  _______

@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 
 #include "deanbot.h"
+#include "g/keymap_combo.h"
 
 // clang-format off
 
@@ -24,13 +25,23 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-[_COLEMAK_DH] = LAYOUT_rev(
+[_BASE] = LAYOUT_rev(
 //---------+---------                     ---------+---------//
-   _QUIT__ , CMDH_L1           ,           CMDH_R1 , _CLOSE_ ,
-   _MWDWN_ , CMDH_L2           ,           CMDH_R2 , _MWUP__ ,
-   __HUD__ , CMDH_L3           ,           CMDH_R3 , _HIDE__ ,
+   BOUT_L1 , BASE_L1           ,           BASE_R1 , BOUT_R1 ,
+   BOUT_L2 , BASE_L2           ,           BASE_R2 , BOUT_R2 ,
+   BOUT_L3 , BASE_L3           ,           BASE_R3 , BOUT_R3 ,
 //---------+---------                     ---------+---------//
-   BASEx_L , __RPT__ , BASEx_R
+   BASEx_L , _L_MIR_ , BASEx_R
+),
+
+[_MIR] = LAYOUT_rev(
+//---------+---------                     ---------+---------//
+   MIOUT_1 , MIR__L1           ,           MIR__R1 , MIOUT_1 ,
+   MIOUT_2 , MIR__L2           ,           MIR__R2 , MIOUT_2 ,
+   MIOUT_3 , MIR__L3           ,           MIR__R3 , MIOUT_3 ,
+//---------+---------                     ---------+---------//
+   _____BLANKx______
+//---------+---------//
 ),
 
 [_NAV] = LAYOUT_rev(

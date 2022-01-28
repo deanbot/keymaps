@@ -29,9 +29,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT_naked48(
 //---------+---------                     ---------+---------//
-   _QUIT__ , BASE_L1           ,           BASE_R1 , _CLOSE_ ,
-   _LEAD__ , BASE_L2           ,           BASE_R2 , _MWUP__ ,
-   __HUD__ , BASE_L3           ,           BASE_R3 , _HIDE__ ,
+   BOUT_L1 , BASE_L1           ,           BASE_R1 , BOUT_R1 ,
+   BOUT_L2 , BASE_L2           ,           BASE_R2 , BOUT_R2 ,
+   BOUT_L3 , BASE_L3           ,           BASE_R3 , BOUT_R3 ,
 //---------+---------                     ---------+---------//
    _LEFT__ , _RIGHT_ ,
    BASEx_L , BASExLT , _MOMIR_ ,
@@ -42,9 +42,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_MIR] = LAYOUT_naked48(
 //---------+---------                     ---------+---------//
-   _______ , MIR__L1           ,           MIR__R1 , _______ ,
-   _______ , MIR__L2           ,           MIR__R2 , _______ ,
-   _______ , MIR__L3           ,           MIR__R3 , _______ ,
+   MIOUT_1 , MIR__L1           ,           MIR__R1 , MIOUT_1 ,
+   MIOUT_2 , MIR__L2           ,           MIR__R2 , MIOUT_2 ,
+   MIOUT_3 , MIR__L3           ,           MIR__R3 , MIOUT_3 ,
 //---------+---------                     ---------+---------//
    BLANKx_
 //---------+---------//
@@ -71,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //---------+---------                     ---------+---------//
    _______ , _______ ,
    SYMx__L , SYMx_LT , _______ ,
-   _______ , SYMx_RT , SYMx__R  ,
+   _______ , SYMx_RT , SYMx__R ,
    _______ , _______
 //---------+---------//
 ),

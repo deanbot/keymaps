@@ -14,12 +14,15 @@ enum layers
   _META
 };
 
+#define _TERTL_ KC_LEAD
+#define _TERTR_ __RPT__
+
 enum keycodesmm
 {
   _SEL_L_ = SAFE_RANGE,
 
-  _TERTL_,
-  _TERTR_,
+  // _TERTL_,
+  // _TERTR_,
 
   _STRIN_, // ${}
   _REQU__, // required
@@ -49,14 +52,17 @@ enum keycodesmm
   _C_MB1_,
   _C_MB2_,
   _C_MWU_,
-  _C_MWD_
+  _C_MWD_,
 };
+
+#define _LEADF_ KC_F22
 
 #define _MONAV_ MO(_NAV)
 #define _MOSYM_ MO(_SYM)
 #define _MOMIR_ MO(_MIR)
 #define _MMETA_ MO(_META)
 #define _SP_MK_ LT(_MOUSE, KC_SPACE)
+#define _L_MIR_ LT(_MIR, _LEADF_)
 #define _CLMK_ DF(_BASE)
 
 #define ___A___ KC_A
@@ -192,6 +198,7 @@ enum keycodesmm
 
 // workflow/app/browser
 #define _LEAD__ KC_LEAD
+#define _CTL_C_ LCTL(KC_C)
 #define _STAB__ LSFT(KC_TAB)
 #define _PRTSC_ LCMD(LSFT(___4___))
 #define _CLOSE_ LCMD(KC_W)

@@ -49,12 +49,20 @@ void matrix_scan_user(void) {
   LEADER_DICTIONARY() {
     leading = false;
     leader_end();
-    SEQ_TWO_KEYS(KC_P, KC_W) {
-      SEND_STRING("Myp@ssword1");
+    SEQ_TWO_KEYS(KC_P, KC_W) { SEND_STRING("Myp@ssword1"); }
+    SEQ_TWO_KEYS(KC_R, KC_E) { SEND_STRING("required "); }
+    SEQ_ONE_KEY(KC_F) { SEND_STRING("final "); }
+    SEQ_ONE_KEY(KC_T) { SEND_STRING("this."); }
+    SEQ_ONE_KEY(KC_D) { SEND_STRING("/// "); }
+    SEQ_TWO_KEYS(KC_T, KC_O) { SEND_STRING("// TODO : "); }
+    SEQ_TWO_KEYS(KC_T, KC_I) { SEND_STRING("tool/install.sh" SS_TAP(X_ENTER)); }
+    SEQ_ONE_KEY(KC_L) { SEND_STRING("List<>" SS_TAP(X_LEFT)); }
+    SEQ_ONE_KEY(KC_C) { SEND_STRING("context."); }
+    SEQ_TWO_KEYS(KC_C, KC_D) {
+      SEND_STRING("context.read<>()" SS_TAP(X_LEFT) SS_TAP(X_LEFT)
+                      SS_TAP(X_LEFT));
     }
-    SEQ_TWO_KEYS(KC_R, KC_E) {
-      SEND_STRING("required ");
-    }
+    SEQ_TWO_KEYS(KC_G, KC_G) { SEND_STRING("gf; git pull;"); }
   }
 }
 #endif
@@ -68,24 +76,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 #ifdef CONSOLE_ENABLE
   if (record->event.pressed) {
-    uprintf(
-      "0x%04X,%u,%u,%u\n",
-      keycode,
-      record->event.key.row,
-      record->event.key.col,
-      get_highest_layer(layer_state));
+    uprintf("0x%04X,%u,%u,%u\n", keycode, record->event.key.row,
+            record->event.key.col, get_highest_layer(layer_state));
   }
 #endif
 
 #ifdef CUSTOM_SWAPPER_ENABLE
-  update_swapper(
-    &sw_win_active, KC_LCMD, KC_TAB, _SWWIN_,
-    keycode, record
-  );
-  // update_swapper(
-  //   &sw_lang_active, KC_LSHIFT, KC_LOPT, _SWLNG_,
-  //   keycode, record
-  // );
+  update_swapper(&sw_win_active, KC_LCMD, KC_TAB, _SWWIN_, keycode, record);
+  // update_swapper(&sw_lang_active, KC_LSHIFT, KC_LOPT, _SWLNG_, keycode, record);
 #endif
 
 #ifdef CUSTOM_REPEAT_ENABLE
@@ -97,93 +95,106 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // TODO : replace send string with tap_code to save space
   switch (keycode) {
 
-    // select line
-    case _SEL_L_:
-      if (record->event.pressed) {
-        SEND_STRING(SS_TAP(X_HOME) SS_LSFT(SS_TAP(X_END)));
+  case _L_MIR_:
+    if (record->event.pressed) {
+      if (record->tap.count == 1) {
+        qk_leader_start();
+        return false;
       }
-      return false;
+    }
+    break;
 
-    // ${} then tap left
-    case _STRIN_:
-      if (record->event.pressed) {
-        SEND_STRING("${}" SS_TAP(X_LEFT));
-      }
-      return false;
+  // select line
+  case _SEL_L_:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_HOME) SS_LSFT(SS_TAP(X_END)));
+    }
+    return false;
 
-    case __SS___:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LALT("s"));
-      }
-      return false;
+  // ${} then tap left
+  case _STRIN_:
+    if (record->event.pressed) {
+      SEND_STRING("${}" SS_TAP(X_LEFT));
+      // SEND_STRING("() => " SS_TAP(X_LEFT));
+    }
+    return false;
 
-    case __UE___:
-      if (record->event.pressed) {
-        if (get_mods() & MOD_BIT(KC_LSHIFT)) {
-          unregister_code(KC_LSHIFT);
-          SEND_STRING(SS_LALT("u") "U");
-        } else {
-          SEND_STRING(SS_LALT("u") "u");
-        }
-      }
-      return false;
+  case __SS___:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT("s"));
+    }
+    return false;
 
-    case __OE___:
-      if (record->event.pressed) {
-        if (get_mods() & MOD_BIT(KC_LSHIFT)) {
-          unregister_code(KC_LSHIFT);
-          SEND_STRING(SS_LALT("u") "O");
-        } else {
-          SEND_STRING(SS_LALT("u") "o");
-        }
+  case __UE___:
+    if (record->event.pressed) {
+      if (get_mods() & MOD_BIT(KC_LSHIFT)) {
+        unregister_code(KC_LSHIFT);
+        SEND_STRING(SS_LALT("u") "U");
+      } else {
+        SEND_STRING(SS_LALT("u") "u");
       }
-      return false;
+    }
+    return false;
 
-    case __AE___:
-      if (record->event.pressed) {
-        if (get_mods() & MOD_BIT(KC_LSHIFT)) {
-          unregister_code(KC_LSHIFT);
-          SEND_STRING(SS_LALT("u") "A");
-        } else {
-          SEND_STRING(SS_LALT("u") "a");
-        }
+  case __OE___:
+    if (record->event.pressed) {
+      if (get_mods() & MOD_BIT(KC_LSHIFT)) {
+        unregister_code(KC_LSHIFT);
+        SEND_STRING(SS_LALT("u") "O");
+      } else {
+        SEND_STRING(SS_LALT("u") "o");
       }
-      return false;
+    }
+    return false;
 
-    case __ZE___:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LALT(SS_LSFT("2")));
+  case __AE___:
+    if (record->event.pressed) {
+      if (get_mods() & MOD_BIT(KC_LSHIFT)) {
+        unregister_code(KC_LSHIFT);
+        SEND_STRING(SS_LALT("u") "A");
+      } else {
+        SEND_STRING(SS_LALT("u") "a");
       }
-      return false;
+    }
+    return false;
 
-    // open discord
-    case _DISCO_:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "disc" SS_DELAY(100) SS_TAP(X_ENTER));
-      }
-      return false;
+  case __ZE___:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_LSFT("2")));
+    }
+    return false;
 
-    // open slack
-    case _SLACK_:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "sla" SS_DELAY(100) SS_TAP(X_ENTER));
-      }
-      return false;
+  // open discord
+  case _DISCO_:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "disc" SS_DELAY(100)
+                      SS_TAP(X_ENTER));
+    }
+    return false;
 
-    case _TEAMS_:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "tea" SS_DELAY(100) SS_TAP(X_ENTER));
-      }
-      return false;
+  // open slack
+  case _SLACK_:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "sla" SS_DELAY(100)
+                      SS_TAP(X_ENTER));
+    }
+    return false;
+
+  case _TEAMS_:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "tea" SS_DELAY(100)
+                      SS_TAP(X_ENTER));
+    }
+    return false;
 
 #ifdef CUSTOM_CAPS_WORD_ENABLE
-    case _CAPSW_:
-      if (record->event.pressed) {
-      } else {
-        caps_word_toggle();
-      }
-      return false;
-  #endif
+  case _CAPSW_:
+    if (record->event.pressed) {
+    } else {
+      caps_word_toggle();
+    }
+    return false;
+#endif
 
   // letting go of nav doesn't unregister
   case _C_MB1_:
@@ -231,5 +242,5 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, _NAV, _SYM, _NUM);
+  return update_tri_layer_state(state, _NAV, _SYM, _NUM);
 }
