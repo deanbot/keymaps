@@ -60,6 +60,7 @@ void matrix_scan_user(void) {
                       SS_TAP(X_LEFT));
     }
     SEQ_TWO_KEYS(KC_G, KC_G) { SEND_STRING("gf; git pull;"); }
+    SEQ_TWO_KEYS(KC_G, KC_P) { SEND_STRING("git push;"); }
   }
 }
 #endif
