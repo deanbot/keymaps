@@ -51,14 +51,11 @@ void matrix_scan_user(void) {
     leader_end();
     SEQ_TWO_KEYS(KC_P, KC_W) { SEND_STRING("Myp@ssword1"); }
     SEQ_TWO_KEYS(KC_R, KC_E) { SEND_STRING("required "); }
-    SEQ_ONE_KEY(KC_F) { SEND_STRING("final "); }
-    SEQ_ONE_KEY(KC_T) { SEND_STRING("this."); }
+    SEQ_TWO_KEYS(KC_R, KC_T) { SEND_STRING("required this."); }
     SEQ_ONE_KEY(KC_D) { SEND_STRING("/// "); }
     SEQ_TWO_KEYS(KC_T, KC_O) { SEND_STRING("// TODO : "); }
     SEQ_TWO_KEYS(KC_T, KC_I) { SEND_STRING("tool/install.sh" SS_TAP(X_ENTER)); }
-    SEQ_ONE_KEY(KC_L) { SEND_STRING("List<>" SS_TAP(X_LEFT)); }
-    SEQ_ONE_KEY(KC_C) { SEND_STRING("context."); }
-    SEQ_TWO_KEYS(KC_C, KC_D) {
+    SEQ_TWO_KEYS(KC_C, KC_O) {
       SEND_STRING("context.read<>()" SS_TAP(X_LEFT) SS_TAP(X_LEFT)
                       SS_TAP(X_LEFT));
     }

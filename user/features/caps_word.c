@@ -35,6 +35,7 @@ void process_caps_word(uint16_t keycode, keyrecord_t *record) {
         }
         // we end caps word on one of the following keypresses
         switch (keycode & 0xFF) {
+            case KC_LEAD:
             case KC_ESC:
             case KC_SPC:
             case KC_ENT:
