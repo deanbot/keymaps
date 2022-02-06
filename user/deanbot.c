@@ -51,16 +51,13 @@ void matrix_scan_user(void) {
     leader_end();
     SEQ_TWO_KEYS(KC_P, KC_W) { SEND_STRING("Myp@ssword1"); }
     SEQ_TWO_KEYS(KC_R, KC_E) { SEND_STRING("required "); }
-    SEQ_TWO_KEYS(KC_R, KC_T) { SEND_STRING("required this."); }
-    SEQ_ONE_KEY(KC_D) { SEND_STRING("/// "); }
-    SEQ_TWO_KEYS(KC_T, KC_O) { SEND_STRING("// TODO : "); }
-    SEQ_TWO_KEYS(KC_T, KC_I) { SEND_STRING("tool/install.sh" SS_TAP(X_ENTER)); }
-    SEQ_TWO_KEYS(KC_C, KC_O) {
-      SEND_STRING("context.read<>()" SS_TAP(X_LEFT) SS_TAP(X_LEFT)
-                      SS_TAP(X_LEFT));
+    SEQ_ONE_KEY(KC_F) {
+      SEND_STRING("feature/MOBL-");
+      // TODO : trigger numword
     }
-    SEQ_TWO_KEYS(KC_G, KC_G) { SEND_STRING("gf; git pull;"); }
-    SEQ_TWO_KEYS(KC_G, KC_P) { SEND_STRING("git push;"); }
+    SEQ_ONE_KEY(KC_G) { SEND_STRING("gf; git pull;"); }
+    SEQ_ONE_KEY(KC_I) { SEND_STRING("tool/install.sh" SS_TAP(X_ENTER)); }
+    SEQ_TWO_KEYS(KC_I, KC_I) { SEND_STRING("tool/build_generated.sh" SS_TAP(X_ENTER)); }
   }
 }
 #endif
@@ -106,6 +103,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case _SEL_L_:
     if (record->event.pressed) {
       SEND_STRING(SS_TAP(X_HOME) SS_LSFT(SS_TAP(X_END)));
+      // tap_code(KC_HOME);
+      // tap_code16(S(KC_END));
     }
     return false;
 
@@ -113,7 +112,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case _STRIN_:
     if (record->event.pressed) {
       SEND_STRING("${}" SS_TAP(X_LEFT));
-      // SEND_STRING("() => " SS_TAP(X_LEFT));
+    }
+    return false;
+
+  // <> then tap left
+  case _TYPE__:
+    if (record->event.pressed) {
+      SEND_STRING("<>" SS_TAP(X_LEFT));
     }
     return false;
 
@@ -181,6 +186,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case _TEAMS_:
     if (record->event.pressed) {
       SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "tea" SS_DELAY(100)
+                      SS_TAP(X_ENTER));
+    }
+    return false;
+
+  case _VSCDE_:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "vsc" SS_DELAY(100)
+                      SS_TAP(X_ENTER));
+    }
+    return false;
+
+  case _ANDST_:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "and" SS_DELAY(100)
                       SS_TAP(X_ENTER));
     }
     return false;

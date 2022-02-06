@@ -24,7 +24,8 @@ enum keycodesmm
   // _TERTL_,
   // _TERTR_,
 
-  _STRIN_, // ${}
+  _STRIN_, // ${} left
+  _TYPE__, // <> left
   _REQU__, // required
   __SS___, // s umlaut
   __AE___, // a umlaut
@@ -212,8 +213,8 @@ enum keycodesmm
 #define _UNDO__ LCMD(KC_Z)
 #define _PASTE_ LCMD(KC_V)
 #define _REDO__ LCMD(LSFT(KC_Z))
-#define _N_TAB_ LCTL(KC_T)
-#define _RETAB_ LSFT(LCTL(KC_T))
+#define _N_TAB_ LCMD(KC_T)
+#define _RETAB_ LSFT(LCMD(KC_T))
 #define _N_WIN_ LCMD(KC_N)
 #define _TAB_L_ LCTL(KC_PGUP)
 #define _TAB_R_ LCTL(KC_PGDOWN)
@@ -244,6 +245,8 @@ enum keycodesmm
 #define _DISCO_ HYPR(KC_D) // discord
 #define _SLACK_ HYPR(KC_S)
 #define _TEAMS_ HYPR(KC_T)
+#define _ANDST_ HYPR(KC_A)
+#define _VSCDE_ HYPR(KC_V)
 
 // ide
 #define _HINT__ LCTL(KC_SPACE) // prompt complete
