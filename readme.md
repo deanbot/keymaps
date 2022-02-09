@@ -31,8 +31,10 @@ TODO
 - Keymap/features/userspace
   - [alterecco/machine](https://github.com/alterecco/machine/tree/main/qmk)
   - [callum-oakley/qmk_firmware](https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum)
-  - [keymaps/jurgen-kluft](https://github.com/jurgen-kluft/qmk_firmware/blob/jurgen/keyboards/kyria/keymaps/jurgen-kluft/)
-  - [keymaps/Vermoot](https://github.com/Vermoot/qmk_keymaps/blob/master/kyria/keymaps/Vermoot/)
+  - [jurgen-kluft/qmk_firmware](https://github.com/jurgen-kluft/qmk_firmware/blob/jurgen/keyboards/kyria/keymaps/jurgen-kluft/)
+  - [Vermoot/qmk_keymaps](https://github.com/Vermoot/qmk_keymaps/blob/master/kyria/keymaps/Vermoot/)
+  - [keyboards/ferris](https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris/keymaps/default)
+  - [manna-harbour/miryoku_qmk](https://github.com/manna-harbour/miryoku_qmk/tree/miryoku/users/manna-harbour_miryoku)
 
 # Development
 

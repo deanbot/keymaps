@@ -30,13 +30,13 @@
 #define MIOUT_2  _SPACE_
 #define MIOUT_3  _O_SFT_
 //              +--------+---------+---------+---------+--------+
-#define NAV__L1  _NEWFL_ , __CUT__ , _COPY__ , _PASTE_ , _CAPSW_
+#define NAV__L1  _DRTAN_ , __CUT__ , _COPY__ , _PASTE_ , _PRTSC_
 #define NAV__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , _SWWIN_
 #define NAV__L3  _ACTIO_ , __ESC__ , _HINT__ , __TAB__ , _COLS__
 //              +--------+---------+---------+---------+--------+
 #define NAV__R1  _PROJ__ , _GOTOD_ , _PGDWN_ , _PG_UP_ , _GOTOE_
 #define NAV__R2  _SEL_L_ , _LEFT__ , _DOWN__ , __UP___ , _RIGHT_
-#define NAV__R3  _DRTAN_ , _ENTER_ , _MATCH_ , __DEL__ , __MB1__
+#define NAV__R3  _NEWFL_ , _ENTER_ , _MATCH_ , __DEL__ , _CAPSW_
 //              +--------+---------+---------+---------+--------+
 #define SYM__L1  _TILDE_ , _LCBRC_ , _LBRAC_ , _LPARN_ , _SCOLN_
 #define SYM__L2  _MINUS_ , _PLUS__ , _EQUAL_ , _UNDRS_ , _HASH__
@@ -44,7 +44,7 @@
 //              +--------+---------+---------+---------+--------+
 #define SYM__R1  _CIRCF_ , _RPARN_ , _RBRAC_ , _RCBRC_ , _GRAVE_
 #define SYM__R2  _DOLLR_ , _O_SFT_ , _O_ALT_ , _O_CTL_ , _O_GUI_
-#define SYM__R3  _STRIN_ , _BSLSH_ , _AMPRS_ , _EXCLM_ , _QUEST_
+#define SYM__R3  _SCOLN_ , _BSLSH_ , _AMPRS_ , _EXCLM_ , _QUEST_
 //              +--------+---------+---------+---------+--------+
 #define NUM__L1  ___7___ , ___5___ , ___3___ , ___1___ , ___9___
 #define NUM__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , __F11__
@@ -75,8 +75,8 @@
 // L/R = Primary/Secondary
 // LT/RT = Tertiary
 #define BASEx_L  _MONAV_ , _O_SFT_
-#define BASExLT  _TERTL_
-#define BASExRT  _TERTR_
+#define BASExLT  _LEAD__
+#define BASExRT  __RPT__
 #define BASEx_R  _SP_MK_ , _MOSYM_
 //
 #define NAVx__L  _______ , _______
@@ -89,7 +89,7 @@
 #define MIRx_RT  _______
 #define MIRx__R  _______ , _______
 //
-#define SYMx__L  _______ , _MMETA_
+#define SYMx__L  _______ , _SQUOT_
 #define SYMx_LT  _______
 #define SYMx_RT  _______
 #define SYMx__R  _______ , _______
@@ -99,7 +99,7 @@
 #define NUMx_RT  _______
 #define NUMx__R  _______ , _______
 //
-#define MOUSx_L  _______ , __MB1__
+#define MOUSx_L  _MMETA_ , __MB1__
 #define MOUSxLT  _______
 #define MOUSxRT  _______
 #define MOUSx_R  _______ , _______

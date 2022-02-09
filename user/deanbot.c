@@ -102,9 +102,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // select line
   case _SEL_L_:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_HOME) SS_LSFT(SS_TAP(X_END)));
-      // tap_code(KC_HOME);
-      // tap_code16(S(KC_END));
+      SEND_STRING(SS_LCMD(SS_TAP(X_RIGHT)) SS_LCMD(SS_TAP(X_LEFT)) SS_LSFT(SS_LCMD(SS_TAP(X_RIGHT))));
     }
     return false;
 

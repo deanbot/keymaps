@@ -14,9 +14,6 @@ enum layers
   _META
 };
 
-#define _TERTL_ KC_LEAD
-#define _TERTR_ __RPT__
-
 enum keycodesmm
 {
   _SEL_L_ = SAFE_RANGE,
@@ -249,7 +246,7 @@ enum keycodesmm
 #define _VSCDE_ HYPR(KC_V)
 
 // ide
-#define _HINT__ LCTL(KC_SPACE) // prompt complete
+#define _HINT__ LCTL(KC_C) //LCTL(KC_SPACE) // prompt complete
 #define __FIX__ LOPT(LSFT(KC_ENTER)) // autofix
 #define _ACTIO_ LOPT(KC_ENTER) // actions
 #define _TERM__ LALT(KC_F12) // toggle terminal
