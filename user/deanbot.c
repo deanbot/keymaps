@@ -120,6 +120,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return false;
 
+  // =>
+  case _ARROW_:
+    if (record->event.pressed) {
+      SEND_STRING("=> ");
+    }
+    return false;
+
   case __SS___:
     if (record->event.pressed) {
       SEND_STRING(SS_LALT("s"));

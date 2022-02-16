@@ -8,7 +8,8 @@ enum layers
   _MIR,
   _FN,
   _NAV,
-  _MOUSE,
+  _GUI,
+  _DBG,
   _SYM,
   _NUM,
   _META
@@ -23,6 +24,7 @@ enum keycodesmm
 
   _STRIN_, // ${} left
   _TYPE__, // <> left
+  _ARROW_, // =>
   _REQU__, // required
   __SS___, // s umlaut
   __AE___, // a umlaut
@@ -30,7 +32,7 @@ enum keycodesmm
   __OE___, // o umlaut
   __ZE___, // euro
 
-  // swapper
+  // swapperw
   _SWWIN_,
   _SWLNG_,
 
@@ -59,8 +61,9 @@ enum keycodesmm
 #define _MOSYM_ MO(_SYM)
 #define _MOMIR_ MO(_MIR)
 #define _MMETA_ MO(_META)
-#define _SP_MK_ LT(_MOUSE, KC_SPACE)
-#define _L_MIR_ LT(_MIR, _LEADF_)
+#define _SPGUI_ LT(_GUI, KC_SPACE) // tap: space hold: gui layer
+#define _L_MIR_ LT(_MIR, _LEADF_) // tap: leader hold: mirror layer
+#define _ES_DG_ LT(_DBG, __ESC__) // tap: escape hold: debug layer
 #define _CLMK_ DF(_BASE)
 
 #define ___A___ KC_A
@@ -113,6 +116,18 @@ enum keycodesmm
 #define __F10__ KC_F10
 #define __F11__ KC_F11
 #define __F12__ KC_F12
+#define __F13__ KC_F13
+#define __F14__ KC_F14
+#define __F15__ KC_F15
+#define __F16__ KC_F16
+#define __F17__ KC_F17
+#define __F18__ KC_F18
+#define __F19__ KC_F19
+#define __F20__ KC_F20
+#define __F21__ KC_F21
+#define __F22__ KC_F22
+#define __F23__ KC_F23
+#define __F24__ KC_F24
 
 #define _LEFT__ KC_LEFT
 #define _DOWN__ KC_DOWN
@@ -194,6 +209,18 @@ enum keycodesmm
 #define _SLEEP_ KC_SYSTEM_SLEEP
 #define _RESET_ RESET
 
+// gui
+#define _T_LFT_ KC_F17
+#define _T_RGT_ KC_F18
+#define _T_TOP_ KC_F19
+#define _T_BTM_ KC_F20
+#define _CENTR_ LCTL(KC_F20)
+#define __MAX__ LCTL(KC_F19)
+#define _T_NW_ LSFT(KC_F17)
+#define _T_NE_ LSFT(KC_F18)
+#define _T_SW_ LSFT(KC_F19)
+#define _T_SE_ LSFT(KC_F20)
+
 // workflow/app/browser
 #define _LEAD__ KC_LEAD
 #define _CTL_C_ LCTL(KC_C)
@@ -228,7 +255,7 @@ enum keycodesmm
 #define _INCOG_ LCMD(LSFT(KC_N))
 #define _DEVT__ LCMD(LOPT(KC_I))
 #define _SRCHW_ LCMD(LOPT(KC_F))
-#define _SELAD_ LCMD(KC_L)
+#define _ADDRS_ LCMD(KC_L)
 #define _JUMP__ LCMD(KC_K)
 #define _BACK__ LCMD(KC_LBRACKET)
 #define __FWD__ LCMD(KC_RBRACKET)
@@ -259,10 +286,13 @@ enum keycodesmm
 #define _RNAME_ LSFT(KC_F6) // rename
 #define _COLS__ LCMD(LSFT(KC_8)) // col selection
 #define _FORMA_ LCMD(LOPT(KC_L)) // format code
+#define _RFCTR_ LCTL(KC_T) // refactor this
+#define _WRAP__ LOPT(LCMD(KC_T))
 #define _SORTI_ LCTL(LOPT(KC_O)) // sort imports
 #define _FINDF_ LCMD(LSFT(KC_O)) // find file in workspace
 #define _GOTOD_ LCMD(KC_B) // go to definition
 #define _GOTOE_ KC_F2 // go to next error
+#define _GOTOL_ LCMD(KC_L) // go to line
 #define _GOTOS_ LCMD(LOPT(KC_O)) // go to symbol in editor
 #define _HTRST_ LCMD(LSFT(KC_BSLASH)) // hot reset
 #define _DEBUG_ LCTL(KC_D) // start debugger
@@ -270,6 +300,8 @@ enum keycodesmm
 #define _RSUME_ LOPT(LCMD(KC_R)) // resume execution
 #define _MATCH_ LCTL(KC_M) // match bracket
 #define _REPL__ LCMD(KC_R) // replace
+#define _FOLDI_ LCMD(KC_MINUS)
+#define _FOLDO_ LCMD(KC_PLUS)
 
 // terminal
 #define __BOL__ LCTL(KC_A)

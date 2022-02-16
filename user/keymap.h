@@ -30,21 +30,28 @@
 #define MIOUT_2  _SPACE_
 #define MIOUT_3  _O_SFT_
 //              +--------+---------+---------+---------+--------+
-#define NAV__L1  _DRTAN_ , __CUT__ , _COPY__ , _PASTE_ , _PRTSC_
-#define NAV__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , _SWWIN_
-#define NAV__L3  _ACTIO_ , __ESC__ , _HINT__ , __TAB__ , _COLS__
+#define NAV__L1  _DRTAN_ , __CUT__ , _COPY__ , _PASTE_ , _REDO__
+#define NAV__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , _UNDO__
+#define NAV__L3  _ACTIO_ , _HINT__ , _LEAD__ , _CAPSW_ , _COLS__
 //              +--------+---------+---------+---------+--------+
 #define NAV__R1  _PROJ__ , _GOTOD_ , _PGDWN_ , _PG_UP_ , _GOTOE_
 #define NAV__R2  _SEL_L_ , _LEFT__ , _DOWN__ , __UP___ , _RIGHT_
-#define NAV__R3  _NEWFL_ , _ENTER_ , _MATCH_ , __DEL__ , _CAPSW_
+#define NAV__R3  _NEWFL_ , _FOLDI_ , _FOLDO_ , __DEL__ , _GOTOL_
 //              +--------+---------+---------+---------+--------+
-#define SYM__L1  _TILDE_ , _LCBRC_ , _LBRAC_ , _LPARN_ , _SCOLN_
+#define NOUT_L1  _______
+#define NOUT_L2  _______
+#define NOUT_L3  _______
+#define NOUT_R1  LSFT(_CLOSE_)
+#define NOUT_R2  _______
+#define NOUT_R3  LSFT(_HIDE__)
+//              +--------+---------+---------+---------+--------+
+#define SYM__L1  _TILDE_ , _LCBRC_ , _LBRAC_ , _LPARN_ , _ARROW_
 #define SYM__L2  _MINUS_ , _PLUS__ , _EQUAL_ , _UNDRS_ , _HASH__
 #define SYM__L3  _ASTER_ , _PIPE__ , __AT___ , _SLASH_ , _PERCT_
 //              +--------+---------+---------+---------+--------+
 #define SYM__R1  _CIRCF_ , _RPARN_ , _RBRAC_ , _RCBRC_ , _GRAVE_
 #define SYM__R2  _DOLLR_ , _O_SFT_ , _O_ALT_ , _O_CTL_ , _O_GUI_
-#define SYM__R3  _SCOLN_ , _BSLSH_ , _AMPRS_ , _EXCLM_ , _QUEST_
+#define SYM__R3  _TYPE__ , _BSLSH_ , _AMPRS_ , _EXCLM_ , _QUEST_
 //              +--------+---------+---------+---------+--------+
 #define NUM__L1  ___7___ , ___5___ , ___3___ , ___1___ , ___9___
 #define NUM__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , __F11__
@@ -54,20 +61,28 @@
 #define NUM__R2  __F12__ , _O_SFT_ , _O_ALT_ , _O_CTL_ , _O_GUI_
 #define NUM__R3  __F8___ , __F1___ , __F2___ , __F4___ , __F6___
 //              +--------+---------+---------+---------+--------+
-#define MOUS_L1  _SELAD_ , __MB2__ , _MWUP__ , __MB3__ , _DEVT__
-#define MOUS_L2  _MLFT__ , __MUP__ , _MDWN__ , _MRGT__ , _BACK__
-#define MOUS_L3  _SRCHW_ , _MWLFT_ , _MWDWN_ , _MWRGT_ , _JUMP__
+#define GUI__L1  _T_LFT_ , _T_TOP_ , _T_BTM_ , _T_RGT_ , __MB3__
+#define GUI__L2  _MLFT__ , __MUP__ , _MDWN__ , _MRGT__ , __MB2__
+#define GUI__L3  _MWLFT_ , _MWUP__ , _MWDWN_ , _MWRGT_ , _ADDRS_
 //              +--------+---------+---------+---------+--------+
-#define MOUS_R1  _CLOSE_ , _TAB_L_ , __TOP__ , _TAB_R_ , _RETAB_
-#define MOUS_R2  __FWD__ , _O_SFT_ , _O_CTL_ , _O_ALT_ , _O_GUI_
-#define MOUS_R3  _N_TAB_ , _ZOOMO_ , __BTM__ , _ZOOMI_ , _ZOOMR_
+#define GUI__R1  _QUIT__ , _TAB_L_ , _TAB_R_ , _RETAB_ , _CLOSE_
+#define GUI__R2  _SWWIN_ , _O_SFT_ , _O_ALT_ , _O_CTL_ , _O_GUI_
+#define GUI__R3  __HUD__ , _BACK__ , _JUMP__ , __FWD__ , _HIDE__
+//              +--------+---------+---------+---------+--------+
+#define DBG__L1  _______ , _______ , _______ , _______ , _______
+#define DBG__L2  _______ , _______ , _______ , _______ , _______
+#define DBG__L3  _______ , _______ , _______ , _______ , _______
+//              +--------+---------+---------+---------+--------+
+#define DBG__R1  _______ , _______ , _______ , _______ , _______
+#define DBG__R2  _______ , _______ , _______ , _______ , _______
+#define DBG__R3  _______ , _______ , _______ , _______ , _______
 //              +--------+---------+---------+---------+--------+
 #define META_L1  _SLEEP_ , _______ , _______ , CMB_TOG , _______
-#define META_L2  _______ , _BRUP__ , _BRDWN_ , _PRTSC_ , _______
+#define META_L2  _______ , _BRUP__ , _BRDWN_ , _TMSMU_ , _______
 #define META_L3  _RESET_ , _______ , _______ , _______ , _______
 //              +--------+---------+---------+---------+--------+
 #define META_R1  RGB_VAD , __PRV__ , _PLYPS_ , __NXT__ , RGB_VAI
-#define META_R2  _MUTE__ , _TMSMU_ , _VDWN__ , __VUP__ , RGB_TOG
+#define META_R2  _TMSMU_ , _MUTE__ , _VDWN__ , __VUP__ , RGB_TOG
 #define META_R3  RGB_HUD , RGB_MOD , RGB_SPD , RGB_SPI , RGB_HUI
 //              +--------+---------+---------+---------+--------+
 
@@ -75,9 +90,9 @@
 // L/R = Primary/Secondary
 // LT/RT = Tertiary
 #define BASEx_L  _MONAV_ , _O_SFT_
-#define BASExLT  _LEAD__
+#define BASExLT  _ES_DG_
 #define BASExRT  __RPT__
-#define BASEx_R  _SP_MK_ , _MOSYM_
+#define BASEx_R  _SPGUI_ , _MOSYM_
 //
 #define NAVx__L  _______ , _______
 #define NAVx_LT  _______
@@ -89,7 +104,7 @@
 #define MIRx_RT  _______
 #define MIRx__R  _______ , _______
 //
-#define SYMx__L  _______ , _SQUOT_
+#define SYMx__L  _______ , _SCOLN_
 #define SYMx_LT  _______
 #define SYMx_RT  _______
 #define SYMx__R  _______ , _______
@@ -99,10 +114,15 @@
 #define NUMx_RT  _______
 #define NUMx__R  _______ , _______
 //
-#define MOUSx_L  _MMETA_ , __MB1__
-#define MOUSxLT  _______
-#define MOUSxRT  _______
-#define MOUSx_R  _______ , _______
+#define GUIx__L  _MMETA_ , __MB1__
+#define GUIx_LT  _______
+#define GUIx_RT  _______
+#define GUIx__R  _______ , _______
+//
+#define DBGx__L  _______ , _______
+#define DBGx_LT  _______
+#define DBGx_RT  _______
+#define DBGx__R  _______ , _______
 //
 #define METAx_L  _______ , _______
 #define METAxLT  _______
