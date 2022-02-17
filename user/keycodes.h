@@ -225,7 +225,7 @@ enum keycodesmm
 #define _LEAD__ KC_LEAD
 #define _CTL_C_ LCTL(KC_C)
 #define _STAB__ LSFT(KC_TAB)
-#define _PRTSC_ LCMD(LSFT(___4___))
+#define _PRTSC_ LCMD(LSFT(KC_4))
 #define _CLOSE_ LCMD(KC_W)
 #define _QUIT__ LCMD(KC_Q)
 #define _HIDE__ LCMD(KC_H)

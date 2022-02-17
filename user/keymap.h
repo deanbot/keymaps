@@ -30,13 +30,13 @@
 #define MIOUT_2  _SPACE_
 #define MIOUT_3  _O_SFT_
 //              +--------+---------+---------+---------+--------+
-#define NAV__L1  _DRTAN_ , __CUT__ , _COPY__ , _PASTE_ , _REDO__
-#define NAV__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , _UNDO__
-#define NAV__L3  _ACTIO_ , _HINT__ , _LEAD__ , _CAPSW_ , _COLS__
+#define NAV__L1  _ACTIO_ , __CUT__ , _COPY__ , _PASTE_ , _HINT__
+#define NAV__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , _LEAD__
+#define NAV__L3  _DRTAN_ , _REDO__ , _UNDO__ , _CAPSW_ , _COLS__
 //              +--------+---------+---------+---------+--------+
 #define NAV__R1  _PROJ__ , _GOTOD_ , _PGDWN_ , _PG_UP_ , _GOTOE_
 #define NAV__R2  _SEL_L_ , _LEFT__ , _DOWN__ , __UP___ , _RIGHT_
-#define NAV__R3  _NEWFL_ , _FOLDI_ , _FOLDO_ , __DEL__ , _GOTOL_
+#define NAV__R3  _NEWFL_ , _FINDF_ , _MATCH_ , __DEL__ , _GOTOL_
 //              +--------+---------+---------+---------+--------+
 #define NOUT_L1  _______
 #define NOUT_L2  _______
@@ -61,9 +61,9 @@
 #define NUM__R2  __F12__ , _O_SFT_ , _O_ALT_ , _O_CTL_ , _O_GUI_
 #define NUM__R3  __F8___ , __F1___ , __F2___ , __F4___ , __F6___
 //              +--------+---------+---------+---------+--------+
-#define GUI__L1  _T_LFT_ , _T_TOP_ , _T_BTM_ , _T_RGT_ , __MB3__
+#define GUI__L1  _MWLFT_ , _MWUP__ , _MWDWN_ , _MWRGT_ , __MB3__
 #define GUI__L2  _MLFT__ , __MUP__ , _MDWN__ , _MRGT__ , __MB2__
-#define GUI__L3  _MWLFT_ , _MWUP__ , _MWDWN_ , _MWRGT_ , _ADDRS_
+#define GUI__L3  _T_LFT_ , _T_TOP_ , _T_BTM_ , _T_RGT_ , _ADDRS_
 //              +--------+---------+---------+---------+--------+
 #define GUI__R1  _QUIT__ , _TAB_L_ , _TAB_R_ , _RETAB_ , _CLOSE_
 #define GUI__R2  _SWWIN_ , _O_SFT_ , _O_ALT_ , _O_CTL_ , _O_GUI_
