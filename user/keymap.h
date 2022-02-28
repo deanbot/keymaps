@@ -32,7 +32,7 @@
 //              +--------+---------+---------+---------+--------+
 #define NAV__L1  _ACTIO_ , __CUT__ , _COPY__ , _PASTE_ , _HINT__
 #define NAV__L2  _O_GUI_ , _O_CTL_ , _O_ALT_ , _O_SFT_ , _LEAD__
-#define NAV__L3  _DRTAN_ , _REDO__ , _UNDO__ , _CAPSW_ , _COLS__
+#define NAV__L3  _DRTAN_ , _CAPSW_ , _REDO__ , _UNDO__ , _COLS__
 //              +--------+---------+---------+---------+--------+
 #define NAV__R1  _PROJ__ , _GOTOD_ , _PGDWN_ , _PG_UP_ , _GOTOE_
 #define NAV__R2  _SEL_L_ , _LEFT__ , _DOWN__ , __UP___ , _RIGHT_
