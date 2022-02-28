@@ -12,10 +12,10 @@
 #define BASE_R3  ___K___ , ___H___ , _COMMA_ , __DOT__ , _SCOLN_
 //              +--------+---------+---------+---------+--------+
 #define BOUT_L1  _QUIT__
-#define BOUT_L2  _MWDWN_
+#define BOUT_L2  __RPT__
 #define BOUT_L3  __HUD__
 #define BOUT_R1  _CLOSE_
-#define BOUT_R2  _MWUP__
+#define BOUT_R2  __RPT__
 #define BOUT_R3  _HIDE__
 //              +--------+---------+---------+---------+--------+
 #define MIR__L1  _SQUOT_ , ___Y___ , ___U___ , ___L___ , ___J___

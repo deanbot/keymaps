@@ -33,10 +33,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    BOUT_L2 , BASE_L2           ,           BASE_R2 , BOUT_R2 ,
    BOUT_L3 , BASE_L3           ,           BASE_R3 , BOUT_R3 ,
 //---------+---------                     ---------+---------//
-   _LEFT__ , _RIGHT_ ,
+   _TAB_L_ , _TAB_R_ ,
    BASEx_L , BASExLT , _MOMIR_ ,
    _MOMIR_ , BASExRT , BASEx_R ,
-   _DOWN__ , __UP___
+   _PG_UP_ , _PGDWN_
 //---------+---------//
 ),
 
@@ -85,7 +85,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    BLANKx_
 //---------+---------//
 ),
-
 
 [_GUI] = LAYOUT_naked48(
 //---------+---------                     ---------+---------//
