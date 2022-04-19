@@ -2,6 +2,8 @@
 
 #include QMK_KEYBOARD_H
 
+// OUT__L or OUT__R include outer column (additional pinky column)
+
 //              +--------+---------+---------+---------+--------+
 #define BASE_L1  ___Q___ , ___W___ , ___F___ , ___P___ , ___B___
 #define BASE_L2  ___A___ , ___R___ , ___S___ , ___T___ , ___G___
@@ -87,11 +89,16 @@
 //              +--------+---------+---------+---------+--------+
 
 // Bottom Row
-// L/R = Primary/Secondary
-// LT/RT = Tertiary
+// L or R includes Primary and Secondary
+// LT or RT includes Tertiary
+// LQ or RQ includes Quaternary
+
+//
 #define BASEx_L  _MONAV_ , _O_SFT_
 #define BASExLT  _ES_DG_
 #define BASExRT  __RPT__
+#define BASExLQ  KC_MUTE
+#define BASExRQ  TG(_GUI)
 #define BASEx_R  _SPGUI_ , _MOSYM_
 //
 #define NAVx__L  _______ , _______
@@ -117,6 +124,8 @@
 #define GUIx__L  _MMETA_ , __MB1__
 #define GUIx_LT  _______
 #define GUIx_RT  _______
+#define GUIx_LQ  BASExLQ
+#define GUIx_RQ  TG(_GUI)
 #define GUIx__R  _______ , _______
 //
 #define DBGx__L  _______ , _______
