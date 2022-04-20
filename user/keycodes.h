@@ -9,6 +9,7 @@ enum layers
   _FN,
   _NAV,
   _GUI,
+  _MSE,
   _DBG,
   _SYM,
   _NUM,
@@ -60,6 +61,7 @@ enum keycodesmm
 #define _MONAV_ MO(_NAV)
 #define _MOSYM_ MO(_SYM)
 #define _MOMIR_ MO(_MIR)
+#define _MOMSE_ MO(_MSE)
 #define _MMETA_ MO(_META)
 #define _SPGUI_ LT(_GUI, KC_SPACE) // tap: space hold: gui layer
 #define _L_MIR_ LT(_MIR, _LEADF_) // tap: leader hold: mirror layer

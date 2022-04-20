@@ -71,6 +71,14 @@
 #define GUI__R2  _SWWIN_ , _O_SFT_ , _O_ALT_ , _O_CTL_ , _O_GUI_
 #define GUI__R3  __HUD__ , _BACK__ , _JUMP__ , __FWD__ , _HIDE__
 //              +--------+---------+---------+---------+--------+
+#define MSE__L1  _MWLFT_ , _MWUP__ , _MWDWN_ , _MWRGT_ , __MB3__
+#define MSE__L2  _MLFT__ , __MUP__ , _MDWN__ , _MRGT__ , __MB2__
+#define MSE__L3  _T_LFT_ , _T_TOP_ , _T_BTM_ , _T_RGT_ , _ADDRS_
+//              +--------+---------+---------+---------+--------+
+#define MSE__R1  __MB3__ , _MWLFT_ , _MWDWN_ , _MWUP__ , _MWRGT_
+#define MSE__R2  __MB2__ , _MLFT__ , _MDWN__ , __MUP__ , _MRGT__
+#define MSE__R3  _ADDRS_ , _T_LFT_ , _T_TOP_ , _T_BTM_ , _T_RGT_
+//              +--------+---------+---------+---------+--------+
 #define DBG__L1  _______ , _______ , _______ , _______ , _______
 #define DBG__L2  _______ , _______ , _______ , _______ , _______
 #define DBG__L3  _______ , _______ , _______ , _______ , _______
@@ -95,8 +103,8 @@
 
 //
 #define BASEx_L  _MONAV_ , _O_SFT_
-#define BASExLT  __MB1__//_ES_DG_
-#define BASExRT  __RPT__
+#define BASExLT  __MB1__ //_ES_DG_
+#define BASExRT  _MOMSE_
 #define BASExLQ  KC_MUTE
 #define BASExRQ  _TMSMU_
 #define BASEx_R  _SPGUI_ , _MOSYM_
@@ -127,6 +135,13 @@
 #define GUIx_LQ  BASExLQ
 #define GUIx_RQ  TG(_GUI)
 #define GUIx__R  _______ , _______
+//
+#define MSEx__L  _______ , _______
+#define MSEx_LT  _______
+#define MSEx_RT  _______
+#define MSEx_LQ  _______
+#define MSEx_RQ  _______
+#define MSEx__R  _______ , _______
 //
 #define DBGx__L  _______ , _______
 #define DBGx_LT  _______
