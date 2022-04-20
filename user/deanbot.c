@@ -284,10 +284,10 @@ layer_state_t layer_state_set_user(layer_state_t state) {
       pimoroni_trackball_set_rgbw(RGB_PURPLE, 0x00);
       break;
     case _NUM:
-      pimoroni_trackball_set_rgbw(RGB_YELLOW, 0x00);
+      pimoroni_trackball_set_rgbw(RGB_GOLDENROD, 0x00);
       break;
     case _GUI:
-      pimoroni_trackball_set_rgbw(RGB_WHITE, 0x00);
+      pimoroni_trackball_set_rgbw(RGB_TURQUOISE, 0x00);
       break;
     case _DBG:
       pimoroni_trackball_set_rgbw(RGB_SPRINGGREEN, 0x00);

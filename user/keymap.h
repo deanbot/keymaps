@@ -95,10 +95,10 @@
 
 //
 #define BASEx_L  _MONAV_ , _O_SFT_
-#define BASExLT  _ES_DG_
+#define BASExLT  __MB1__//_ES_DG_
 #define BASExRT  __RPT__
 #define BASExLQ  KC_MUTE
-#define BASExRQ  TG(_GUI)
+#define BASExRQ  _TMSMU_
 #define BASEx_R  _SPGUI_ , _MOSYM_
 //
 #define NAVx__L  _______ , _______
