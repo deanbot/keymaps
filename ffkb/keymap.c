@@ -5,13 +5,6 @@
 #include "g/keymap_combo.h"
 #endif
 
-#ifdef PIMORONI_TRACKBALL_ENABLE
-#include "drivers/sensors/pimoroni_trackball.h"
-#include "pointing_device.h"
-#include "color.h"
-#endif
-
-
 // clang-format off
 
 /**
@@ -124,40 +117,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 };
-
-// https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md#colors
-#if !defined(RGBLIGHT_ENABLE) && defined(PIMORONI_TRACKBALL_ENABLE)
-layer_state_t layer_state_set_keymap(layer_state_t state) {
-  switch (get_highest_layer(state)) {
-    case _MIR:
-      pimoroni_trackball_set_rgbw(RGB_CYAN, 0x00);
-      break;
-    case _NAV:
-      pimoroni_trackball_set_rgbw(RGB_GREEN, 0x00);
-      break;
-    case _SYM:
-      pimoroni_trackball_set_rgbw(RGB_PURPLE, 0x00);
-      break;
-    case _NUM:
-      pimoroni_trackball_set_rgbw(RGB_YELLOW, 0x00);
-      break;
-    case _GUI:
-      pimoroni_trackball_set_rgbw(RGB_WHITE, 0x00);
-      break;
-    case _DBG:
-      pimoroni_trackball_set_rgbw(RGB_SPRINGGREEN, 0x00);
-      break;
-    case _META:
-      pimoroni_trackball_set_rgbw(RGB_ORANGE, 0x00);
-      break;
-    default:
-      // if (is_caps_lock_on) {}
-      pimoroni_trackball_set_rgbw(RGB_BLUE, 0x00);
-      break;
-  }
-  return state;
-}
-#endif
 
 #ifdef ENCODER_ENABLE
 

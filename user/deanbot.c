@@ -2,6 +2,12 @@
 
 #include "deanbot.h"
 
+#ifdef PIMORONI_TRACKBALL_ENABLE
+#include "drivers/sensors/pimoroni_trackball.h"
+#include "pointing_device.h"
+#include "color.h"
+#endif
+
 #ifdef CUSTOM_ONESHOT_ENABLE
 
 bool is_oneshot_modifier_cancel_key(uint16_t keycode) {
@@ -264,5 +270,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
+
+  // https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md#colors
+  #if !defined(RGBLIGHT_ENABLE) && defined(PIMORONI_TRACKBALL_ENABLE)
+  switch (get_highest_layer(state)) {
+    case _MIR:
+      pimoroni_trackball_set_rgbw(RGB_CYAN, 0x00);
+      break;
+    case _NAV:
+      pimoroni_trackball_set_rgbw(RGB_GREEN, 0x00);
+      break;
+    case _SYM:
+      pimoroni_trackball_set_rgbw(RGB_PURPLE, 0x00);
+      break;
+    case _NUM:
+      pimoroni_trackball_set_rgbw(RGB_YELLOW, 0x00);
+      break;
+    case _GUI:
+      pimoroni_trackball_set_rgbw(RGB_WHITE, 0x00);
+      break;
+    case _DBG:
+      pimoroni_trackball_set_rgbw(RGB_SPRINGGREEN, 0x00);
+      break;
+    case _META:
+      pimoroni_trackball_set_rgbw(RGB_ORANGE, 0x00);
+      break;
+    default:
+      // if (is_caps_lock_on) {}
+      pimoroni_trackball_set_rgbw(RGB_BLUE, 0x00);
+      break;
+  }
+  #endif
   return update_tri_layer_state(state, _NAV, _SYM, _NUM);
 }
