@@ -103,39 +103,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 };
-
-#ifdef ENCODER_ENABLE
-
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    // default behavior if undefined
-    if (index == 0) {
-        // Conditional to reverse the direction of encoder
-        #ifdef ENCODERS_A_REVERSE
-        if (!clockwise) {
-        #else
-        if (clockwise) {
-        #endif
-            tap_code(KC_VOLU);
-        } else {
-            tap_code(KC_VOLD);
-        }
-    }
-    else if (index == 1) {
-      // Conditional to reverse the direction of encoder
-      #ifdef ENCODERS_B_REVERSE
-      if (!clockwise) {
-      #else
-      if (clockwise) {
-      #endif
-        tap_code16(_BRUP__);
-      }
-      else{
-        tap_code16(_BRDWN_);
-      }
-    } else if (index == 3) {
-      // center feature
-    }
-
-    return true;
-}
-#endif

@@ -269,37 +269,90 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
+layer_state_t _state;
 layer_state_t layer_state_set_user(layer_state_t state) {
+  // cache state for encoder handler
+  _state = state;
 
   // https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md#colors
   #if !defined(RGBLIGHT_ENABLE) && defined(PIMORONI_TRACKBALL_ENABLE)
   switch (get_highest_layer(state)) {
-    case _MIR:
-      pimoroni_trackball_set_rgbw(RGB_CYAN, 0x00);
-      break;
-    case _NAV:
-      pimoroni_trackball_set_rgbw(RGB_GREEN, 0x00);
-      break;
-    case _SYM:
-      pimoroni_trackball_set_rgbw(RGB_PURPLE, 0x00);
-      break;
-    case _NUM:
-      pimoroni_trackball_set_rgbw(RGB_GOLDENROD, 0x00);
-      break;
+    // case _MIR:
+    //   pimoroni_trackball_set_rgbw(RGB_CYAN, 0x00);
+    //   break;
+    // case _NAV:
+    //   pimoroni_trackball_set_rgbw(RGB_GREEN, 0x00);
+    //   break;
+    // case _SYM:
+    //   pimoroni_trackball_set_rgbw(RGB_PURPLE, 0x00);
+    //   break;
+    // case _NUM:
+    //   pimoroni_trackball_set_rgbw(RGB_GOLDENROD, 0x00);
+    //   break;
     case _GUI:
       pimoroni_trackball_set_rgbw(RGB_TURQUOISE, 0x00);
       break;
-    case _DBG:
-      pimoroni_trackball_set_rgbw(RGB_SPRINGGREEN, 0x00);
-      break;
+    // case _DBG:
+    //   pimoroni_trackball_set_rgbw(RGB_SPRINGGREEN, 0x00);
+    //   break;
     case _META:
       pimoroni_trackball_set_rgbw(RGB_ORANGE, 0x00);
       break;
     default:
       // if (is_caps_lock_on) {}
-      pimoroni_trackball_set_rgbw(RGB_BLUE, 0x00);
+      pimoroni_trackball_set_rgbw(RGB_BLACK, 0x00);
       break;
   }
   #endif
   return update_tri_layer_state(state, _NAV, _SYM, _NUM);
 }
+
+#ifdef ENCODER_ENABLE
+
+bool encoder_update_user(uint8_t index, bool clockwise) {
+  // default behavior if undefined
+  if (index == 0) {
+    // Conditional to reverse the direction of encoder
+    #ifdef ENCODERS_A_REVERSE
+    if (!clockwise) {
+    #else
+    if (clockwise) {
+    #endif
+      switch(get_highest_layer(_state)) {
+        case _GUI:
+          tap_code(_BRUP__);
+          break;
+        default:
+          tap_code(KC_VOLU);
+          break;
+      }
+    } else {
+      switch(get_highest_layer(_state)) {
+        case _GUI:
+          tap_code(_BRDWN_);
+          break;
+        default:
+          tap_code(KC_VOLD);
+          break;
+      }
+    }
+  }
+  else if (index == 1) {
+    // Conditional to reverse the direction of encoder
+    #ifdef ENCODERS_B_REVERSE
+    if (!clockwise) {
+    #else
+    if (clockwise) {
+    #endif
+      tap_code(KC_PGDN);
+    }
+    else{
+      tap_code(KC_PGUP);
+    }
+  } else if (index == 3) {
+    // center feature
+  }
+
+  return true;
+}
+#endif
