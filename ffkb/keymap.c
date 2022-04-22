@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    _______ , NAV__L2           ,           NAV__R2 , _______ ,
    _______ , NAV__L3           ,           NAV__R3 , _______ ,
 //---------+---------                     ---------+---------//
-   _______ , NAVx__L , _______ , _______ , NAVx__R , _______ ,
+   NAVx_LQ , NAVx__L , NAVx_LT , NAVx_RT , NAVx__R , NAVX_RQ ,
    _______
 //---------+---------//
 ),

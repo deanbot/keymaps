@@ -54,6 +54,9 @@ enum keycodesmm
   _C_MB2_,
   _C_MWU_,
   _C_MWD_,
+
+  // pimoroni scroll
+  _PSCRL_,
 };
 
 #define _LEADF_ KC_F22

@@ -3,9 +3,9 @@
 #include "deanbot.h"
 
 #ifdef PIMORONI_TRACKBALL_ENABLE
+#include "color.h"
 #include "drivers/sensors/pimoroni_trackball.h"
 #include "pointing_device.h"
-#include "color.h"
 #endif
 
 #ifdef CUSTOM_ONESHOT_ENABLE
@@ -63,7 +63,9 @@ void matrix_scan_user(void) {
     }
     SEQ_ONE_KEY(KC_G) { SEND_STRING("gf; git pull;"); }
     SEQ_ONE_KEY(KC_I) { SEND_STRING("tool/install.sh" SS_TAP(X_ENTER)); }
-    SEQ_TWO_KEYS(KC_I, KC_I) { SEND_STRING("tool/build_generated.sh" SS_TAP(X_ENTER)); }
+    SEQ_TWO_KEYS(KC_I, KC_I) {
+      SEND_STRING("tool/build_generated.sh" SS_TAP(X_ENTER));
+    }
   }
 }
 #endif
@@ -71,6 +73,10 @@ void matrix_scan_user(void) {
 #ifdef CUSTOM_SWAPPER_ENABLE
 bool sw_win_active = false;
 bool sw_lang_active = false;
+#endif
+
+#ifdef PIMORONI_TRACKBALL_ENABLE
+bool pimoroni_scroll = false;
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -84,7 +90,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 #ifdef CUSTOM_SWAPPER_ENABLE
   update_swapper(&sw_win_active, KC_LCMD, KC_TAB, _SWWIN_, keycode, record);
-  // update_swapper(&sw_lang_active, KC_LSHIFT, KC_LOPT, _SWLNG_, keycode, record);
+  // update_swapper(&sw_lang_active, KC_LSHIFT, KC_LOPT, _SWLNG_, keycode,
+  // record);
 #endif
 
 #ifdef CUSTOM_REPEAT_ENABLE
@@ -108,7 +115,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // select line
   case _SEL_L_:
     if (record->event.pressed) {
-      SEND_STRING(SS_LCMD(SS_TAP(X_RIGHT)) SS_LCMD(SS_TAP(X_LEFT)) SS_LSFT(SS_LCMD(SS_TAP(X_RIGHT))));
+      SEND_STRING(SS_LCMD(SS_TAP(X_RIGHT)) SS_LCMD(SS_TAP(X_LEFT))
+                      SS_LSFT(SS_LCMD(SS_TAP(X_RIGHT))));
     }
     return false;
 
@@ -224,6 +232,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return false;
 #endif
 
+#ifdef PIMORONI_TRACKBALL_ENABLE
+  // pimoroni toggle scroll
+  case _PSCRL_:
+    if (record->event.pressed) {
+    } else {
+      pimoroni_scroll = !pimoroni_scroll;
+    }
+    return true;
+#endif
+
   // letting go of nav doesn't unregister
   case _C_MB1_:
     if (record->event.pressed) {
@@ -274,80 +292,92 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   // cache state for encoder handler
   _state = state;
 
-  // https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md#colors
-  #if !defined(RGBLIGHT_ENABLE) && defined(PIMORONI_TRACKBALL_ENABLE)
+// https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md#colors
+#if !defined(RGBLIGHT_ENABLE) && defined(PIMORONI_TRACKBALL_ENABLE)
   switch (get_highest_layer(state)) {
-    // case _MIR:
-    //   pimoroni_trackball_set_rgbw(RGB_CYAN, 0x00);
-    //   break;
-    // case _NAV:
-    //   pimoroni_trackball_set_rgbw(RGB_GREEN, 0x00);
-    //   break;
-    // case _SYM:
-    //   pimoroni_trackball_set_rgbw(RGB_PURPLE, 0x00);
-    //   break;
-    // case _NUM:
-    //   pimoroni_trackball_set_rgbw(RGB_GOLDENROD, 0x00);
-    //   break;
-    case _GUI:
-      pimoroni_trackball_set_rgbw(RGB_TURQUOISE, 0x00);
-      break;
-    // case _DBG:
-    //   pimoroni_trackball_set_rgbw(RGB_SPRINGGREEN, 0x00);
-    //   break;
-    case _META:
-      pimoroni_trackball_set_rgbw(RGB_ORANGE, 0x00);
-      break;
-    default:
-      // if (is_caps_lock_on) {}
-      pimoroni_trackball_set_rgbw(RGB_BLACK, 0x00);
-      break;
+  // case _MIR:
+  //   pimoroni_trackball_set_rgbw(RGB_CYAN, 0x00);
+  //   break;
+  // case _NAV:
+  //   pimoroni_trackball_set_rgbw(RGB_GREEN, 0x00);
+  //   break;
+  // case _SYM:
+  //   pimoroni_trackball_set_rgbw(RGB_PURPLE, 0x00);
+  //   break;
+  // case _NUM:
+  //   pimoroni_trackball_set_rgbw(RGB_GOLDENROD, 0x00);
+  //   break;
+  case _GUI:
+    pimoroni_trackball_set_rgbw(RGB_TURQUOISE, 0x00);
+    break;
+  // case _DBG:
+  //   pimoroni_trackball_set_rgbw(RGB_SPRINGGREEN, 0x00);
+  //   break;
+  case _META:
+    pimoroni_trackball_set_rgbw(RGB_ORANGE, 0x00);
+    break;
+  default:
+    // if (is_caps_lock_on) {}
+    pimoroni_trackball_set_rgbw(RGB_BLACK, 0x00);
+    break;
   }
-  #endif
+#endif
   return update_tri_layer_state(state, _NAV, _SYM, _NUM);
 }
 
 #ifdef ENCODER_ENABLE
-
 bool encoder_update_user(uint8_t index, bool clockwise) {
   // default behavior if undefined
   if (index == 0) {
-    // Conditional to reverse the direction of encoder
-    #ifdef ENCODERS_A_REVERSE
+// Conditional to reverse the direction of encoder
+#ifdef ENCODERS_A_REVERSE
     if (!clockwise) {
-    #else
+#else
     if (clockwise) {
-    #endif
-      switch(get_highest_layer(_state)) {
-        case _GUI:
-          tap_code(_BRUP__);
-          break;
-        default:
-          tap_code(KC_VOLU);
-          break;
+#endif
+      switch (get_highest_layer(_state)) {
+      case _GUI:
+        tap_code16(_TAB_L_);
+        break;
+      default:
+        tap_code(KC_VOLU);
+        break;
       }
     } else {
-      switch(get_highest_layer(_state)) {
-        case _GUI:
-          tap_code(_BRDWN_);
-          break;
-        default:
-          tap_code(KC_VOLD);
-          break;
+      switch (get_highest_layer(_state)) {
+      case _GUI:
+        tap_code16(_TAB_R_);
+        break;
+      default:
+        tap_code(KC_VOLD);
+        break;
       }
     }
-  }
-  else if (index == 1) {
-    // Conditional to reverse the direction of encoder
-    #ifdef ENCODERS_B_REVERSE
+  } else if (index == 1) {
+// Conditional to reverse the direction of encoder
+#ifdef ENCODERS_B_REVERSE
     if (!clockwise) {
-    #else
+#else
     if (clockwise) {
-    #endif
-      tap_code(KC_PGDN);
-    }
-    else{
-      tap_code(KC_PGUP);
+#endif
+
+      switch (get_highest_layer(_state)) {
+      case _NAV:
+        tap_code(KC_PGUP);
+        break;
+      default:
+        tap_code(_BRUP__);
+        break;
+      }
+    } else {
+      switch (get_highest_layer(_state)) {
+      case _NAV:
+        tap_code(KC_PGDN);
+        break;
+      default:
+        tap_code(_BRDWN_);
+        break;
+      }
     }
   } else if (index == 3) {
     // center feature
@@ -357,14 +387,14 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 }
 #endif
 
-bool set_scrolling = true;
-
+#ifdef PIMORONI_TRACKBALL_ENABLE
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
-    if (set_scrolling) {
-        mouse_report.h = mouse_report.x;
-        mouse_report.v = mouse_report.y;
-        mouse_report.x = 0;
-        mouse_report.y = 0;
-    }
-    return mouse_report;
+  if (pimoroni_scroll) {
+    mouse_report.h = mouse_report.x;
+    mouse_report.v = mouse_report.y;
+    mouse_report.x = 0;
+    mouse_report.y = 0;
+  }
+  return mouse_report;
 }
+#endif

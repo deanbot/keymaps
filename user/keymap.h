@@ -20,7 +20,7 @@
 #define BOUT_R2  __RPT__
 #define BOUT_R3  _HIDE__
 //              +--------+---------+---------+---------+--------+
-#define MIR__L1  _SQUOT_ , ___Y___ , ___U___ , ___L___ , ___J___
+ #define MIR__L1  _SQUOT_ , ___Y___ , ___U___ , ___L___ , ___J___
 #define MIR__L2  ___O___ , ___I___ , ___E___ , ___N___ , ___M___
 #define MIR__L3  _SCOLN_ , __DOT__ , _COMMA_ , ___H___ , ___K___
 //              +--------+---------+---------+---------+--------+
@@ -82,14 +82,14 @@
 #define DBG__L1  _______ , _______ , _______ , _______ , _______
 #define DBG__L2  _______ , _______ , _______ , _______ , _______
 #define DBG__L3  _______ , _______ , _______ , _______ , _______
-//              +--------+---------+---------+---------+--------+
+//              +--------+----- ----+---------+---------+--------+
 #define DBG__R1  _______ , _______ , _______ , _______ , _______
 #define DBG__R2  _______ , _______ , _______ , _______ , _______
 #define DBG__R3  _______ , _______ , _______ , _______ , _______
 //              +--------+---------+---------+---------+--------+
 #define META_L1  _SLEEP_ , _______ , _______ , CMB_TOG , _______
-#define META_L2  _______ , _BRUP__ , _BRDWN_ , _TMSMU_ , _______
-#define META_L3  _RESET_ , _______ , _______ , _______ , _______
+#define META_L2  _PSCRL_ , _BRUP__ , _BRDWN_ , _TMSMU_ , _______
+#define META_L3  _______ , _______ , _______ , _______ , _RESET_
 //              +--------+---------+---------+---------+--------+
 #define META_R1  RGB_VAD , __PRV__ , _PLYPS_ , __NXT__ , RGB_VAI
 #define META_R2  _TMSMU_ , _MUTE__ , _VDWN__ , __VUP__ , RGB_TOG
@@ -108,10 +108,13 @@
 #define BASExLQ  KC_MUTE
 #define BASExRQ  _TMSMU_
 #define BASEx_R  _SPGUI_ , _MOSYM_
+
 //
 #define NAVx__L  _______ , _______
 #define NAVx_LT  _______
 #define NAVx_RT  _SPACE_
+#define NAVX_RQ  _PSCRL_
+#define NAVx_LQ  _______
 #define NAVx__R  _BKSPC_ , _______
 //
 #define MIRx__L  _______ , _______
@@ -137,8 +140,8 @@
 #define GUIx__R  _______ , _______
 //
 #define MSEx__L  _______ , _______
-#define MSEx_LT  _______
-#define MSEx_RT  _______
+#define MSEx_LT  __MB2__
+#define MSEx_RT  __MB2__
 #define MSEx_LQ  _______
 #define MSEx_RQ  _______
 #define MSEx__R  _______ , _______
