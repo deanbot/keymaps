@@ -363,7 +363,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 
       switch (get_highest_layer(_state)) {
       case _NAV:
-        tap_code(KC_PGUP);
+        tap_code(KC_PGDN);
         break;
       default:
         tap_code(_BRUP__);
@@ -372,7 +372,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     } else {
       switch (get_highest_layer(_state)) {
       case _NAV:
-        tap_code(KC_PGDN);
+        tap_code(KC_PGUP);
         break;
       default:
         tap_code(_BRDWN_);

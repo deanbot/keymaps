@@ -1,4 +1,10 @@
-.PHONY: naked48
+.PHONY: ffkb
+
+ffkb: setup
+
+	cd qmk_firmware; qmk lint -kb fingerpunch/ffkb/pimoroni_evq -km deanbot --strict
+
+	qmk flash -kb fingerpunch/ffkb/pimoroni_evq -km deanbot
 
 ferris: setup
 

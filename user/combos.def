@@ -78,3 +78,6 @@ COMB(UE, __UE___, KC_Z, KC_QUOT)
 COMB(AE, __AE___, KC_A, KC_E)
 COMB(OE, __OE___, KC_Z, KC_I)
 COMB(ZE, __ZE___, KC_Z, KC_E)
+
+// misc
+SUBS(LGTM, "Looks good to me.", KC_L, KC_G)
