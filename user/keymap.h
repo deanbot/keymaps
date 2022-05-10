@@ -13,12 +13,12 @@
 #define BASE_R2 ___M___, ___N___, ___E___, ___I___, ___O___
 #define BASE_R3 ___K___, ___H___, _COMMA_, __DOT__, _SCOLN_
 //              +--------+---------+---------+---------+--------+
-#define BOUT_L1 _QUIT__
-#define BOUT_L2 __RPT__
-#define BOUT_L3 __HUD__
-#define BOUT_R1 _CLOSE_
-#define BOUT_R2 __RPT__
-#define BOUT_R3 _HIDE__
+#define BOUT_L1 _______
+#define BOUT_L2 _______
+#define BOUT_L3 _______
+#define BOUT_R1 _______
+#define BOUT_R2 _______
+#define BOUT_R3 _______
 //              +--------+---------+---------+---------+--------+
 #define MIR__L1 _SQUOT_, ___Y___, ___U___, ___L___, ___J___
 #define MIR__L2 ___O___, ___I___, ___E___, ___N___, ___M___
@@ -43,9 +43,9 @@
 #define NOUT_L1 _______
 #define NOUT_L2 _______
 #define NOUT_L3 _______
-#define NOUT_R1 LSFT(_CLOSE_)
+#define NOUT_R1 _______
 #define NOUT_R2 _______
-#define NOUT_R3 LSFT(_HIDE__)
+#define NOUT_R3 _______
 //              +--------+---------+---------+---------+--------+
 #define SYM__L1 _TILDE_, _LCBRC_, _LBRAC_, _LPARN_, _ARROW_
 #define SYM__L2 _MINUS_, _PLUS__, _EQUAL_, _UNDRS_, _HASH__
@@ -79,9 +79,9 @@
 #define MSE__R2 __MB2__, _MLFT__, _MDWN__, __MUP__, _MRGT__
 #define MSE__R3 _ADDRS_, _T_LFT_, _T_TOP_, _T_BTM_, _T_RGT_
 //              +--------+---------+---------+---------+--------+
-#define DBG__L1 _______, _______, _______, _______, _______
-#define DBG__L2 _______, _______, _______, _______, _______
-#define DBG__L3 _______, _______, _______, _______, _______
+#define DBG__L1 _______, _______, _RLOAD_, _RSTRT_, _______
+#define DBG__L2 _______, _______, _______, _RESUM_, _TOGBR_
+#define DBG__L3 _______, _______, _STOP__, _START_, _______
 //              +--------+----- ----+---------+---------+--------+
 #define DBG__R1 _______, _______, _______, _______, _______
 #define DBG__R2 _______, _______, _______, _______, _______
@@ -104,7 +104,7 @@
 //
 #define BASEx_L _MONAV_, _O_SFT_
 #define BASExLT __MB1__
-#define BASExRT _SWWIN_  //_ES_DG_
+#define BASExRT _MODBG_
 #define BASExLQ KC_MUTE
 #define BASExRQ _TMSMU_
 #define BASEx_R _SPGUI_, _MOSYM_

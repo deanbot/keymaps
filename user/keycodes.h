@@ -66,9 +66,10 @@ enum keycodesmm
 #define _MOMIR_ MO(_MIR)
 #define _MOMSE_ MO(_MSE)
 #define _MMETA_ MO(_META)
+#define _MODBG_ MO(_DBG)
 #define _SPGUI_ LT(_GUI, KC_SPACE) // tap: space hold: gui layer
 #define _L_MIR_ LT(_MIR, _LEADF_) // tap: leader hold: mirror layer
-#define _ES_DG_ LT(_DBG, __ESC__) // tap: escape hold: debug layer
+#define _DBG_T_ LT(_DBG, __HUD__) // tap: escape hold: debug layer
 #define _CLMK_ DF(_BASE)
 
 #define ___A___ KC_A
@@ -307,6 +308,12 @@ enum keycodesmm
 #define _REPL__ LCMD(KC_R) // replace
 #define _FOLDI_ LCMD(KC_MINUS)
 #define _FOLDO_ LCMD(KC_PLUS)
+#define _RESUM_ LCMD(LOPT(KC_R)) // resume debugger
+#define _STOP__ LCMD(KC_F2)
+#define _START_ LCTL(KC_D)
+#define _RSTRT_ LSFT(LCMD(_BSLSH_))
+#define _RLOAD_ LCMD(_BSLSH_)
+#define _TOGBR_ LCMD(KC_F8)
 
 // terminal
 #define __BOL__ LCTL(KC_A)
