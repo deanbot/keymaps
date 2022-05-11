@@ -226,6 +226,7 @@ enum keycodesmm
 #define _T_NE_ LSFT(KC_F18)
 #define _T_SW_ LSFT(KC_F19)
 #define _T_SE_ LSFT(KC_F20)
+#define _SPOT_ LCMD(KC_SPACE)
 
 // workflow/app/browser
 #define _LEAD__ KC_LEAD
@@ -306,14 +307,17 @@ enum keycodesmm
 #define _RSUME_ LOPT(LCMD(KC_R)) // resume execution
 #define _MATCH_ LCTL(KC_M) // match bracket
 #define _REPL__ LCMD(KC_R) // replace
-#define _FOLDI_ LCMD(KC_MINUS)
-#define _FOLDO_ LCMD(KC_PLUS)
+#define _FOLDI_ LCMD(KC_MINUS) // fold code in
+#define _FOLDO_ LCMD(KC_PLUS) // fold code out
 #define _RESUM_ LCMD(LOPT(KC_R)) // resume debugger
-#define _STOP__ LCMD(KC_F2)
-#define _START_ LCTL(KC_D)
-#define _RSTRT_ LSFT(LCMD(_BSLSH_))
-#define _RLOAD_ LCMD(_BSLSH_)
-#define _TOGBR_ LCMD(KC_F8)
+#define _STOP__ LCMD(KC_F2) // stop debugging
+#define _START_ LCTL(KC_D) // start debugging
+#define _RSTRT_ LSFT(LCMD(_BSLSH_)) // hot restart
+#define _RLOAD_ LCMD(_BSLSH_) // hot reload
+#define _TOGBR_ LCMD(KC_F8) // toggle breakpoint
+#define _DT_OV_ KC_F8 // debug step over
+#define _DS_IN_ KC_F7 // debug step into
+#define _DSOUT_ LSFT(KC_F8) // debug step out
 
 // terminal
 #define __BOL__ LCTL(KC_A)
