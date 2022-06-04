@@ -215,6 +215,9 @@ enum keycodesmm
 #define _SLEEP_ KC_SYSTEM_SLEEP
 #define _RESET_ RESET
 
+#define _ALTTB_ KC_F15 // alt tab
+#define _LFTAT_ LSFT(KC_F15) // left alt tab
+
 // gui
 #define _T_LFT_ KC_F17
 #define _T_RGT_ KC_F18
@@ -232,7 +235,8 @@ enum keycodesmm
 #define _LEAD__ KC_LEAD
 #define _CTL_C_ LCTL(KC_C)
 #define _STAB__ LSFT(KC_TAB)
-#define _PRTSC_ LCMD(LSFT(KC_4))
+#define _PRTRC_ LCMD(LSFT(KC_4)) // print region clipboard
+#define _PRTSF_ LCMD(LSFT(KC_3)) // print screen file
 #define _CLOSE_ LCMD(KC_W)
 #define _QUIT__ LCMD(KC_Q)
 #define _HIDE__ LCMD(KC_H)
@@ -278,6 +282,9 @@ enum keycodesmm
 #define _TEAMS_ HYPR(KC_T)
 #define _ANDST_ HYPR(KC_A)
 #define _VSCDE_ HYPR(KC_V)
+#define _OUTLK_ HYPR(KC_O)
+#define _MUSIC_ HYPR(KC_C)
+#define _BRWSR_ HYPR(KC_B)
 
 // ide
 #define _HINT__ LCTL(KC_C) //LCTL(KC_SPACE) // prompt complete

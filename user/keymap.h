@@ -80,12 +80,12 @@
 #define MSE__R3 _ADDRS_, _T_LFT_, _T_TOP_, _T_BTM_, _T_RGT_
 //              +--------+---------+---------+---------+--------+
 #define DBG__L1 _______, _______, _______, _______, _______
-#define DBG__L2 _______, _DT_OV_, _DS_IN_, _DSOUT_, _RESUM_
+#define DBG__L2 _______, _DSOUT_, _DS_IN_, _DT_OV_, _RESUM_
 #define DBG__L3 _______, _______, _______, _______, _______
 //              +--------+----- ----+---------+---------+--------+
 #define DBG__R1 _RSTRT_, _______, _______, _______, _______
 #define DBG__R2 _RLOAD_, _TOGBR_, _START_, _STOP__, _______
-#define DBG__R3 _______, _______, _______, _______, _______
+#define DBG__R3 _RESUM_, _DT_OV_, _DS_IN_, _DSOUT_, _______
 //              +--------+---------+---------+---------+--------+
 #define META_L1 _SLEEP_, _______, _______, CMB_TOG, _______
 #define META_L2 _PSCRL_, _BRUP__, _BRDWN_, _TMSMU_, _______
@@ -101,13 +101,17 @@
 // LT or RT includes Tertiary
 // LQ or RQ includes Quaternary
 
-//
+// primary/secondary
 #define BASEx_L _MONAV_, _O_SFT_
+#define BASEx_R _SPGUI_, _MOSYM_
+
+// tertiary
 #define BASExLT __MB1__
 #define BASExRT _MODBG_
+
+// quaternary
 #define BASExLQ KC_MUTE
 #define BASExRQ _TMSMU_
-#define BASEx_R _SPGUI_, _MOSYM_
 
 //
 #define NAVx__L _______, _______
