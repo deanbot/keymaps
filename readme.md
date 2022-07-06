@@ -6,6 +6,8 @@ Supported keyboards:
 
 - [naked48](https://github.com/qmk/qmk_firmware/tree/master/keyboards/naked48)
 - [ferris](https://github.com/qmk/qmk_firmware/tree/master/keyboards/naked48)
+- [ffkb](https://github.com/sadekbaroudi/qmk_firmware/tree/master/keyboards/fingerpunch/ffkb)
+- [cannonball](https://github.com/Taro-Hayashi/qmk_firmware/tree/tarohayashi/keyboards/tarohayashi/cannonball)
 
 # Install
 
@@ -20,6 +22,8 @@ Supported keyboards:
   qmk config user.qmk_home=~/path/to/keymaps/qmk_firmware
   ```
 4. Verify with `qmk doctor`
+5. clone [fingerpunch fork](https://github.com/sadekbaroudi/qmk_firmware) for ffkb and [Taro Hayashi fork](https://github.com/Taro-Hayashi/qmk_firmware) (ensure you check out taroyahashi branch) for cannonball.
+6. Rename `local-install-template.sh` as `local-install.sh` and update paths.
 
 # Keymap
 
