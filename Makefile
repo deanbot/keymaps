@@ -1,10 +1,17 @@
 .PHONY: ffkb
 
+# qmk lint -kb fingerpunch/ffkb/pimoroni_evq -km deanbot --strict
 ffkb: setup
 
-	cd qmk_firmware; qmk lint -kb fingerpunch/ffkb/pimoroni_evq -km deanbot --strict
+	cd qmk_firmware;
 
 	qmk flash -kb fingerpunch/ffkb/pimoroni_evq -km deanbot
+
+cannonball: setup
+
+	cd qmk_firmware; qmk lint -kb tarohayashi/cannonball -km deanbot --strict
+
+	qmk flash -kb tarohayashi/cannonball -km deanbot
 
 ferris: setup
 
@@ -23,15 +30,20 @@ setup: install
 	test -L ./qmk_firmware/users/deanbot || ln -s $(shell pwd)/user ./qmk_firmware/users/deanbot
 	test -L ./qmk_firmware/keyboards/naked48/keymaps/deanbot || ln -s $(shell pwd)/naked48 ./qmk_firmware/keyboards/naked48/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/ferris/keymaps/deanbot || ln -s $(shell pwd)/ferris ./qmk_firmware/keyboards/ferris/keymaps/deanbot
+	test -L ./qmk_firmware/keyboards/fingerpunch/ffkb/keymaps/deanbot || ln -s $(shell pwd)/cannonabll ./qmk_firmware/keyboards/fingerpunch/ffkb/keymaps/deanbot
+	test -L ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot || ln -s $(shell pwd)/cannonabll ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot
 
 install:
 	# init submodule
 	git submodule update --init --recursive
+	./local-install.sh
 
 unlink:
 	rm ./qmk_firmware/users/deanbot
 	rm ./qmk_firmware/keyboards/naked48/keymaps/deanbot
 	rm ./qmk_firmware/keyboards/ferris/keymaps/deanbot
+	rm -rf ./qmk_firmware/keyboards/tarohayashi/
+	rm -rf ./qmk_firmware/keyboards/fingerpunch/
 
 clean:
 	rm -rf obj_*

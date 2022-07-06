@@ -13,10 +13,20 @@ enum layers
   _DBG,
   _SYM,
   _NUM,
-  _META
+  _META,
 };
 
-enum keycodesmm
+enum layers_cannonball {
+  BASE = 0,
+  RAISE,
+  UTIL_1,
+  UTIL_2,
+  UTIL_3,
+  UTIL_4,
+  UTIL_5
+};
+
+enum keycodes
 {
   _SEL_L_ = SAFE_RANGE,
 
@@ -48,6 +58,9 @@ enum keycodesmm
 
   // capsword
   _CAPSW_,
+
+  // double left click
+  _MB1X2_,
 
   // mousekey combos
   _C_MB1_,
@@ -275,6 +288,10 @@ enum keycodesmm
 #define _ZOOMR_ LCMD(KC_0)
 #define _SAVE__ LCMD(KC_S)
 #define _SPOTL_ LCMD(KC_SPACE)
+#define _WD_L__ LOPT(KC_LEFT)
+#define _WD_R__ LOPT(KC_RIGHT)
+#define _SWD_L_ LSFT(LOPT(KC_LEFT))
+#define _SWD_R_ LSFT(LOPT(KC_RIGHT))
 
 // apps
 #define _DISCO_ HYPR(KC_D) // discord

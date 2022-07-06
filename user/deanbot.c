@@ -17,6 +17,8 @@ bool is_oneshot_modifier_cancel_key(uint16_t keycode) {
         case _MMETA_:
         case __RPT__:
         case _CAPSW_:
+        case KC_BSPC:
+        case __ESC__:
             return true;
         default:
             return false;
@@ -113,10 +115,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #endif
 
 #ifdef CUSTOM_SWAPPER_ENABLE
-
     if (keycode == _ALTTB_ || keycode == _LFTAT_) {
         update_swapper(&sw_win_active, KC_LCMD, KC_TAB, _SWWIN_, _SWWIN_, record);
-
     } else {
         update_swapper(&sw_win_active, KC_LCMD, KC_TAB, _SWWIN_, keycode, record);
     }
@@ -132,12 +132,26 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     // TODO : replace send string with tap_code to save space
     switch (keycode) {
+        #ifdef LEADER_ENABLE
         case _L_MIR_:
-            if (record->event.pressed) {
-                if (record->tap.count == 1) {
-                    qk_leader_start();
-                    return false;
-                }
+            if (record->event.pressed && record->tap.count) {
+                qk_leader_start();
+                return false;
+            }
+            break;
+        #endif
+
+        // bottom/top in LT
+        case LT(UTIL_2, KC_F15):
+            if (record->event.pressed && record->tap.count) {
+                SEND_STRING(SS_LCMD(SS_TAP(X_UP)));
+                return false;
+            }
+            break;
+        case LT(UTIL_3, KC_F16):
+            if (record->event.pressed && record->tap.count) {
+                SEND_STRING(SS_LCMD(SS_TAP(X_DOWN)));
+                return false;
             }
             break;
 
@@ -147,6 +161,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING(SS_LCMD(SS_TAP(X_RIGHT)) SS_LCMD(SS_TAP(X_LEFT)) SS_LSFT(SS_LCMD(SS_TAP(X_RIGHT))));
             }
             return false;
+
 
         // ${} then tap left
         case _STRIN_:
@@ -264,6 +279,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
+        // double click
+        case _MB1X2_:
+            if (record->event.pressed) {
+                register_code(KC_MS_BTN1);
+                unregister_code(KC_MS_BTN1);
+                register_code(KC_MS_BTN1);
+                unregister_code(KC_MS_BTN1);
+            }
+            return false;
+
 #ifdef CUSTOM_CAPS_WORD_ENABLE
         case _CAPSW_:
             if (record->event.pressed) {
@@ -314,130 +339,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
     }
 
-    int8_t keycode_consumed = 0;
-
 #ifdef CUSTOM_CAPS_WORD_ENABLE
     process_caps_word(keycode, record);
 #endif
 
 #ifdef CUSTOM_ONESHOT_ENABLE
+    int8_t keycode_consumed = 0;
     keycode_consumed += update_oneshot_modifiers(keycode, record, keycode_consumed);
 #endif
 
     return true;
 }
 
-layer_state_t _state;
-layer_state_t layer_state_set_user(layer_state_t state) {
-    // cache state for encoder handler
-    _state = state;
-
-// https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md#colors
-#if !defined(RGBLIGHT_ENABLE) && defined(PIMORONI_TRACKBALL_ENABLE)
-    switch (get_highest_layer(state)) {
-        // case _MIR:
-        //   pimoroni_trackball_set_rgbw(RGB_CYAN, 0x00);
-        //   break;
-        // case _NAV:
-        //   pimoroni_trackball_set_rgbw(RGB_GREEN, 0x00);
-        //   break;
-        // case _SYM:
-        //   pimoroni_trackball_set_rgbw(RGB_PURPLE, 0x00);
-        //   break;
-        // case _NUM:
-        //   pimoroni_trackball_set_rgbw(RGB_GOLDENROD, 0x00);
-        //   break;
-        case _GUI:
-            pimoroni_trackball_set_rgbw(RGB_TURQUOISE, 0x00);
-            break;
-        // case _DBG:
-        //   pimoroni_trackball_set_rgbw(RGB_SPRINGGREEN, 0x00);
-        //   break;
-        case _META:
-            pimoroni_trackball_set_rgbw(RGB_ORANGE, 0x00);
-            break;
-        default:
-            // if (is_caps_lock_on) {}
-            pimoroni_trackball_set_rgbw(RGB_BLACK, 0x00);
-            break;
-    }
-#endif
-    return update_tri_layer_state(state, _NAV, _SYM, _NUM);
-}
-
-#ifdef ENCODER_ENABLE
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    // default behavior if undefined
-    if (index == 0) {
-// Conditional to reverse the direction of encoder
-#    ifdef ENCODERS_A_REVERSE
-        if (!clockwise) {
-#    else
-        if (clockwise) {
-#    endif
-            switch (get_highest_layer(_state)) {
-                case _GUI:
-                    tap_code16(_TAB_R_);
-                    break;
-                case _SYM:
-                    tap_code16(_ALTTB_);
-                    break;
-                default:
-                    tap_code(KC_VOLU);
-                    break;
-            }
-        } else {
-            switch (get_highest_layer(_state)) {
-                case _GUI:
-                    tap_code16(_TAB_L_);
-                    break;
-                case _SYM:
-                    tap_code16(_LFTAT_);
-                    break;
-                default:
-                    tap_code(KC_VOLD);
-                    break;
-            }
-        }
-    } else if (index == 1) {
-// Conditional to reverse the direction of encoder
-#    ifdef ENCODERS_B_REVERSE
-        if (!clockwise) {
-#    else
-        if (clockwise) {
-#    endif
-
-            switch (get_highest_layer(_state)) {
-                case _NAV:
-                    tap_code(KC_PGDN);
-                    break;
-                case _META:
-                    tap_code16(_UNDO__);
-                    break;
-                default:
-                    tap_code(_BRUP__);
-                    break;
-            }
-        } else {
-            switch (get_highest_layer(_state)) {
-                case _NAV:
-                    tap_code(KC_PGUP);
-                    break;
-                case _META:
-                    tap_code16(_REDO__);
-                    break;
-                default:
-                    tap_code(_BRDWN_);
-                    break;
-            }
-        }
-    } else if (index == 3) {
-        // center feature
-    }
-
-    return true;
-}
-#endif
+// layer_state_t layer_state_set_user(layer_state_t state) {
+//     return update_tri_layer_state(state, _NAV, _SYM, _NUM);
+// }
 
 #ifdef PIMORONI_TRACKBALL_ENABLE
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
