@@ -19,3 +19,5 @@ ifeq ($(strip $(CUSTOM_SWAPPER_ENABLE)), yes)
 	SRC += ./features/swapper.c
 	OPT_DEFS += -DCUSTOM_SWAPPER_ENABLE
 endif
+
+SRC += ./features/swap_os.c

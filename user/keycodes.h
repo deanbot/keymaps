@@ -43,9 +43,10 @@ enum keycodes
   __OE___, // o umlaut
   __ZE___, // euro
 
-  // swapperw
+  // swappers
   _SWWIN_,
   _SWLNG_,
+  _SWOS__,
 
   // one shot
   _O_SFT_,

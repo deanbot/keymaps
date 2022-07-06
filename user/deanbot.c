@@ -130,6 +130,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 #endif
 
+    if (keycode == _SWOS__) {
+        if (record->event.pressed) {
+            update_os();
+            switch(current_os) {
+                case OS_OSX:
+                     SEND_STRING("osx");
+                     break;
+                case OS_WIN:
+                    SEND_STRING("win");
+                    break;
+                case OS_LINUX:
+                    SEND_STRING("linux");
+                    break;
+            }
+            return false;
+        }
+    }
+
     // TODO : replace send string with tap_code to save space
     switch (keycode) {
         #ifdef LEADER_ENABLE

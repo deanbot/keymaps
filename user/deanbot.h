@@ -16,3 +16,5 @@
 #ifdef CUSTOM_CAPS_WORD_ENABLE
 # include "features/caps_word.h"
 #endif
+
+#include "features/swap_os.h"
