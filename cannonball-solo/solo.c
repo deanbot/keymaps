@@ -11,7 +11,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // process window swapping
   #ifdef CUSTOM_SWAPPER_ENABLE
   // set swapper keycodes by current os
-  uint16_t cmdish = KC_LGUI;
+  uint16_t cmdish = KC_LALT; //KC_LGUI;
   uint16_t tabish = KC_TAB;
   bool processFurther = update_swapper(&sw_win_active, cmdish, tabish, _SWWIN_, keycode, record);
   if (!processFurther) {

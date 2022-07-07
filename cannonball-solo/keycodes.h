@@ -65,38 +65,38 @@ enum keycodes {
 #define _RESET_ RESET
 
 // gui
-#define _T_LFT_ KC_F17
-#define _T_RGT_ KC_F18
-#define __MAX__ LCTL(KC_F19)
-#define __HUD__ LCTL(KC_UP) // task view
+#define _T_LFT_ LGUI(KC_LEFT) //KC_F17
+#define _T_RGT_ LGUI(KC_RIGHT) //KC_F18
+#define __MAX__ LGUI(KC_UP) //LCTL(KC_F19)
+#define _HIDE__ LGUI(KC_DOWN) //LCMD(KC_H) // minimize
+#define __HUD__ LGUI(KC_TAB) //LCTL(KC_UP) // task view
 
 // workflow
-#define _COPY__ LCMD(KC_C)
-#define __CUT__ LCMD(KC_X)
-#define _UNDO__ LCMD(KC_Z)
-#define _PASTE_ LCMD(KC_V)
-#define _REDO__ LCMD(LSFT(KC_Z))
-#define _SAVE__ LCMD(KC_S)
+#define _COPY__ LCTL(KC_C) //LCMD(KC_C)
+#define __CUT__ LCTL(KC_X) //LCMD(KC_X)
+#define _UNDO__ LCTL(KC_Z) //LCMD(KC_Z)
+#define _PASTE_ LCTL(KC_V) //LCMD(KC_V)
+#define _REDO__ LCTL(KC_Y) //LCMD(LSFT(KC_Z))
+#define _SAVE__ LCTL(KC_S) //LCMD(KC_S)
 #define _STAB__ LSFT(KC_TAB) // shift tab
-#define _PRTRC_ LCMD(LSFT(KC_4)) // print region clipboard
-#define _BEGLN_ LCMD(KC_LEFT) // beginning of line
-#define _ENDLN_ LCMD(KC_RIGHT) // end of line
-#define _SEL_A_ LCMD(KC_A) // select all
+#define _PRTRC_ KC_PSCR //LCMD(LSFT(KC_4)) // print region clipboard
+#define _BEGLN_ KC_HOME //LCMD(KC_LEFT) // beginning of line
+#define _ENDLN_ KC_END //LCMD(KC_RIGHT) // end of line
+#define _SEL_A_ LCTL(KC_A) //LCMD(KC_A) // select all
 #define _TAB_L_ LCTL(KC_PGUP)
 #define _TAB_R_ LCTL(KC_PGDOWN)
-#define _N_TAB_ LCMD(KC_T) // new tab
-#define _RETAB_ LSFT(LCMD(KC_T)) // reopen window
-#define _CLOSE_ LCMD(KC_W) // close window
-#define _QUIT__ LCMD(KC_Q) // quit app
-#define _HIDE__ LCMD(KC_H) // minimize
-#define _ADDRS_ LCMD(KC_L) // select address bar
-#define _JUMP__ LCMD(KC_K) // slack jump
-#define _RFSH__ LCMD(KC_R) // browser refresh
-#define _BACK__ LCMD(KC_LBRACKET) // browser back
-#define __FWD__ LCMD(KC_RBRACKET) // browser forward
+#define _N_TAB_ LCTL(KC_T) //LCMD(KC_T) // new tab
+#define _RETAB_ LCTL(LSFT(KC_T)) //LSFT(LCMD(KC_T)) // reopen window
+#define _CLOSE_ LCTL(KC_W)) //LCMD(KC_W) // close window
+#define _QUIT__ LALT(KC_F4) //LCMD(KC_Q) // quit app
+#define _ADDRS_ LCTL(KC_L) //LCMD(KC_L) // select address bar
+#define _JUMP__ LCTL(KC_K) //LCMD(KC_K) // slack jump
+#define _RFSH__ LCTL(KC_R) //LCMD(KC_R) // browser refresh
+#define _BACK__ LALT(KC_LEFT) //LCMD(KC_LBRACKET) // browser back
+#define __FWD__ LALT(KC_RIGHT) //LCMD(KC_RBRACKET) // browser forward
 #define _ZOOMI_ LCMD(KC_PLUS) // zoom in
 #define _ZOOMO_ LCMD(KC_MINUS) // zoom out
 #define _ZOOMR_ LCMD(KC_0) // zoom reset
-#define _WD_L__ LOPT(KC_LEFT)
-#define _WD_R__ LOPT(KC_RIGHT)
-#define _INCOG_ LCMD(LSFT(KC_N))
+#define _WD_L__ LCTL(KC_LEFT) //LOPT(KC_LEFT)
+#define _WD_R__ LCTL(KC_RIGHT) //LOPT(KC_RIGHT)
+#define _INCOG_ LCTL(LSFT(KC_N)) //LCMD(LSFT(KC_N))
