@@ -20,11 +20,11 @@
   ),
 **/
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+cconst uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT(
 //---------+---------+---------+---------+---------|
              LT_P1__ , LT_P2__ , LT_P3__ , LT_P4__ ,
-   TG_P5__ , _PRTRC_ , __UP___ , __HUD__ ,
+   TG_P5__ , _PRTRC_ , __UP___ , _______ ,
              _LEFT__ , _DOWN__ , _RIGHT_ , LT_2U__ ,
 //---------+---------+---------+---------+---------|
    XXXXXXX , __VUP__ , _MUTE__ , _VDWN__ , XXXXXXX ,
@@ -34,8 +34,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [UTIL_1] = LAYOUT(
 //---------+---------+---------+---------+---------|
              _______ , _T_LFT_ , _T_RGT_ , __MAX__ ,
-   _______ , _______ , _______ , _ZOOMR_ ,
-             _______ , _______ , __HUD__ , _SWWIN_ ,
+   _______ , _______ , _HIDE__ , _ZOOMR_ ,
+             _______ , _QUIT__ , __HUD__ , _SWWIN_ ,
 //---------+---------+---------+---------+---------|
    XXXXXXX , _______ , _______ , _______ , XXXXXXX ,
    _______ , _______ , _______ , _______ , _ZOOMO_ , _ZOOMI_
@@ -43,9 +43,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [UTIL_2] = LAYOUT(
 //---------+---------+---------+---------+---------|
-             _HIDE__ , _______ , _TAB_L_ , _TAB_R_ ,
+             _ADDRS_ , _______ , _TAB_L_ , _TAB_R_ ,
    _______ , _______ , _______ , _______ ,
-             _N_TAB_ , _QUIT__  , _RETAB_ , _CLOSE_ ,
+             _N_TAB_ , _______ , _RETAB_ , _CLOSE_ ,
 //---------+---------+---------+---------+---------|
    XXXXXXX , _______ , _______ , _______ , XXXXXXX ,
    _______ , _______ , _______ , _______ , _TAB_L_ , _TAB_R_
@@ -63,8 +63,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [UTIL_4] = LAYOUT(
 //---------+---------+---------+---------+---------|
-             _ADDRS_ , _WD_L__ , _WD_R__ , _______ ,
-   _______ , _______ , _SEL_A_ , _______ ,
+             _SEL_A_ , _WD_L__ , _WD_R__ , _______ ,
+   _______ , _______ , _______ , _______ ,
              _BEGLN_ , _______ , _ENDLN_ , _LSHFT_ ,
 //---------+---------+---------+---------+---------|
    XXXXXXX , _______ , _______ , _______ , XXXXXXX ,
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              __ESC__ , _______ , _RFSH__ , _______ ,
 //---------+---------+---------+---------+---------|
    XXXXXXX , __FWD__ , _INCOG_ , _BACK__ , XXXXXXX ,
-   _BRDWN_ , _BRUP__ , _MWLFT_ , _MWRGT_ , _BACK__ , __FWD__
+   _BRDWN_ , _BRUP__ , _MWLFT_ , _MWRGT_ , _______ , _______
 //---------+---------+---------+---------+---------|---------//
   )
-};
+);
