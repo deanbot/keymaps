@@ -273,6 +273,7 @@ enum keycodes
 #define _DEL_L_ LCMD(KC_DELETE)
 #define _BEGLN_ LCMD(KC_LEFT)
 #define _ENDLN_ LCMD(KC_RIGHT)
+#define _SEL_A_ LCMD(KC_A)
 #define __TOP__ LCMD(KC_UP)
 #define __BTM__ LCMD(KC_DOWN)
 #define __HUD__ LCTL(KC_UP)

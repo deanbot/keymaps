@@ -14,9 +14,9 @@ swap_os get_next_os(swap_os os) {
       next_os = OS_WIN;
       break;
     case OS_WIN:
-      next_os = OS_LINUX;
+      next_os = OS_UBU;
       break;
-    case OS_LINUX:
+    case OS_UBU:
       next_os = OS_OSX;
       break;
   }

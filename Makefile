@@ -13,6 +13,12 @@ cannonball: setup
 
 	qmk flash -kb tarohayashi/cannonball -km deanbot
 
+cannonball-solo: setup
+
+	cd qmk_firmware; qmk lint -kb tarohayashi/cannonball -km solo --strict
+
+	qmk flash -kb tarohayashi/cannonball -km solo
+
 ferris: setup
 
 	cd qmk_firmware; qmk lint -kb ferris/0_2/bling -km deanbot --strict
@@ -32,6 +38,7 @@ setup: install
 	test -L ./qmk_firmware/keyboards/ferris/keymaps/deanbot || ln -s $(shell pwd)/ferris ./qmk_firmware/keyboards/ferris/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/fingerpunch/ffkb/keymaps/deanbot || ln -s $(shell pwd)/ffkb ./qmk_firmware/keyboards/fingerpunch/ffkb/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot || ln -s $(shell pwd)/cannonball ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot
+	test -L ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo || ln -s $(shell pwd)/cannonball-solo ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo
 
 install:
 	# init submodule
