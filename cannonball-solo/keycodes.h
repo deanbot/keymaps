@@ -87,7 +87,7 @@ enum keycodes {
 #define _TAB_R_ LCTL(KC_PGDOWN)
 #define _N_TAB_ LCTL(KC_T) //LCMD(KC_T) // new tab
 #define _RETAB_ LCTL(LSFT(KC_T)) //LSFT(LCMD(KC_T)) // reopen window
-#define _CLOSE_ LCTL(KC_W)) //LCMD(KC_W) // close window
+#define _CLOSE_ LCTL(KC_W) //LCMD(KC_W) // close window
 #define _QUIT__ LALT(KC_F4) //LCMD(KC_Q) // quit app
 #define _ADDRS_ LCTL(KC_L) //LCMD(KC_L) // select address bar
 #define _JUMP__ LCTL(KC_K) //LCMD(KC_K) // slack jump

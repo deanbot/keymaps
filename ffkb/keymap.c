@@ -121,43 +121,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-layer_state_t _state;
-layer_state_t layer_state_set_user(layer_state_t state) {
-    // cache state for encoder handler
-    _state = state;
-    // https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md#colors
-#if !defined(RGBLIGHT_ENABLE) && defined(PIMORONI_TRACKBALL_ENABLE)
-    switch (get_highest_layer(state)) {
-        // case _MIR:
-        //   pimoroni_trackball_set_rgbw(RGB_CYAN, 0x00);
-        //   break;
-        // case _NAV:
-        //   pimoroni_trackball_set_rgbw(RGB_GREEN, 0x00);
-        //   break;
-        // case _SYM:
-        //   pimoroni_trackball_set_rgbw(RGB_PURPLE, 0x00);
-        //   break;
-        // case _NUM:
-        //   pimoroni_trackball_set_rgbw(RGB_GOLDENROD, 0x00);
-        //   break;
-        case _GUI:
-            pimoroni_trackball_set_rgbw(RGB_TURQUOISE, 0x00);
-            break;
-        // case _DBG:
-        //   pimoroni_trackball_set_rgbw(RGB_SPRINGGREEN, 0x00);
-        //   break;
-        case _META:
-            pimoroni_trackball_set_rgbw(RGB_ORANGE, 0x00);
-            break;
-        default:
-            // if (is_caps_lock_on) {}
-            pimoroni_trackball_set_rgbw(RGB_BLACK, 0x00);
-            break;
-    }
-#endif
-    return update_tri_layer_state(state, _NAV, _SYM, _NUM);
-}
-
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
     // default behavior if undefined
@@ -170,7 +133,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 #endif
             switch (get_highest_layer(_state)) {
                 case _GUI:
-                    tap_code16(_TAB_R_);
+                    tap_code16(_MWDWN_);
                     break;
                 case _SYM:
                     tap_code16(_ALTTB_);
@@ -182,7 +145,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         } else {
             switch (get_highest_layer(_state)) {
                 case _GUI:
-                    tap_code16(_TAB_L_);
+                    tap_code16(_MWUP__);
                     break;
                 case _SYM:
                     tap_code16(_LFTAT_);
@@ -231,3 +194,41 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return true;
 }
 #endif
+
+
+layer_state_t _state;
+layer_state_t layer_state_set_user(layer_state_t state) {
+    // cache state for encoder handler
+    _state = state;
+    // https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md#colors
+#if !defined(RGBLIGHT_ENABLE) && defined(PIMORONI_TRACKBALL_ENABLE)
+    switch (get_highest_layer(state)) {
+        // case _MIR:
+        //   pimoroni_trackball_set_rgbw(RGB_CYAN, 0x00);
+        //   break;
+        // case _NAV:
+        //   pimoroni_trackball_set_rgbw(RGB_GREEN, 0x00);
+        //   break;
+        // case _SYM:
+        //   pimoroni_trackball_set_rgbw(RGB_PURPLE, 0x00);
+        //   break;
+        // case _NUM:
+        //   pimoroni_trackball_set_rgbw(RGB_GOLDENROD, 0x00);
+        //   break;
+        case _GUI:
+            pimoroni_trackball_set_rgbw(RGB_TURQUOISE, 0x00);
+            break;
+        // case _DBG:
+        //   pimoroni_trackball_set_rgbw(RGB_SPRINGGREEN, 0x00);
+        //   break;
+        case _META:
+            pimoroni_trackball_set_rgbw(RGB_ORANGE, 0x00);
+            break;
+        default:
+            // if (is_caps_lock_on) {}
+            pimoroni_trackball_set_rgbw(RGB_BLACK, 0x00);
+            break;
+    }
+#endif
+    return update_tri_layer_state(state, _NAV, _SYM, _NUM);
+}

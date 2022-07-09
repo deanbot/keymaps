@@ -20,7 +20,7 @@
   ),
 **/
 
-cconst uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT(
 //---------+---------+---------+---------+---------|
              LT_P1__ , LT_P2__ , LT_P3__ , LT_P4__ ,
@@ -91,4 +91,4 @@ cconst uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    _BRDWN_ , _BRUP__ , _MWLFT_ , _MWRGT_ , _______ , _______
 //---------+---------+---------+---------+---------|---------//
   )
-);
+};
