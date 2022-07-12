@@ -79,6 +79,7 @@ enum keycodes {
 #define _REDO__ LCTL(KC_Y) //LCMD(LSFT(KC_Z))
 #define _SAVE__ LCTL(KC_S) //LCMD(KC_S)
 #define _STAB__ LSFT(KC_TAB) // shift tab
+#define _FIND__ LCTL(KC_F) //LCMD(KC_F)
 #define _PRTRC_ KC_PSCR //LCMD(LSFT(KC_4)) // print region clipboard
 #define _BEGLN_ KC_HOME //LCMD(KC_LEFT) // beginning of line
 #define _ENDLN_ KC_END //LCMD(KC_RIGHT) // end of line

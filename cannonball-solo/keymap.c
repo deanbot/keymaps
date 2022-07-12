@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT(
 //---------+---------+---------+---------+---------|
              LT_P1__ , LT_P2__ , LT_P3__ , LT_P4__ ,
-   TG_P5__ , _PRTRC_ , __UP___ , _______ ,
+   TG_P5__ , _PRTRC_ , __UP___ , _FIND__ ,
              _LEFT__ , _DOWN__ , _RIGHT_ , LT_2U__ ,
 //---------+---------+---------+---------+---------|
    XXXXXXX , __VUP__ , _MUTE__ , _VDWN__ , XXXXXXX ,
