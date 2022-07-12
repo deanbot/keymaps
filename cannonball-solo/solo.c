@@ -27,10 +27,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case LT_P2__:
       if (record->event.pressed && record->tap.count) {
         // osx
-        SEND_STRING(SS_LCMD(SS_TAP(X_UP)));
+        // SEND_STRING(SS_LCMD(SS_TAP(X_UP)));
 
         // win
-        // SEND_STRING(SS_GUI(SS_TAP(X_HOME)));
+        SEND_STRING(SS_GUI(SS_TAP(X_HOME)));
         return false;
       }
       break;
@@ -39,10 +39,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case LT_P3__:
       if (record->event.pressed && record->tap.count) {
         // osx
-        SEND_STRING(SS_LCMD(SS_TAP(X_DOWN)));
+        // SEND_STRING(SS_LCMD(SS_TAP(X_DOWN)));
 
         // win
-        // SEND_STRING(SS_GUI(SS_TAP(X_END)));
+        SEND_STRING(SS_GUI(SS_TAP(X_END)));
         return false;
       }
       break;
