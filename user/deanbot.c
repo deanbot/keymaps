@@ -17,8 +17,6 @@ bool is_oneshot_modifier_cancel_key(uint16_t keycode) {
         case _MMETA_:
         case __RPT__:
         case _CAPSW_:
-        case KC_BSPC:
-        case __ESC__:
             return true;
         default:
             return false;

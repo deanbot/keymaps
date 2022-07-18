@@ -1,9 +1,8 @@
 .PHONY: ffkb
 
-# qmk lint -kb fingerpunch/ffkb/pimoroni_evq -km deanbot --strict
 ffkb: setup
 
-	cd qmk_firmware;
+	cd qmk_firmware; qmk lint -kb fingerpunch/ffkb/pimoroni_evq -km deanbot --strict;
 
 	qmk flash -kb fingerpunch/ffkb/pimoroni_evq -km deanbot
 
