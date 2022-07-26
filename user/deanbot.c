@@ -165,6 +165,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         #endif
 
+        case _USRPW_:
+            if (record->event.pressed) {
+                SEND_STRING("user" SS_TAP(X_TAB) "pass" SS_TAP(X_ENTER));
+            }
+            return false;
+            break;
+
         // bottom/top in LT
         case LT(UTIL_2, KC_F15):
             if (record->event.pressed && record->tap.count) {

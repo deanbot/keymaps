@@ -71,6 +71,8 @@ enum keycodes
 
   // pimoroni scroll
   _PSCRL_,
+
+  _USRPW_,
 };
 
 #define _LEADF_ KC_F22
