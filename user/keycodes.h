@@ -46,7 +46,6 @@ enum keycodes
   // swappers
   _SWWIN_,
   _SWLNG_,
-  _SWOS__,
 
   // one shot
   _O_SFT_,

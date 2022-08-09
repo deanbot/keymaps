@@ -96,11 +96,6 @@ void matrix_scan_user(void) {
 }
 #endif
 
-// current os
-//
-// set to desired os
-// uint8_t current_os = OS_OSX;
-
 #ifdef CUSTOM_SWAPPER_ENABLE
 bool sw_win_active  = false;
 bool sw_lang_active = false;
@@ -132,27 +127,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 #endif
-
-    // process os swapping
-    if (keycode == _SWOS__) {
-        if (record->event.pressed) {
-            update_os();
-            // remove
-            switch(current_os) {
-                case OS_OSX:
-                     SEND_STRING("osx");
-                     break;
-                case OS_WIN:
-                    SEND_STRING("win");
-                    break;
-                case OS_UBU:
-                    SEND_STRING("ubuntu");
-                    break;
-            }
-            return false;
-        }
-    }
-
 
     // TODO : replace send string with tap_code to save space
     switch (keycode) {

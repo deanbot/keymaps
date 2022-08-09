@@ -8,6 +8,7 @@ Supported keyboards:
 - [ferris](https://github.com/qmk/qmk_firmware/tree/master/keyboards/naked48)
 - [ffkb](https://github.com/sadekbaroudi/qmk_firmware/tree/master/keyboards/fingerpunch/ffkb)
 - [cannonball](https://github.com/Taro-Hayashi/qmk_firmware/tree/tarohayashi/keyboards/tarohayashi/cannonball)
+- oxymoroon
 
 # Install
 

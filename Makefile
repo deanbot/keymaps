@@ -1,4 +1,4 @@
-.PHONY: ffkb
+i.PHONY: ffkb
 
 ffkb: setup
 
@@ -17,6 +17,12 @@ cannonball-solo: setup
 	cd qmk_firmware; qmk lint -kb tarohayashi/cannonball -km solo --strict
 
 	qmk flash -kb tarohayashi/cannonball -km solo
+
+oxymoron: setup
+
+	cd qmk_firmware; qmk lint -kb rainkeebs/oxymoron -km deanbot --strict
+
+	qmk flash -kb rainkeebs/oxymoron -km default
 
 ferris: setup
 
@@ -38,6 +44,7 @@ setup: install
 	test -L ./qmk_firmware/keyboards/fingerpunch/ffkb/keymaps/deanbot || ln -s $(shell pwd)/ffkb ./qmk_firmware/keyboards/fingerpunch/ffkb/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot || ln -s $(shell pwd)/cannonball ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo || ln -s $(shell pwd)/cannonball-solo ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo
+	test -L ./qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot || ln -s $(shell pwd)/oxymoron ./qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot
 
 install:
 	# init submodule
@@ -50,6 +57,7 @@ unlink:
 	rm ./qmk_firmware/keyboards/ferris/keymaps/deanbot
 	rm -rf ./qmk_firmware/keyboards/tarohayashi/
 	rm -rf ./qmk_firmware/keyboards/fingerpunch/
+	rm -rf ./qmk_firmware/keyboards/rainkeebs/oxymoron
 
 clean:
 	rm -rf obj_*
