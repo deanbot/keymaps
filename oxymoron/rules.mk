@@ -2,7 +2,6 @@
 # SPLIT_KEYBOARD = no
 
 # reduce filesize
-COMMAND_ENABLE = no
 EXTRAFLAGS += -flto
 
 # Disable unused features
