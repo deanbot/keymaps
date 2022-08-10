@@ -1,45 +1,84 @@
 #include QMK_KEYBOARD_H
 
 #include "deanbot.h"
+
 #ifdef COMBO_ENABLE
 #include "g/keymap_combo.h"
 #endif
 
+/**
+  [VOID] = LAYOUT(
+//---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------//
+   _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ ,
+   _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ ,
+   _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ ,
+   _______ , _______ , _______ ,      _______      ,      _______      , _______ , _______ , _______ , _______
+//---------+---------+---------+----*----+----*----+----*----+----*----+---------+---------+---------+---------//
+),
+**/
+
+#define LAYOUT_oxy(...)       LAYOUT(__VA_ARGS__)
+
+#define BLANKx_ _______ , _______
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0] = LAYOUT(
-        KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-        KC_TAB,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,    KC_ENT,
-        KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM,    KC_DOT,    KC_SLSH,    KC_RSFT,
-        KC_LCTL,    KC_LALT,    KC_LGUI,    MO(1),    KC_SPC,    MO(2),    KC_RGUI,    KC_RALT,    KC_RCTRL
-    ),
 
-    [1] = LAYOUT(
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
-    ),
-
-    [2] = LAYOUT(
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
-    ),
-
-    [3] = LAYOUT(
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
-    )
+[_BASE] = LAYOUT_oxy(
+//---------+---------+---------+---------+---------+---------+---------//
+   __ESC__ ,           BASE_L1 , BASE_R1 ,                     _ENTER_ ,
+   _BKSPC_ ,           BASE_L2 , BASE_R2 ,                     _______ ,
+   _O_ALT_ ,           BASE_L3 , _______ , BASE_R3                     ,
+   __HUD__ , BASExLT , BASEx_L , BASEx_R , _TAB_L_ , _TAB_R_ , _TMSMU_
+//---------+---------+---------+----*----+----*----+----*----+----*----//
+),
+[_NAV] = LAYOUT_oxy(
+//---------+---------+---------+---------+---------+---------+---------//
+   _______ ,           NAV__L1 , NAV__R1 ,                     _______ ,
+   _______ ,           NAV__L2 , NAV__R2 ,                     _______ ,
+   _______ ,           NAV__L3 , _______ , NAV__R3                     ,
+   _______ , NAVx_LT , NAVx__L , NAVx__R , _______ , _______ , _______
+//---------+---------+---------+----*----+----*----+----*----+----*----//
+),
+[_SYM] = LAYOUT_oxy(
+//---------+---------+---------+---------+---------+---------+---------//
+   _______ ,           SYM__L1 , SYM__R1 ,                     _______ ,
+   _______ ,           SYM__L2 , SYM__R2 ,                     _______ ,
+   _______ ,           SYM__L3 , _______ , SYM__R3                     ,
+   _______ , SYMx_LT , SYMx__L , SYMx__R , _______ , _______ , _______
+//---------+---------+---------+----*----+----*----+----*----+----*----//
+),
+[_NUM] = LAYOUT_oxy(
+//---------+---------+---------+---------+---------+---------+---------//
+   _______ ,           NUM__L1 , NUM__R1 ,                     _______ ,
+   _______ ,           NUM__L2 , NUM__R2 ,                     _______ ,
+   _______ ,           NUM__L3 , _______ , NUM__R3                     ,
+   _______ , _______ , BLANKx_ , BLANKx_ , _______ , _______ , _______
+//---------+---------+---------+----*----+----*----+----*----+----*----//
+),
+[_GUI] = LAYOUT_oxy(
+//---------+---------+---------+---------+---------+---------+---------//
+   _______ ,           GUI__L1 , GUI__R1 ,                     _______ ,
+   _______ ,           GUI__L2 , GUI__R2 ,                     _______ ,
+   _______ ,           GUI__L3 , _______ , GUI__R3                     ,
+   _______ , GUIx_LT , GUIx__L , GUIx__R , _______ , _______ , _______
+//---------+---------+---------+----*----+----*----+----*----+----*----//
+),
+[_META] = LAYOUT_oxy(
+//---------+---------+---------+---------+---------+---------+---------//
+   _______ ,           META_L1 , META_R1 ,                     _______ ,
+   _______ ,           META_L2 , META_R2 ,                     _______ ,
+   _______ ,           META_L3 , _______ , META_R3                     ,
+   _______ , _______ , BLANKx_ , BLANKx_ , _______ , _______ , _______
+//---------+---------+---------+----*----+----*----+----*----+----*----//
+),
+    // [0] = LAYOUT_oxy(
+    //     KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+    //     KC_TAB,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,    KC_ENT,
+    //     KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM,    KC_DOT,    KC_SLSH,    KC_RSFT,
+    //     KC_LCTL,    KC_LALT,    KC_LGUI,    MO(1),    KC_SPC,    MO(2),    KC_RGUI,    KC_RALT,    KC_RCTRL
+    // ),
 };
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-        if (clockwise) {
-            tap_code_delay(KC_VOLU, 10);
-        } else {
-            tap_code_delay(KC_VOLD, 10);
-        }
     return false;
 }

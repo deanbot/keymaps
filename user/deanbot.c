@@ -2,12 +2,6 @@
 
 #include "deanbot.h"
 
-#ifdef PIMORONI_TRACKBALL_ENABLE
-#    include "color.h"
-#    include "drivers/sensors/pimoroni_trackball.h"
-#    include "pointing_device.h"
-#endif
-
 #ifdef CUSTOM_ONESHOT_ENABLE
 
 bool is_oneshot_modifier_cancel_key(uint16_t keycode) {
@@ -58,9 +52,6 @@ void matrix_scan_user(void) {
         SEQ_TWO_KEYS(KC_P, KC_W) {
             SEND_STRING("Myp@ssword1");
         }
-        SEQ_TWO_KEYS(KC_R, KC_E) {
-            SEND_STRING("required ");
-        }
         SEQ_ONE_KEY(KC_F) {
             SEND_STRING("feature/MOBL-");
             // TODO : trigger numword
@@ -68,29 +59,8 @@ void matrix_scan_user(void) {
         SEQ_ONE_KEY(KC_G) {
             SEND_STRING("gf; git pull;");
         }
-
         SEQ_ONE_KEY(KC_C) {
             tap_code16(LSFT(_CENTR_));
-        }
-        SEQ_TWO_KEYS(KC_D, KC_E) {
-            SEND_STRING("development" SS_TAP(X_ENTER));
-        }
-        SEQ_ONE_KEY(KC_I) {
-            SEND_STRING("tool/install.sh" SS_TAP(X_ENTER));
-        }
-        SEQ_TWO_KEYS(KC_I, KC_I) {
-            SEND_STRING("tool/build_generated.sh" SS_TAP(X_ENTER));
-        }
-        SEQ_TWO_KEYS(KC_D, KC_M) {
-            SEND_STRING("final Widget child;");
-        }
-        SEQ_TWO_KEYS(KC_D, KC_I) {
-            SEND_STRING(" required this.child, ");
-            tap_code16(_FORMA_);
-        }
-        SEQ_TWO_KEYS(KC_D, KC_DOT) {
-            SEND_STRING("child: child, ");
-            tap_code16(_FORMA_);
         }
     }
 }
@@ -106,39 +76,27 @@ bool pimoroni_scroll = true;
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-#ifdef CONSOLE_ENABLE
+    #ifdef CONSOLE_ENABLE
     if (record->event.pressed) {
         uprintf("0x%04X,%u,%u,%u\n", keycode, record->event.key.row, record->event.key.col, get_highest_layer(layer_state));
     }
-#endif
+    #endif
 
-#ifdef CUSTOM_SWAPPER_ENABLE
-    if (keycode == _ALTTB_ || keycode == _LFTAT_) {
-        update_swapper(&sw_win_active, KC_LCMD, KC_TAB, _SWWIN_, _SWWIN_, record);
-    } else {
+    #ifdef CUSTOM_SWAPPER_ENABLE
+    if (keycode == _ALTTB_) {
         update_swapper(&sw_win_active, KC_LCMD, KC_TAB, _SWWIN_, keycode, record);
+        return false;
     }
-    // update_swapper(&sw_lang_active, KC_LSHIFT, KC_LOPT, _SWLNG_, keycode,
-    // record);
-#endif
+    #endif
 
-#ifdef CUSTOM_REPEAT_ENABLE
+    #ifdef CUSTOM_REPEAT_ENABLE
     if (!process_repeat_last_key(keycode, record, __RPT__, _MONAV_)) {
         return false;
     }
-#endif
+    #endif
 
     // TODO : replace send string with tap_code to save space
     switch (keycode) {
-        #ifdef LEADER_ENABLE
-        case _L_MIR_:
-            if (record->event.pressed && record->tap.count) {
-                qk_leader_start();
-                return false;
-            }
-            break;
-        #endif
-
         case _USRPW_:
             if (record->event.pressed) {
                 SEND_STRING("user" SS_TAP(X_TAB) "pass" SS_TAP(X_ENTER));
@@ -146,7 +104,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
             break;
 
-        // bottom/top in LT
+        // cannonball bottom/top in LT
         case LT(UTIL_2, KC_F15):
             if (record->event.pressed && record->tap.count) {
                 SEND_STRING(SS_LCMD(SS_TAP(X_UP)));
@@ -166,7 +124,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING(SS_LCMD(SS_TAP(X_RIGHT)) SS_LCMD(SS_TAP(X_LEFT)) SS_LSFT(SS_LCMD(SS_TAP(X_RIGHT))));
             }
             return false;
-
+            break;
 
         // ${} then tap left
         case _STRIN_:
@@ -174,6 +132,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("${}" SS_TAP(X_LEFT));
             }
             return false;
+            break;
 
         // <> then tap left
         case _TYPE__:
@@ -181,6 +140,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("<>" SS_TAP(X_LEFT));
             }
             return false;
+            break;
 
         // =>
         case _ARROW_:
@@ -188,12 +148,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("=> ");
             }
             return false;
+            break;
 
         case __SS___:
             if (record->event.pressed) {
                 SEND_STRING(SS_LALT("s"));
             }
             return false;
+            break;
 
         case __UE___:
             if (record->event.pressed) {
@@ -205,6 +167,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return false;
+            break;
 
         case __OE___:
             if (record->event.pressed) {
@@ -216,6 +179,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return false;
+            break;
 
         case __AE___:
             if (record->event.pressed) {
@@ -227,12 +191,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return false;
+            break;
 
         case __ZE___:
             if (record->event.pressed) {
                 SEND_STRING(SS_LALT(SS_LSFT("2")));
             }
             return false;
+            break;
 
         // open discord
         case _DISCO_:
@@ -240,6 +206,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "disc" SS_DELAY(100) SS_TAP(X_ENTER));
             }
             return false;
+            break;
 
         // open slack
         case _SLACK_:
@@ -247,42 +214,49 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "sla" SS_DELAY(100) SS_TAP(X_ENTER));
             }
             return false;
+            break;
 
         case _TEAMS_:
             if (record->event.pressed) {
                 SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "tea" SS_DELAY(100) SS_TAP(X_ENTER));
             }
             return false;
+            break;
 
         case _OUTLK_:
             if (record->event.pressed) {
                 SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "out" SS_DELAY(100) SS_TAP(X_ENTER));
             }
             return false;
+            break;
 
         case _MUSIC_:
             if (record->event.pressed) {
                 SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "mus" SS_DELAY(100) SS_TAP(X_ENTER));
             }
             return false;
+            break;
 
         case _VSCDE_:
             if (record->event.pressed) {
                 SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "vsc" SS_DELAY(100) SS_TAP(X_ENTER));
             }
             return false;
+            break;
 
         case _ANDST_:
             if (record->event.pressed) {
                 SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "and" SS_DELAY(100) SS_TAP(X_ENTER));
             }
             return false;
+            break;
 
         case _BRWSR_:
             if (record->event.pressed) {
                 SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "edg" SS_DELAY(100) SS_TAP(X_ENTER));
             }
             return false;
+            break;
 
         // double click
         case _MB1X2_:
@@ -293,65 +267,68 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_code(KC_MS_BTN1);
             }
             return false;
+            break;
 
-#ifdef CUSTOM_CAPS_WORD_ENABLE
+        #ifdef CUSTOM_CAPS_WORD_ENABLE
         case _CAPSW_:
             if (record->event.pressed) {
             } else {
                 caps_word_toggle();
             }
             return false;
-#endif
+            break;
+        #endif
 
-#ifdef PIMORONI_TRACKBALL_ENABLE
+        #ifdef PIMORONI_TRACKBALL_ENABLE
         // pimoroni toggle scroll
         case _PSCRL_:
             if (record->event.pressed) {
             } else {
                 pimoroni_scroll = !pimoroni_scroll;
             }
-            return true;
-#endif
+            return false;
+            break;
+        #endif
 
         // letting go of nav doesn't unregister
-        case _C_MB1_:
-            if (record->event.pressed) {
-                register_code(KC_MS_BTN1);
-            } else {
-                unregister_code(KC_MS_BTN1);
-            }
-            return false;
-        case _C_MB2_:
-            if (record->event.pressed) {
-                register_code(KC_MS_BTN2);
-            } else {
-                unregister_code(KC_MS_BTN2);
-            }
-            return false;
-        case _C_MWD_:
-            if (record->event.pressed) {
-                register_code(KC_MS_WH_DOWN);
-            } else {
-                unregister_code(KC_MS_WH_DOWN);
-            }
-            return false;
-        case _C_MWU_:
-            if (record->event.pressed) {
-                register_code(KC_MS_WH_UP);
-            } else {
-                unregister_code(KC_MS_WH_UP);
-            }
-            return false;
+        // case _C_MB1_:
+        //     if (record->event.pressed) {
+        //         register_code(KC_MS_BTN1);
+        //     } else {
+        //         unregister_code(KC_MS_BTN1);
+        //     }
+        //     return false;
+        // case _C_MB2_:
+        //     if (record->event.pressed) {
+        //         register_code(KC_MS_BTN2);
+        //     } else {
+        //         unregister_code(KC_MS_BTN2);
+        //     }
+        //     return false;
+        // case _C_MWD_:
+        //     if (record->event.pressed) {
+        //         register_code(KC_MS_WH_DOWN);
+        //     } else {
+        //         unregister_code(KC_MS_WH_DOWN);
+        //     }
+        //     return false;
+        // case _C_MWU_:
+        //     if (record->event.pressed) {
+        //         register_code(KC_MS_WH_UP);
+        //     } else {
+        //         unregister_code(KC_MS_WH_UP);
+        //     }
+        //     return false;
     }
 
-#ifdef CUSTOM_CAPS_WORD_ENABLE
+    #ifdef CUSTOM_CAPS_WORD_ENABLE
     process_caps_word(keycode, record);
-#endif
+    #endif
 
-#ifdef CUSTOM_ONESHOT_ENABLE
+    #ifdef CUSTOM_ONESHOT_ENABLE
     int8_t keycode_consumed = 0;
     keycode_consumed += update_oneshot_modifiers(keycode, record, keycode_consumed);
-#endif
+    #endif
 
     return true;
 }

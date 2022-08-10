@@ -2,8 +2,8 @@
 # SPLIT_KEYBOARD = no
 
 # reduce filesize
-# COMMAND_ENABLE = no
-# EXTRAFLAGS += -flto
+COMMAND_ENABLE = no
+EXTRAFLAGS += -flto
 
 # Disable unused features
 CONSOLE_ENABLE = no
@@ -14,7 +14,6 @@ STENO_ENABLE = no
 COMMAND_ENABLE = no
 TERMINAL_ENABLE = no
 KEY_LOCK_ENABLE = no
-BOOTMAGIC_ENABLE = no
 SLEEP_LED_ENABLE = no
 TAP_DANCE_ENABLE = no
 VELOCIKEY_ENABLE = no

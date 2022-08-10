@@ -22,7 +22,7 @@ oxymoron: setup
 
 	cd qmk_firmware; qmk lint -kb rainkeebs/oxymoron -km deanbot --strict
 
-	qmk flash -kb rainkeebs/oxymoron -km default
+	qmk flash -kb rainkeebs/oxymoron -km deanbot
 
 ferris: setup
 

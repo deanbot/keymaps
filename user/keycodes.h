@@ -63,10 +63,10 @@ enum keycodes
   _MB1X2_,
 
   // mousekey combos
-  _C_MB1_,
-  _C_MB2_,
-  _C_MWU_,
-  _C_MWD_,
+  // _C_MB1_,
+  // _C_MB2_,
+  // _C_MWU_,
+  // _C_MWD_,
 
   // pimoroni scroll
   _PSCRL_,
@@ -231,7 +231,6 @@ enum keycodes
 #define _RESET_ RESET
 
 #define _ALTTB_ KC_F15 // alt tab
-#define _LFTAT_ LSFT(KC_F15) // left alt tab
 
 // gui
 #define _T_LFT_ KC_F17
