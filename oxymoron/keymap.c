@@ -25,9 +25,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT_oxy(
 //---------+---------+---------+---------+---------+---------+---------//
-   __ESC__ ,           BASE_L1 , BASE_R1 ,                     _ENTER_ ,
+   __TAB__ ,           BASE_L1 , BASE_R1 ,                     _ENTER_ ,
    _BKSPC_ ,           BASE_L2 , BASE_R2 ,                     _______ ,
-   _O_ALT_ ,           BASE_L3 , _______ , BASE_R3                     ,
+   BASExRT ,           BASE_L3 , BASExLT , BASE_R3                     ,
    __HUD__ , BASExLT , BASEx_L , BASEx_R , _TAB_L_ , _TAB_R_ , _TMSMU_
 //---------+---------+---------+----*----+----*----+----*----+----*----//
 ),

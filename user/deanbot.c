@@ -83,10 +83,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     #endif
 
     #ifdef CUSTOM_SWAPPER_ENABLE
-    if (keycode == _ALTTB_) {
-        update_swapper(&sw_win_active, KC_LCMD, KC_TAB, _SWWIN_, keycode, record);
-        return false;
-    }
+    update_swapper(&sw_win_active, KC_LCMD, KC_TAB, _SWWIN_, keycode, record);
     #endif
 
     #ifdef CUSTOM_REPEAT_ENABLE
