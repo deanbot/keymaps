@@ -26,9 +26,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT_oxy(
 //---------+---------+---------+---------+---------+---------+---------//
    __TAB__ ,           BASE_L1 , BASE_R1 ,                     _ENTER_ ,
-   _BKSPC_ ,           BASE_L2 , BASE_R2 ,                     _______ ,
-   BASExRT ,           BASE_L3 , BASExLT , BASE_R3                     ,
-   __HUD__ , BASExLT , BASEx_L , BASEx_R , _TAB_L_ , _TAB_R_ , _TMSMU_
+   _LEAD__ ,           BASE_L2 , BASE_R2 ,                     _______ ,
+   BASExRT ,           BASE_L3 , __RPT__ , BASE_R3                     ,
+   __MB2__ , BASExLT , BASEx_L , BASEx_R , _VDWN__ , __VUP__ , _TMSMU_
 //---------+---------+---------+----*----+----*----+----*----+----*----//
 ),
 [_NAV] = LAYOUT_oxy(
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    _______ ,           NAV__L1 , NAV__R1 ,                     _______ ,
    _______ ,           NAV__L2 , NAV__R2 ,                     _______ ,
    _______ ,           NAV__L3 , _______ , NAV__R3                     ,
-   _______ , NAVx_LT , NAVx__L , NAVx__R , _______ , _______ , _______
+   _______ , NAVx_LT , NAVx__L , NAVx__R , __PRV__ , __NXT__ , _______
 //---------+---------+---------+----*----+----*----+----*----+----*----//
 ),
 [_SYM] = LAYOUT_oxy(
@@ -68,6 +68,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    _______ ,           META_L1 , META_R1 ,                     _______ ,
    _______ ,           META_L2 , META_R2 ,                     _______ ,
    _______ ,           META_L3 , _______ , META_R3                     ,
+   _______ , _______ , BLANKx_ , BLANKx_ , _BRDWN_ , _BRUP__ , _______
+//---------+---------+---------+----*----+----*----+----*----+----*----//
+),
+[_DBG] = LAYOUT_oxy(
+//---------+---------+---------+---------+---------+---------+---------//
+   _______ ,           DBG__L1 , DBG__R1 ,                     _______ ,
+   _______ ,           DBG__L2 , DBG__R2 ,                     _______ ,
+   _______ ,           DBG__L3 , _______ , DBG__R3                     ,
    _______ , _______ , BLANKx_ , BLANKx_ , _______ , _______ , _______
 //---------+---------+---------+----*----+----*----+----*----+----*----//
 ),
