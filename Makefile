@@ -1,4 +1,10 @@
-i.PHONY: ffkb
+.PHONY: ffkb
+
+sweeeeep: setup
+
+	cd qmk_firmware; qmk lint -kb fingerpunch/sweeeeep/rgblight_oled -km deanbot --strict
+
+	qmk flash -kb sweeeeep -km deanbot
 
 ffkb: setup
 
@@ -42,6 +48,7 @@ setup: install
 	test -L ./qmk_firmware/keyboards/naked48/keymaps/deanbot || ln -s $(shell pwd)/naked48 ./qmk_firmware/keyboards/naked48/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/ferris/keymaps/deanbot || ln -s $(shell pwd)/ferris ./qmk_firmware/keyboards/ferris/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/fingerpunch/ffkb/keymaps/deanbot || ln -s $(shell pwd)/ffkb ./qmk_firmware/keyboards/fingerpunch/ffkb/keymaps/deanbot
+	test -L ./qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot || ln -s $(shell pwd)/sweeeeep ./qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot || ln -s $(shell pwd)/cannonball ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo || ln -s $(shell pwd)/cannonball-solo ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo
 	test -L ./qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot || ln -s $(shell pwd)/oxymoron ./qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot
@@ -52,12 +59,12 @@ install:
 	./local-install.sh
 
 unlink:
-	rm ./qmk_firmware/users/deanbot
-	rm ./qmk_firmware/keyboards/naked48/keymaps/deanbot
-	rm ./qmk_firmware/keyboards/ferris/keymaps/deanbot
 	rm -rf ./qmk_firmware/keyboards/tarohayashi/
 	rm -rf ./qmk_firmware/keyboards/fingerpunch/
 	rm -rf ./qmk_firmware/keyboards/rainkeebs/oxymoron
+	rm ./qmk_firmware/keyboards/ferris/keymaps/deanbot
+	rm ./qmk_firmware/keyboards/naked48/keymaps/deanbot
+	rm ./qmk_firmware/users/deanbot
 
 clean:
 	rm -rf obj_*

@@ -215,7 +215,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case _TEAMS_:
             if (record->event.pressed) {
-                SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "tea" SS_DELAY(100) SS_TAP(X_ENTER));
+                SEND_STRING(SS_LCMD(" ") SS_DELAY(100) "team" SS_DELAY(100) SS_TAP(X_ENTER));
             }
             return false;
             break;
