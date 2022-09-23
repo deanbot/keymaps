@@ -173,7 +173,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                     tap_code16(_MWDWN_);
                     break;
                 case _SYM:
-                    tap_code16(_ALTTB_);
+                    tap_code16(_REDO__);
                     break;
                 default:
                     tap_code(KC_VOLU);
@@ -185,7 +185,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                     tap_code16(_MWUP__);
                     break;
                 case _SYM:
-                    tap_code16(_LFTAT_);
+                    tap_code16(_UNDO__);
                     break;
                 default:
                     tap_code(KC_VOLD);
@@ -204,9 +204,6 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 case _NAV:
                     tap_code(KC_PGDN);
                     break;
-                case _META:
-                    tap_code16(_UNDO__);
-                    break;
                 default:
                     tap_code(_BRUP__);
                     break;
@@ -215,9 +212,6 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             switch (get_highest_layer(_state)) {
                 case _NAV:
                     tap_code(KC_PGUP);
-                    break;
-                case _META:
-                    tap_code16(_REDO__);
                     break;
                 default:
                     tap_code(_BRDWN_);

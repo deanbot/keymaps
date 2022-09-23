@@ -6,9 +6,10 @@ sweeeeep: setup
 
 	qmk flash -kb sweeeeep -km deanbot
 
+# qmk lint -kb fingerpunch/ffkb/pimoroni_evq -km deanbot --strict;
 ffkb: setup
 
-	cd qmk_firmware; qmk lint -kb fingerpunch/ffkb/pimoroni_evq -km deanbot --strict;
+	cd qmk_firmware;
 
 	qmk flash -kb fingerpunch/ffkb/pimoroni_evq -km deanbot
 
