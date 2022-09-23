@@ -1,10 +1,11 @@
 .PHONY: ffkb
 
+#qmk lint -kb fingerpunch/sweeeeep/rgblight_oled -km deanbot --strict
 sweeeeep: setup
 
-	cd qmk_firmware; qmk lint -kb fingerpunch/sweeeeep/rgblight_oled -km deanbot --strict
+	cd qmk_firmware;
 
-	qmk flash -kb sweeeeep -km deanbot
+	qmk flash -kb fingerpunch/sweeeeep/rgblight_oled -km deanbot
 
 # qmk lint -kb fingerpunch/ffkb/pimoroni_evq -km deanbot --strict;
 ffkb: setup
