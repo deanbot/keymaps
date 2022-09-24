@@ -109,8 +109,8 @@
 #define BASExLT __MB1__
 #define BASExRT _MODBG_
 
-#define BASExL3 BASExLT , BASEx_L
-#define BASExR3 BASEx_R , BASExRT
+#define BASExL3 BASEx_L , BASExLT
+#define BASExR3 BASExRT , BASEx_R
 
 // quaternary
 #define BASExLQ KC_MUTE
@@ -124,8 +124,8 @@
 #define NAVx_LQ _______
 #define NAVx__R _BKSPC_, _______
 
-#define NAV_xL3 NAVx_LT , NAVx__L
-#define NAV_xR3 NAVx__R , NAVx_RT
+#define NAV_xL3 NAVx__L , NAVx_LT
+#define NAV_xR3 NAVx_RT , NAVx__R
 
 //
 #define MIRx__L _______, _______
@@ -138,8 +138,8 @@
 #define SYMx_RT _______
 #define SYMx__R _______, _______
 
-#define SYM_xL3 SYMx_LT , SYMx__L
-#define SYM_xR3 SYMx__R , SYMx_RT
+#define SYM_xL3 SYMx__L , SYMx_LT
+#define SYM_xR3 SYMx_RT , SYMx__R
 
 //
 #define NUMx__L _______, _______
@@ -154,8 +154,8 @@
 #define GUIx_RQ TG(_GUI)
 #define GUIx__R _______, _______
 
-#define GUI_xL3 GUIx_LT , GUIx__L
-#define GUI_xR3 GUIx__R , GUIx_RT
+#define GUI_xL3 GUIx__L , GUIx_LT
+#define GUI_xR3 GUIx_RT , GUIx__R
 
 //
 #define MSEx__L _______, _______
@@ -170,8 +170,8 @@
 #define DBGx_RT _______
 #define DBGx__R _______, _______
 
-#define DBG_xL3 DBGx_LT , DBGx__L
-#define DBG_xR3 DBGx__R , DBGx_RT
+#define DBG_xL3 DBGx__L , DBGx_LT
+#define DBG_xR3 DBGx_RT , DBGx__R
 //
 #define METAx_L _______, _______
 #define METAxLT _______
