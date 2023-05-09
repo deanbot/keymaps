@@ -1,31 +1,5 @@
 #pragma once
 
-#include QMK_KEYBOARD_H
-
-enum layers
-{
-  _BASE,
-  _MIR,
-  _FN,
-  _NAV,
-  _GUI,
-  _MSE,
-  _DBG,
-  _SYM,
-  _NUM,
-  _META,
-};
-
-enum layers_cannonball {
-  BASE = 0,
-  RAISE,
-  UTIL_1,
-  UTIL_2,
-  UTIL_3,
-  UTIL_4,
-  UTIL_5
-};
-
 // Check to see which keyboard you're using, and define the PLACEHOLDER_SAFE_RANGE based on that.
 #if defined(KEYBOARD_fingerpunch_arachnophobe) \
     || defined(KEYBOARD_fingerpunch_barobord) \
@@ -49,10 +23,12 @@ enum layers_cannonball {
     || defined(KEYBOARD_fingerpunch_rockon_v3) \
     || defined(KEYBOARD_fingerpunch_rockon_bp) \
     || defined(KEYBOARD_fingerpunch_sweeeeep) \
-    || defined(KEYBOARD_fingerpunch_ximi) \
-    #define PLACEHOLDER_SAFE_RANGE FP_SAFE_RANGE
+    || defined(KEYBOARD_fingerpunch_ximi)
+#    define PLACEHOLDER_SAFE_RANGE FP_SAFE_RANGE
+#elif defined(KEYMAP_SAFE_RANGE)
+#    define PLACEHOLDER_SAFE_RANGE KEYMAP_SAFE_RANGE
 #else
-    #define PLACEHOLDER_SAFE_RANGE SAFE_RANGE
+#    define PLACEHOLDER_SAFE_RANGE SAFE_RANGE
 #endif
 
 enum keycodes
@@ -187,11 +163,11 @@ enum keycodes
 #define _SPACE_ KC_SPACE
 #define __TAB__ KC_TAB
 #define _ENTER_ KC_ENTER
-#define _BKSPC_ KC_BSPACE
+#define _BKSPC_ KC_BSPC
 #define __DEL__ KC_DELETE
 #define __ESC__ KC_ESCAPE
 
-#define _PGDWN_ KC_PGDOWN
+#define _PGDWN_ KC_PGDN
 #define _PG_UP_ KC_PGUP
 #define _HOME__ KC_HOME
 #define __END__ KC_END
@@ -207,8 +183,8 @@ enum keycodes
 #define _RPARN_ KC_RIGHT_PAREN
 #define _LCBRC_ KC_LEFT_CURLY_BRACE
 #define _RCBRC_ KC_RIGHT_CURLY_BRACE
-#define _LBRAC_ KC_LBRACKET
-#define _RBRAC_ KC_RBRACKET
+#define _LBRAC_ KC_LBRC
+#define _RBRAC_ KC_RBRC
 #define _LABRC_ KC_LEFT_ANGLE_BRACKET
 #define _RABRC_ KC_RIGHT_ANGLE_BRACKET
 #define __DOT__ KC_DOT
@@ -216,7 +192,7 @@ enum keycodes
 #define _SQUOT_ KC_QUOTE
 #define _DQUOT_ KC_DOUBLE_QUOTE
 #define _COLON_ KC_COLON
-#define _SCOLN_ KC_SCOLON
+#define _SCOLN_ KC_SCLN
 #define _TILDE_ LSFT(KC_GRAVE)
 #define _GRAVE_ KC_GRAVE
 #define _UNDRS_ KC_UNDERSCORE
@@ -227,7 +203,7 @@ enum keycodes
 #define _HASH__ KC_HASH
 #define _DOLLR_ KC_DOLLAR
 #define _SLASH_ KC_SLASH
-#define _BSLSH_ KC_BSLASH
+#define _BSLSH_ KC_BSLS
 #define _PERCT_ KC_PERCENT
 #define _AMPRS_ KC_AMPERSAND
 #define _QUEST_ KC_QUESTION
@@ -275,7 +251,7 @@ enum keycodes
 #define _SPOT_ LCMD(KC_SPACE)
 
 // workflow/app/browser
-#define _LEAD__ KC_LEAD
+#define _LEAD__ QK_LEAD
 #define _CTL_C_ LCTL(KC_C)
 #define _STAB__ LSFT(KC_TAB)
 #define _PRTRC_ LCMD(LSFT(KC_4)) // print region clipboard
@@ -295,10 +271,10 @@ enum keycodes
 #define _RETAB_ LSFT(LCMD(KC_T))
 #define _N_WIN_ LCMD(KC_N)
 #define _TAB_L_ LCTL(KC_PGUP)
-#define _TAB_R_ LCTL(KC_PGDOWN)
-#define _BSP_W_ LOPT(KC_BSPACE)
+#define _TAB_R_ LCTL(KC_PGDN)
+#define _BSP_W_ LOPT(KC_BSPC)
 #define _DEL_W_ LOPT(KC_DELETE)
-#define _BSP_L_ LCMD(KC_BSPACE)
+#define _BSP_L_ LCMD(KC_BSPC)
 #define _DEL_L_ LCMD(KC_DELETE)
 #define _BEGLN_ LCMD(KC_LEFT)
 #define _ENDLN_ LCMD(KC_RIGHT)
@@ -312,8 +288,8 @@ enum keycodes
 #define _SRCHW_ LCMD(LOPT(KC_F))
 #define _ADDRS_ LCMD(KC_L)
 #define _JUMP__ LCMD(KC_K)
-#define _BACK__ LCMD(KC_LBRACKET)
-#define __FWD__ LCMD(KC_RBRACKET)
+#define _BACK__ LCMD(KC_LBRC)
+#define __FWD__ LCMD(KC_RBRC)
 #define _ZOOMI_ LCMD(KC_PLUS)
 #define _ZOOMO_ LCMD(KC_MINUS)
 #define _ZOOMR_ LCMD(KC_0)
@@ -341,7 +317,7 @@ enum keycodes
 #define _TERM__ LALT(KC_F12) // toggle terminal
 #define _TERMQ_ LSFT(LALT(KC_F12))
 #define _NEWFL_ LCMD(LOPT(KC_N)) // new file in directory
-#define _DRTAN_ LCMD(KC_SCOLON) // analysis
+#define _DRTAN_ LCMD(KC_SCLN) // analysis
 #define _PROJ__ LCMD(KC_1) // project explorer
 #define _DEBGR_ LCMD(KC_5) // debugger panel
 #define _COMMT_ LCMD(KC_0) // git panel

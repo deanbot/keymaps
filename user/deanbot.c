@@ -1,9 +1,6 @@
-#include QMK_KEYBOARD_H
-
 #include "deanbot.h"
 
 #ifdef CUSTOM_ONESHOT_ENABLE
-
 bool is_oneshot_modifier_cancel_key(uint16_t keycode) {
     switch (keycode) {
         case _MONAV_:
@@ -45,10 +42,11 @@ oneshot_mod get_modifier_for_trigger_key(uint16_t keycode) {
 #ifdef LEADER_ENABLE
 LEADER_EXTERNS();
 
-void matrix_scan_user(void) {
+void matrix_scan_leader_key(void) {
     LEADER_DICTIONARY() {
         leading = false;
         leader_end();
+
         SEQ_TWO_KEYS(KC_P, KC_W) {
             SEND_STRING("Myp@ssword1");
         }
@@ -66,11 +64,18 @@ void matrix_scan_user(void) {
 }
 #endif
 
+void matrix_scan_user(void) {
+#if defined(LEADER_ENABLE)
+    matrix_scan_leader_key();
+#endif
+}
+
 #ifdef CUSTOM_SWAPPER_ENABLE
 bool sw_win_active  = false;
 bool sw_lang_active = false;
 #endif
 
+/*
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     #ifdef CONSOLE_ENABLE
     if (record->event.pressed) {
@@ -90,20 +95,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     // TODO : replace send string with tap_code to save space
     switch (keycode) {
-        // cannonball bottom/top in LT
-        case LT(UTIL_2, KC_F15):
-            if (record->event.pressed && record->tap.count) {
-                SEND_STRING(SS_LCMD(SS_TAP(X_UP)));
-                return false;
-            }
-            break;
-        case LT(UTIL_3, KC_F16):
-            if (record->event.pressed && record->tap.count) {
-                SEND_STRING(SS_LCMD(SS_TAP(X_DOWN)));
-                return false;
-            }
-            break;
-
         // select line
         case _SEL_L_:
             if (record->event.pressed) {
@@ -145,8 +136,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case __UE___:
             if (record->event.pressed) {
-                if (get_mods() & MOD_BIT(KC_LSHIFT)) {
-                    unregister_code(KC_LSHIFT);
+                if (get_mods() & MOD_BIT(KC_LSFT)) {
+                    unregister_code(KC_LSFT);
                     SEND_STRING(SS_LALT("u") "U");
                 } else {
                     SEND_STRING(SS_LALT("u") "u");
@@ -157,8 +148,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case __OE___:
             if (record->event.pressed) {
-                if (get_mods() & MOD_BIT(KC_LSHIFT)) {
-                    unregister_code(KC_LSHIFT);
+                if (get_mods() & MOD_BIT(KC_LSFT)) {
+                    unregister_code(KC_LSFT);
                     SEND_STRING(SS_LALT("u") "O");
                 } else {
                     SEND_STRING(SS_LALT("u") "o");
@@ -169,8 +160,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case __AE___:
             if (record->event.pressed) {
-                if (get_mods() & MOD_BIT(KC_LSHIFT)) {
-                    unregister_code(KC_LSHIFT);
+                if (get_mods() & MOD_BIT(KC_LSFT)) {
+                    unregister_code(KC_LSFT);
                     SEND_STRING(SS_LALT("u") "A");
                 } else {
                     SEND_STRING(SS_LALT("u") "a");
@@ -306,11 +297,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     #endif
 
     return true;
-}
-
-layer_state_t _state;
-layer_state_t layer_state_set_user(layer_state_t state) {
-    // cache state for encoder handler
-    _state = state;
-    return update_tri_layer_state(state, _NAV, _SYM, _NUM);
-}
+}*/

@@ -1,7 +1,5 @@
 #pragma once
 
-#include QMK_KEYBOARD_H
-
 // OUT__L or OUT__R include outer column (additional pinky column)
 
 //              +--------+---------+---------+---------+--------+
@@ -87,7 +85,7 @@
 #define DBG__R2 _RLOAD_, _TOGBR_, _START_, _STOP__, _______
 #define DBG__R3 _RESUM_, _DT_OV_, _DS_IN_, _DSOUT_, _______
 //              +--------+---------+---------+---------+--------+
-#define META_L1 _SLEEP_, _______, _______, CMB_TOG, _______
+#define META_L1 _SLEEP_, _______, _______, CM_TOGG, _______
 #define META_L2 _PSCRL_, _BRUP__, _BRDWN_, _TMSMU_, _______
 #define META_L3 _______, _______, _______, _______, _RESET_
 //              +--------+---------+---------+---------+--------+

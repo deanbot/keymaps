@@ -1,9 +1,6 @@
 #pragma once
-#include QMK_KEYBOARD_H
 
 #ifdef CUSTOM_ONESHOT_ENABLE
-#pragma once
-
 #include QMK_KEYBOARD_H
 
 typedef enum {

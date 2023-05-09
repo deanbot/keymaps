@@ -1,8 +1,10 @@
 #pragma once
-#include QMK_KEYBOARD_H
+// #include QMK_KEYBOARD_H
 
-#include "./keycodes.h"
-#include "./wrappers.h"
+// #include "version.h"
+// #include "eeprom.h"
+// #include "./keycodes.h"
+// #include "./keymap.h"
 
 enum layers
 {

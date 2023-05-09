@@ -1,9 +1,6 @@
-#include QMK_KEYBOARD_H
-
 #include "deanbot.h"
-#ifdef COMBO_ENABLE
-#include "g/keymap_combo.h"
-#endif
+
+#include QMK_KEYBOARD_H
 
 // clang-format off
 
@@ -120,7 +117,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     // default behavior if undefined
     if (index == 0) {
         if (clockwise) {
-            switch (get_highest_layer(_state)) {
+            switch (biton32(layer_state)) {
                 case _GUI:
                     tap_code16(_MWDWN_);
                     break;
@@ -132,7 +129,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                     break;
             }
         } else {
-            switch (get_highest_layer(_state)) {
+            switch (biton32(layer_state)) {
                 case _GUI:
                     tap_code16(_MWUP__);
                     break;
@@ -146,7 +143,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         }
     } else if (index == 1) {
         if (clockwise) {
-            switch (get_highest_layer(_state)) {
+            switch (biton32(layer_state)) {
                 case _NAV:
                     tap_code(KC_PGDN);
                     break;
@@ -155,7 +152,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                     break;
             }
         } else {
-            switch (get_highest_layer(_state)) {
+            switch (biton32(layer_state)) {
                 case _NAV:
                     tap_code(KC_PGUP);
                     break;
@@ -167,13 +164,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     } else if (index == 3) {
         // center feature
         if (clockwise) {
-            switch (get_highest_layer(_state)) {
+            switch (biton32(layer_state)) {
                 default:
                     tap_code16(_REDO__);
                     break;
             }
         } else {
-            switch (get_highest_layer(_state)) {
+            switch (biton32(layer_state)) {
                 default:
                     tap_code16(_UNDO__);
                     break;
@@ -184,3 +181,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return true;
 }
 #endif
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    return update_tri_layer_state(state, _NAV, _SYM, _NUM);
+}
