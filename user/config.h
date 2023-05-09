@@ -23,9 +23,6 @@
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 
-// how to configure pimoroni speedc?
-// #define POINTING_DEVICE_TASK_THROTTLE_MS 10
-// #define PIMORONI_TRACKBALL_DEBOUNCE_CYCLES 20
-// #define PIMORONI_TRACKBALL_TIMEOUT 100
-
 // #define ENCODER_RESOLUTION 4
+
+// #define EECONFIG_KB_DATA_SIZE 8

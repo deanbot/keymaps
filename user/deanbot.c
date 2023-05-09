@@ -53,7 +53,7 @@ void matrix_scan_user(void) {
             SEND_STRING("Myp@ssword1");
         }
         SEQ_ONE_KEY(KC_F) {
-            SEND_STRING("feature/MOBL-");
+            SEND_STRING("feature/");
             // TODO : trigger numword
         }
         SEQ_ONE_KEY(KC_G) {
@@ -69,10 +69,6 @@ void matrix_scan_user(void) {
 #ifdef CUSTOM_SWAPPER_ENABLE
 bool sw_win_active  = false;
 bool sw_lang_active = false;
-#endif
-
-#ifdef PIMORONI_TRACKBALL_ENABLE
-bool pimoroni_scroll = true;
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -94,13 +90,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     // TODO : replace send string with tap_code to save space
     switch (keycode) {
-        case _USRPW_:
-            if (record->event.pressed) {
-                SEND_STRING("user" SS_TAP(X_TAB) "pass" SS_TAP(X_ENTER));
-            }
-            return false;
-            break;
-
         // cannonball bottom/top in LT
         case LT(UTIL_2, KC_F15):
             if (record->event.pressed && record->tap.count) {
@@ -276,17 +265,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         #endif
 
-        #ifdef PIMORONI_TRACKBALL_ENABLE
-        // pimoroni toggle scroll
-        case _PSCRL_:
-            if (record->event.pressed) {
-            } else {
-                pimoroni_scroll = !pimoroni_scroll;
-            }
-            return false;
-            break;
-        #endif
-
         // letting go of nav doesn't unregister
         // case _C_MB1_:
         //     if (record->event.pressed) {
@@ -330,18 +308,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-// layer_state_t layer_state_set_user(layer_state_t state) {
-//     return update_tri_layer_state(state, _NAV, _SYM, _NUM);
-// }
-
-#ifdef PIMORONI_TRACKBALL_ENABLE
-report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
-    if (pimoroni_scroll) {
-        mouse_report.h = mouse_report.x;
-        mouse_report.v = mouse_report.y;
-        mouse_report.x = 0;
-        mouse_report.y = 0;
-    }
-    return mouse_report;
+layer_state_t _state;
+layer_state_t layer_state_set_user(layer_state_t state) {
+    // cache state for encoder handler
+    _state = state;
+    return update_tri_layer_state(state, _NAV, _SYM, _NUM);
 }
-#endif

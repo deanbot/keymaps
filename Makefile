@@ -8,11 +8,12 @@ sweeeeep: setup
 	qmk flash -kb fingerpunch/sweeeeep/rgblight_oled -km deanbot
 
 # qmk lint -kb fingerpunch/ffkb/atmega/v1 -km deanbot --strict;
+# RGBLIGHT_ENABLE=yes RGB_MATRIX_ENABLE=yes
 ffkb: setup
 
 	cd qmk_firmware;
 
-	qmk flash -kb fingerpunch/ffkb/atmega/v1 -km deanbot
+	make fingerpunch/ffkb/atmega/v1:deanbot PIMORONI_TRACKBALL_ENABLE=no OLED_ENABLE=no FP_EC11_CENTER=yes FP_EVQ_UNDER_PALMS=yes RGBLIGHT_ENABLE=yes
 
 cannonball: setup
 

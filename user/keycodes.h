@@ -26,9 +26,38 @@ enum layers_cannonball {
   UTIL_5
 };
 
+// Check to see which keyboard you're using, and define the PLACEHOLDER_SAFE_RANGE based on that.
+#if defined(KEYBOARD_fingerpunch_arachnophobe) \
+    || defined(KEYBOARD_fingerpunch_barobord) \
+    || defined(KEYBOARD_fingerpunch_barobord_byomcu) \
+    || defined(KEYBOARD_fingerpunch_bgkeeb) \
+    || defined(KEYBOARD_fingerpunch_bigbarobord) \
+    || defined(KEYBOARD_fingerpunch_euclid36) \
+    || defined(KEYBOARD_fingerpunch_euclid36_proto) \
+    || defined(KEYBOARD_fingerpunch_ffkb_atmega_v1) \
+    || defined(KEYBOARD_fingerpunch_ffkb_byomcu_v1) \
+    || defined(KEYBOARD_fingerpunch_ffkb_byomcu_v2) \
+    || defined(KEYBOARD_fingerpunch_ffkb_byomcu_v3) \
+    || defined(KEYBOARD_fingerpunch_ffkb_rp_v3) \
+    || defined(KEYBOARD_fingerpunch_fflx) \
+    || defined(KEYBOARD_fingerpunch_fpm101) \
+    || defined(KEYBOARD_fingerpunch_luakeeb) \
+    || defined(KEYBOARD_fingerpunch_pinkiesout_v1) \
+    || defined(KEYBOARD_fingerpunch_pinkiesout_v2) \
+    || defined(KEYBOARD_fingerpunch_rockon_v1) \
+    || defined(KEYBOARD_fingerpunch_rockon_v2) \
+    || defined(KEYBOARD_fingerpunch_rockon_v3) \
+    || defined(KEYBOARD_fingerpunch_rockon_bp) \
+    || defined(KEYBOARD_fingerpunch_sweeeeep) \
+    || defined(KEYBOARD_fingerpunch_ximi) \
+    #define PLACEHOLDER_SAFE_RANGE FP_SAFE_RANGE
+#else
+    #define PLACEHOLDER_SAFE_RANGE SAFE_RANGE
+#endif
+
 enum keycodes
 {
-  _SEL_L_ = SAFE_RANGE,
+  _SEL_L_ = PLACEHOLDER_SAFE_RANGE,
 
   // _TERTL_,
   // _TERTR_,
@@ -228,7 +257,7 @@ enum keycodes
 #define _BRUP__ KC_BRIGHTNESS_UP
 #define _BRDWN_ KC_BRIGHTNESS_DOWN
 #define _SLEEP_ KC_SYSTEM_SLEEP
-#define _RESET_ RESET
+#define _RESET_ QK_BOOT
 
 #define _ALTTB_ KC_F15 // alt tab
 
