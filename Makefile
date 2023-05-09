@@ -7,12 +7,12 @@ sweeeeep: setup
 
 	qmk flash -kb fingerpunch/sweeeeep/rgblight_oled -km deanbot
 
-# qmk lint -kb fingerpunch/ffkb/pimoroni_evq -km deanbot --strict;
+# qmk lint -kb fingerpunch/ffkb/atmega/v1 -km deanbot --strict;
 ffkb: setup
 
 	cd qmk_firmware;
 
-	qmk flash -kb fingerpunch/ffkb/pimoroni_evq -km deanbot
+	qmk flash -kb fingerpunch/ffkb/atmega/v1 -km deanbot
 
 cannonball: setup
 
@@ -47,9 +47,9 @@ naked48: setup
 
 setup: install
 	test -L ./qmk_firmware/users/deanbot || ln -s $(shell pwd)/user ./qmk_firmware/users/deanbot
-	test -L ./qmk_firmware/keyboards/naked48/keymaps/deanbot || ln -s $(shell pwd)/naked48 ./qmk_firmware/keyboards/naked48/keymaps/deanbot
+	test -L ./qmk_firmware/keyboards/salicylic_acid3/naked48/keymaps/deanbot || ln -s $(shell pwd)/naked48 ./qmk_firmware/keyboards/salicylic_acid3/naked48/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/ferris/keymaps/deanbot || ln -s $(shell pwd)/ferris ./qmk_firmware/keyboards/ferris/keymaps/deanbot
-	test -L ./qmk_firmware/keyboards/fingerpunch/ffkb/keymaps/deanbot || ln -s $(shell pwd)/ffkb ./qmk_firmware/keyboards/fingerpunch/ffkb/keymaps/deanbot
+	test -L ./qmk_firmware/keyboards/fingerpunch/ffkb/atmega/v1/keymaps/deanbot || ln -s $(shell pwd)/ffkb ./qmk_firmware/keyboards/fingerpunch/ffkb/atmega/v1/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot || ln -s $(shell pwd)/sweeeeep ./qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot || ln -s $(shell pwd)/cannonball ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot
 	test -L ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo || ln -s $(shell pwd)/cannonball-solo ./qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo
@@ -65,7 +65,7 @@ unlink:
 	rm -rf ./qmk_firmware/keyboards/fingerpunch/
 	rm -rf ./qmk_firmware/keyboards/rainkeebs/oxymoron
 	rm ./qmk_firmware/keyboards/ferris/keymaps/deanbot
-	rm ./qmk_firmware/keyboards/naked48/keymaps/deanbot
+	rm ./qmk_firmware/keyboards/salicylic_acid3/naked48/keymaps/deanbot
 	rm ./qmk_firmware/users/deanbot
 
 clean:

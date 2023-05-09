@@ -12,7 +12,7 @@ Supported keyboards:
 
 # Install
 
-1. Install qmk & qmk cli: https://beta.docs.qmk.fm/tutorial/newbs_getting_started
+1. Install qmk & qmk cli: https://qmk.github.io/qmk_mkdocs/master/en/tutorial_getting_started/
 2. Initialize firmware submodule:
   ```sh
   cd /path/to/keymaps;
