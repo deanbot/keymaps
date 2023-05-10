@@ -37,6 +37,8 @@ CUSTOM_SWAPPER_ENABLE = yes
 CUSTOM_REPEAT_ENABLE = yes
 CUSTOM_CAPS_WORD_ENABLE = yes
 
+# VPATH += keyboards/gboards/
+
 ifeq ($(strip $(CUSTOM_ONESHOT_ENABLE)), yes)
 	SRC += ./features/oneshot.c
 	OPT_DEFS += -DCUSTOM_ONESHOT_ENABLE

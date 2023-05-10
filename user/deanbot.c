@@ -40,35 +40,23 @@ oneshot_mod get_modifier_for_trigger_key(uint16_t keycode) {
 #endif
 
 #ifdef LEADER_ENABLE
-LEADER_EXTERNS();
 
-void matrix_scan_leader_key(void) {
-    LEADER_DICTIONARY() {
-        leading = false;
-        leader_end();
+void leader_start_user(void) {
+    // Do something when the leader key is pressed
+}
 
-        SEQ_TWO_KEYS(KC_P, KC_W) {
-            SEND_STRING("Myp@ssword1");
-        }
-        SEQ_ONE_KEY(KC_F) {
-            SEND_STRING("feature/");
-            // TODO : trigger numword
-        }
-        SEQ_ONE_KEY(KC_G) {
-            SEND_STRING("gf; git pull;");
-        }
-        SEQ_ONE_KEY(KC_C) {
-            tap_code16(LSFT(_CENTR_));
-        }
+void leader_end_user(void) {
+    if (leader_sequence_two_keys(KC_P, KC_W)) {
+        SEND_STRING("Myp@ssword1");
+    } else if (leader_sequence_one_key(KC_F)) {
+        SEND_STRING("feature/");
+    } else if (leader_sequence_one_key(KC_G)) {
+        SEND_STRING("gf; git pull;");
+    } else if (leader_sequence_one_key(KC_C)) {
+        tap_code16(LSFT(_CENTR_));
     }
 }
 #endif
-
-void matrix_scan_user(void) {
-#if defined(LEADER_ENABLE)
-    matrix_scan_leader_key();
-#endif
-}
 
 #ifdef CUSTOM_SWAPPER_ENABLE
 bool sw_win_active  = false;
