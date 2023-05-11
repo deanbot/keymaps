@@ -3,12 +3,8 @@ SRC += deanbot.c
 # BOOTLOADER = atmel-dfu
 # SPLIT_KEYBOARD = no
 
-# reduce filesize
-# COMMAND_ENABLE = no
-# EXTRAFLAGS += -flto
-
 # Disable unused features
-CONSOLE_ENABLE = yes
+CONSOLE_ENABLE = no
 VIA_ENABLE = no
 NKRO_ENABLE = no
 AUDIO_ENABLE = no
@@ -22,22 +18,24 @@ SLEEP_LED_ENABLE = no
 TAP_DANCE_ENABLE = no
 VELOCIKEY_ENABLE = no
 SWAP_HANDS_ENABLE = no
-BACKLIGHT_ENABLE = no
-# RGBLIGHT_ENABLE = no
-# RGB_MATRIX_ENABLE = no
 SPACE_CADET_ENABLE = no
 KEY_OVERRIDE_ENABLE = no
 CASEMODES_ENABLE = no
 GRAVE_ESC_ENABLE = no
-COMBO_ENABLE = no
+
+BACKLIGHT_ENABLE = no
+# RGBLIGHT_ENABLE = no
+# RGB_MATRIX_ENABLE = no
+
+COMBO_ENABLE = yes
 LEADER_ENABLE = yes
 MOUSEKEY_ENABLE = yes
 CUSTOM_ONESHOT_ENABLE = yes
 CUSTOM_SWAPPER_ENABLE = yes
-CUSTOM_REPEAT_ENABLE = yes
+CUSTOM_REPEAT_ENABLE = noj
 CUSTOM_CAPS_WORD_ENABLE = yes
 
-# VPATH += keyboards/gboards/
+VPATH += keyboards/gboards/
 
 ifeq ($(strip $(CUSTOM_ONESHOT_ENABLE)), yes)
 	SRC += ./features/oneshot.c

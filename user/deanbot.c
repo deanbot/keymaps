@@ -63,7 +63,6 @@ bool sw_win_active  = false;
 bool sw_lang_active = false;
 #endif
 
-/*
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     #ifdef CONSOLE_ENABLE
     if (record->event.pressed) {
@@ -285,4 +284,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     #endif
 
     return true;
-}*/
+}
