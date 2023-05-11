@@ -40,7 +40,6 @@ oneshot_mod get_modifier_for_trigger_key(uint16_t keycode) {
 #endif
 
 #ifdef LEADER_ENABLE
-
 void leader_start_user(void) {
     // Do something when the leader key is pressed
 }

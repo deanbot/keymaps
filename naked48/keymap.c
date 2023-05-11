@@ -1,7 +1,10 @@
-#include QMK_KEYBOARD_H
-
 #include "deanbot.h"
+
+#ifdef COMBO_ENABLE
 #include "g/keymap_combo.h"
+#endif
+
+#include QMK_KEYBOARD_H
 
 // clang-format off
 
