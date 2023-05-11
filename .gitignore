@@ -4,3 +4,4 @@ obj_*
 *.map
 error_occurred
 local-install.sh
+local-uninstall.sh
