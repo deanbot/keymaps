@@ -3,5 +3,5 @@ obj_*
 *.elf
 *.map
 error_occurred
-local-install.sh
-local-uninstall.sh
+local-*.sh
+!local-install-template.sh

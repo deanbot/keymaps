@@ -1,21 +1,28 @@
 #!/bin/sh
+# 
+# Some folk don't have their keyboards in the master branch
 
 KEYMAPS=$HOME/path/to/keymaps
+QMK=$HOME/src/qmk_firmware
 
-# some folk don't have their keyboards in the master branch
-
-# cannonball
-mkdir -p $KEYMAPS/qmk_firmware/keyboards/tarohayashi
+# TaroHayashi
+#
+# copy cannonball from taro qmk to deanbot qmk
+mkdir -p $QMK/keyboards/tarohayashi
 TARO_QMK=$HOME/src/Taro-Hayashi/qmk_firmware
-test -L $KEYMAPS/qmk_firmware/keyboards/tarohayashi/cannonball || ln -s $TARO_QMK/keyboards/tarohayashi/cannonball $KEYMAPS/qmk_firmware/keyboards/tarohayashi/cannonball
+test -L $QMK/keyboards/tarohayashi/cannonball || ln -s $TARO_QMK/keyboards/tarohayashi/cannonball $QMK/keyboards/tarohayashi/cannonball
 
-# fp
-mkdir -p $KEYMAPS/qmk_firmware/keyboards/fingerpunch
+# fingerpunch
+# 
+# copy fingerpunch boards from sadek qmk to deanbot qmk
+mkdir -p $QMK/keyboards/fingerpunch
 SADEK_QMK=$HOME/src/sadekbaroudi/qmk_firmware
-test -L $KEYMAPS/qmk_firmware/keyboards/fingerpunch/src || ln -s $SADEK_QMK/keyboards/fingerpunch/src $KEYMAPS/qmk_firmware/keyboards/fingerpunch/src
-test -L $KEYMAPS/qmk_firmware/keyboards/fingerpunch/ffkb || ln -s $SADEK_QMK/keyboards/fingerpunch/ffkb $KEYMAPS/qmk_firmware/keyboards/fingerpunch/ffkb
-test -L $KEYMAPS/qmk_firmware/keyboards/fingerpunch/sweeeeep || ln -s $SADEK_QMK/keyboards/fingerpunch/sweeeeep $KEYMAPS/qmk_firmware/keyboards/fingerpunch/sweeeeep
+test -L $QMK/keyboards/fingerpunch/src || ln -s $SADEK_QMK/keyboards/fingerpunch/src $QMK/keyboards/fingerpunch/src
+test -L $QMK/keyboards/fingerpunch/ffkb || ln -s $SADEK_QMK/keyboards/fingerpunch/ffkb $QMK/keyboards/fingerpunch/ffkb
+test -L $QMK/keyboards/fingerpunch/sweeeeep || ln -s $SADEK_QMK/keyboards/fingerpunch/sweeeeep $QMK/keyboards/fingerpunch/sweeeeep
 
-# oxymoron
-mkdir -p $HOME/src/deanbot/keymaps/qmk_firmware/keyboards/rainkeebs
-test -L $KEYMAPS/qmk_firmware/keyboards/rainkeebs/oxymoron || ln -s $HOME/src/rainkeebs/oxymoron_source/oxymoron $KEYMAPS/qmk_firmware/keyboards/rainkeebs/oxymoron
+# rainkeebs
+# 
+# copy oxymoron source (one off repo) to deanbot qmk
+mkdir -p $QMK/keyboards/rainkeebs
+test -L $QMK/keyboards/rainkeebs/oxymoron || ln -s $HOME/path/to/oxymoron $QMK/keyboards/rainkeebs/oxymoron
