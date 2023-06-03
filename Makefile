@@ -15,6 +15,14 @@ ffkb: setup
 
 	# make fingerpunch/ffkb/atmega/v1:deanbot PIMORONI_TRACKBALL_ENABLE=no OLED_ENABLE=no FP_EC11_CENTER=yes FP_EVQ_UNDER_PALMS=yes RGBLIGHT_ENABLE=yes
 
+draculad: setup
+
+	cd ~/src/qmk_firmware;
+
+	qmk lint -kb draculad -km deanbot --strict
+
+	# qmk flash -kb draculad -km deanbot
+
 cannonball: setup
 
 	cd ~/src/qmk_firmware; qmk lint -kb tarohayashi/cannonball -km deanbot --strict
@@ -56,6 +64,7 @@ setup: install
 	test -L ~/src/qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot || ln -s $(shell pwd)/cannonball ~/src/qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot
 	test -L ~/src/qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo || ln -s $(shell pwd)/cannonball-solo ~/src/qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo
 	test -L ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot || ln -s $(shell pwd)/oxymoron ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot
+	test -L ~/src/qmk_firmware/keyboards/draculad/deanbot || ln -s $(shell pwd)/draculad ~/src/qmk_firmware/keyboards/draculad/keymaps/deanbot
 
 install:
 	# init submodule
@@ -66,6 +75,7 @@ unlink:
 	rm -rf ~/src/qmk_firmware/keyboards/tarohayashi/
 	rm -rf ~/src/qmk_firmware/keyboards/fingerpunch/
 	rm -rf ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron
+	rm -rf ~/src/qmk_firmware/keyboards/draculad/deanbot
 	rm ~/src/qmk_firmware/keyboards/ferris/keymaps/deanbot
 	rm ~/src/qmk_firmware/keyboards/salicylic_acid3/naked48/keymaps/deanbot
 	rm ~/src/qmk_firmware/users/deanbot

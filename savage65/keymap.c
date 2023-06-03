@@ -16,16 +16,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include QMK_KEYBOARD_H
 
-
-// Each layer gets a name for readability, which is then used in the keymap matrix below.
-// The underscores don't mean anything - you can have a layer called STUFF or any other name.
-// Layer names don't all need to be of the same length, obviously, and you can also skip them
-// entirely and just use numbers.
+// Each layer gets a name for readability, which is then used in the keymap
+// matrix below. The underscores don't mean anything - you can have a layer
+// called STUFF or any other name. Layer names don't all need to be of the same
+// length, obviously, and you can also skip them entirely and just use numbers.
 enum layer_names {
-    _BASE,
-    _FN1,
-		_META,
+  _BASE,
+  _FN1,
+  _META,
 };
+
+// clang-format off
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
