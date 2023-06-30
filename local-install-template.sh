@@ -12,6 +12,13 @@ mkdir -p $QMK/keyboards/tarohayashi
 TARO_QMK=$HOME/src/Taro-Hayashi/qmk_firmware
 test -L $QMK/keyboards/tarohayashi/cannonball || ln -s $TARO_QMK/keyboards/tarohayashi/cannonball $QMK/keyboards/tarohayashi/cannonball
 
+# tsquash
+#
+# copy lesovoz from tsquash vial-qmk to deanbot qmk
+mkdir -p $QMK/keyboards/tsquash
+TSQUASH_QMK=$HOME/src/Tsquash/vial-qmk
+test -L $QMK/keyboards/tsquash/lesovoz || ln -s $TSQUASH_QMK/keyboards/lesovoz $QMK/keyboards/tsquash/lesovoz
+
 # fingerpunch
 # 
 # copy fingerpunch boards from sadek qmk to deanbot qmk

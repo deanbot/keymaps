@@ -21,11 +21,13 @@ draculad: setup
 
 	qmk lint -kb draculad -km deanbot --strict
 
-	# qmk flash -kb draculad -km deanbot
+	qmk flash -kb draculad -km deanbot
 
 cannonball: setup
 
-	cd ~/src/qmk_firmware; qmk lint -kb tarohayashi/cannonball -km deanbot --strict
+	cd ~/src/qmk_firmware; 
+	
+	qmk lint -kb tarohayashi/cannonball -km deanbot --strict
 
 	qmk flash -kb tarohayashi/cannonball -km deanbot
 
@@ -34,6 +36,12 @@ cannonball-solo: setup
 	cd ~/src/qmk_firmware; qmk lint -kb tarohayashi/cannonball -km solo --strict
 
 	qmk flash -kb tarohayashi/cannonball -km solo
+
+rex60: setup
+	
+	cd ~/src/qmk_firmware;
+
+	qmk lint -kb tsquash/lesovoz -km deanbot --strict
 
 # qmk lint -kb rainkeebs/oxymoron -km deanbot --strict
 oxymoron: setup
@@ -57,14 +65,20 @@ naked48: setup
 
 setup: install
 	test -L ~/src/qmk_firmware/users/deanbot || ln -s $(shell pwd)/user ~/src/qmk_firmware/users/deanbot
+
+	test -L ~/src/qmk_firmware/keyboards/draculad/keymaps/deanbot || ln -s $(shell pwd)/draculad ~/src/qmk_firmware/keyboards/draculad/keymaps/deanbot
 	test -L ~/src/qmk_firmware/keyboards/salicylic_acid3/naked48/keymaps/deanbot || ln -s $(shell pwd)/naked48 ~/src/qmk_firmware/keyboards/salicylic_acid3/naked48/keymaps/deanbot
 	test -L ~/src/qmk_firmware/keyboards/ferris/keymaps/deanbot || ln -s $(shell pwd)/ferris ~/src/qmk_firmware/keyboards/ferris/keymaps/deanbot
-	test -L ~/src/qmk_firmware/keyboards/fingerpunch/ffkb/atmega/v1/keymaps/deanbot || ln -s $(shell pwd)/ffkb ~/src/qmk_firmware/keyboards/fingerpunch/ffkb/atmega/v1/keymaps/deanbot
-	test -L ~/src/qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot || ln -s $(shell pwd)/sweeeeep ~/src/qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot
+
 	test -L ~/src/qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot || ln -s $(shell pwd)/cannonball ~/src/qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/deanbot
 	test -L ~/src/qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo || ln -s $(shell pwd)/cannonball-solo ~/src/qmk_firmware/keyboards/tarohayashi/cannonball/keymaps/solo
+
+	test -L ~/src/qmk_firmware/keyboards/tsquash/lesovoz/keymaps/deanbot || ln -s $(shell pwd)/lesovoz ~/src/qmk_firmware/keyboards/tsquash/lesovoz/keymaps/deanbot
+	
+	test -L ~/src/qmk_firmware/keyboards/fingerpunch/ffkb/atmega/v1/keymaps/deanbot || ln -s $(shell pwd)/ffkb ~/src/qmk_firmware/keyboards/fingerpunch/ffkb/atmega/v1/keymaps/deanbot
+	test -L ~/src/qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot || ln -s $(shell pwd)/sweeeeep ~/src/qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot
+	
 	test -L ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot || ln -s $(shell pwd)/oxymoron ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot
-	test -L ~/src/qmk_firmware/keyboards/draculad/deanbot || ln -s $(shell pwd)/draculad ~/src/qmk_firmware/keyboards/draculad/keymaps/deanbot
 
 install:
 	# init submodule
@@ -75,6 +89,7 @@ unlink:
 	rm -rf ~/src/qmk_firmware/keyboards/tarohayashi/
 	rm -rf ~/src/qmk_firmware/keyboards/fingerpunch/
 	rm -rf ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron
+	rm -rf ~/src/qmk_firmware/keyboards/tsquash
 	rm -rf ~/src/qmk_firmware/keyboards/draculad/deanbot
 	rm ~/src/qmk_firmware/keyboards/ferris/keymaps/deanbot
 	rm ~/src/qmk_firmware/keyboards/salicylic_acid3/naked48/keymaps/deanbot
