@@ -22,11 +22,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 
-// clang-format off
+#define LAYOUT_DRAC(...)       LAYOUT(__VA_ARGS__)
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-    [_BASE] =  LAYOUT(
+    [_BASE] =  LAYOUT_DRAC(
 //---------                       ---------//
     BASE_L1           ,           BASE_R1 ,
     BASE_L2           ,           BASE_R2 ,
@@ -37,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            //---------+---------//
     ),
 
-    [_NAV] =  LAYOUT(
+    [_NAV] =  LAYOUT_DRAC(
 //---------                       ---------//
     NAV_L1           ,             NAV_R1 ,
     NAV_L2           ,             NAV_R2 ,
@@ -48,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            //---------+---------//
     ),
 
-    [_SYM] =  LAYOUT(
+    [_SYM] =  LAYOUT_DRAC(
 //---------                       ---------//
     SYM__L1           ,           SYM__R1 ,
     SYM__L2           ,           SYM__R2 ,
@@ -59,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            //---------+---------//
     ),
 
-    [_NUM] =  LAYOUT(
+    [_NUM] =  LAYOUT_DRAC(
 //---------                       ---------//
     NUM__L1           ,           NUM__R1 ,
     NUM__L2           ,           NUM__R2 ,
@@ -70,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            //---------+---------//
     ),
 
-    [_GUI] =  LAYOUT(
+    [_GUI] =  LAYOUT_DRAC(
 //---------                       ---------//
     GUI__L1           ,           GUI__R1 ,
     GUI__L2           ,           GUI__R2 ,
@@ -81,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            //---------+---------//
     ),
 
-    [_MSE] =  LAYOUT(
+    [_MSE] =  LAYOUT_DRAC(
 //---------                       ---------//
     MSE__L1           ,           MSE__R1 ,
     MSE__L2           ,           MSE__R2 ,
@@ -92,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            //---------+---------//
     ),
 
-    [_DBG] =  LAYOUT(
+    [_DBG] =  LAYOUT_DRAC(
 //---------                       ---------//
     DBG__L1           ,           DBG__R1 ,
     DBG__L2           ,           DBG__R2 ,
@@ -103,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            //---------+---------//
     ),
 
-    [_META] =  LAYOUT(
+    [_META] =  LAYOUT_DRAC(
 //---------                       ---------//
     META_L1           ,           META_R1 ,
     META_L2           ,           META_R2 ,

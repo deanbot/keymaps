@@ -2,8 +2,8 @@
 
 #include QMK_KEYBOARD_H
 
-#include "./keycodes.h"
-#include "./wrappers.h"
+#include "codes.h"
+#include "wrappers.h"
 
 enum layers
 {

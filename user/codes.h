@@ -1,29 +1,16 @@
 #pragma once
 
+#include "deanbot.h"
+#include QMK_KEYBOARD_H
+
 // Check to see which keyboard you're using, and define the PLACEHOLDER_SAFE_RANGE based on that.
-#if defined(KEYBOARD_fingerpunch_arachnophobe) \
-    || defined(KEYBOARD_fingerpunch_barobord) \
-    || defined(KEYBOARD_fingerpunch_barobord_byomcu) \
-    || defined(KEYBOARD_fingerpunch_bgkeeb) \
-    || defined(KEYBOARD_fingerpunch_bigbarobord) \
-    || defined(KEYBOARD_fingerpunch_euclid36) \
-    || defined(KEYBOARD_fingerpunch_euclid36_proto) \
-    || defined(KEYBOARD_fingerpunch_ffkb_atmega_v1) \
+#if defined(KEYBOARD_fingerpunch_ffkb_atmega_v1) \
     || defined(KEYBOARD_fingerpunch_ffkb_byomcu_v1) \
     || defined(KEYBOARD_fingerpunch_ffkb_byomcu_v2) \
     || defined(KEYBOARD_fingerpunch_ffkb_byomcu_v3) \
     || defined(KEYBOARD_fingerpunch_ffkb_rp_v3) \
     || defined(KEYBOARD_fingerpunch_fflx) \
-    || defined(KEYBOARD_fingerpunch_fpm101) \
-    || defined(KEYBOARD_fingerpunch_luakeeb) \
-    || defined(KEYBOARD_fingerpunch_pinkiesout_v1) \
-    || defined(KEYBOARD_fingerpunch_pinkiesout_v2) \
-    || defined(KEYBOARD_fingerpunch_rockon_v1) \
-    || defined(KEYBOARD_fingerpunch_rockon_v2) \
-    || defined(KEYBOARD_fingerpunch_rockon_v3) \
-    || defined(KEYBOARD_fingerpunch_rockon_bp) \
-    || defined(KEYBOARD_fingerpunch_sweeeeep) \
-    || defined(KEYBOARD_fingerpunch_ximi)
+    || defined(KEYBOARD_fingerpunch_sweeeeep)
 #    define PLACEHOLDER_SAFE_RANGE FP_SAFE_RANGE
 #elif defined(KEYMAP_SAFE_RANGE)
 #    define PLACEHOLDER_SAFE_RANGE KEYMAP_SAFE_RANGE

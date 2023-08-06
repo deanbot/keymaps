@@ -63,10 +63,17 @@ naked48: setup
 
 	qmk flash -kb naked48 -km deanbot
 
+reviung41: setup
+
+	cd ~/src/qmk_firmware; qmk lint -kb reviung/reviung41 -km deanbot --strict
+
+	qmk flash -kb reviung/reviung41 -km deanbot
+
 setup: install
 	test -L ~/src/qmk_firmware/users/deanbot || ln -s $(shell pwd)/user ~/src/qmk_firmware/users/deanbot
 
 	test -L ~/src/qmk_firmware/keyboards/draculad/keymaps/deanbot || ln -s $(shell pwd)/draculad ~/src/qmk_firmware/keyboards/draculad/keymaps/deanbot
+	test -L ~/src/qmk_firmware/keyboards/reviung/reviung41/keymaps/deanbot || ln -s $(shell pwd)/reviung41 ~/src/qmk_firmware/keyboards/reviung/reviung41/keymaps/deanbot
 	test -L ~/src/qmk_firmware/keyboards/salicylic_acid3/naked48/keymaps/deanbot || ln -s $(shell pwd)/naked48 ~/src/qmk_firmware/keyboards/salicylic_acid3/naked48/keymaps/deanbot
 	test -L ~/src/qmk_firmware/keyboards/ferris/keymaps/deanbot || ln -s $(shell pwd)/ferris ~/src/qmk_firmware/keyboards/ferris/keymaps/deanbot
 
@@ -90,13 +97,14 @@ unlink:
 	rm -rf ~/src/qmk_firmware/keyboards/fingerpunch/
 	rm -rf ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron
 	rm -rf ~/src/qmk_firmware/keyboards/tsquash
-	rm -rf ~/src/qmk_firmware/keyboards/draculad/deanbot
+	rm ~/src/qmk_firmware/keyboards/draculad/keymaps/deanbot
+	rm ~/src/qmk_firmware/keyboards/reviung/reviung41/keymaps/deanbot
 	rm ~/src/qmk_firmware/keyboards/ferris/keymaps/deanbot
 	rm ~/src/qmk_firmware/keyboards/salicylic_acid3/naked48/keymaps/deanbot
 	rm ~/src/qmk_firmware/users/deanbot
 
 clean:
-	rm -rf obj_*
-	rm -f *.elf
-	rm -f *.map
-	rm -f *.hex
+	rm -rf ~/src/qmk_firmware/obj_*
+	rm -f ~/src/qmk_firmware/*.elf
+	rm -f ~/src/qmk_firmware/*.map
+	rm -f ~/src/qmk_firmware/*.hex
