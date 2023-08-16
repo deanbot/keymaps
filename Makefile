@@ -23,6 +23,13 @@ draculad: setup
 
 	qmk flash -kb draculad -km deanbot
 
+#qmk lint -kb tsquash/lesovoz -km default
+lesovoz: setup
+
+	cd ~/src/qmk_firmware;
+
+	qmk flash -kb tsquash/lesovoz -km deanbot
+
 cannonball: setup
 
 	cd ~/src/qmk_firmware; 
@@ -37,11 +44,9 @@ cannonball-solo: setup
 
 	qmk flash -kb tarohayashi/cannonball -km solo
 
-rex60: setup
+# rex60: setup
 	
-	cd ~/src/qmk_firmware;
-
-	qmk lint -kb tsquash/lesovoz -km deanbot --strict
+# 	cd ~/src/qmk_firmware;
 
 # qmk lint -kb rainkeebs/oxymoron -km deanbot --strict
 oxymoron: setup

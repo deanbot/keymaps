@@ -21,86 +21,88 @@
 
 #include QMK_KEYBOARD_H
 
+#define LAYOUT_ortho_4x10_wrapper(...)  LAYOUT_lesovoz(__VA_ARGS__)
+
 // clang-format off
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_BASE] = LAYOUT(
+    [_BASE] = LAYOUT_ortho_4x10_wrapper(
 //----------+---------+---------//
     BASE_L1      ,      BASE_R1 ,
     BASE_L2      ,      BASE_R2 ,
     BASE_L3      ,      BASE_R3 ,
 //----------+---------+---------//
     _TAB_L_ , _TAB_R_ , 
-    BASExLT , BASEx_L , 
-    BASEx_R , BASExRT , 
+    BASEx_L , BASExLT ,
+    BASExRT , BASEx_R ,  
     _PG_UP_ , _PGDWN_
 //---------+---------//
     ),
 
-    [_NAV] = LAYOUT(
+    [_NAV] = LAYOUT_ortho_4x10_wrapper(
 //----------+---------+---------//
-    NAV_L1      ,      NAV_R1 ,
-    NAV_L2      ,      NAV_R2 ,
-    NAV_L3      ,      NAV_R3 ,
+    NAV__L1      ,      NAV__R1 ,
+    NAV__L2      ,      NAV__R2 ,
+    NAV__L3      ,      NAV__R3 ,
 //----------+---------+---------//
     _______ , _______ ,
-    NAVx_LT , NAVx__L , 
-    NAVx__R , NAVx_RT , 
-    _______ , _______ 
+    NAVx__L , NAVx_LT ,  
+    NAVx_RT , NAVx__R ,  
+    _______ , _______
 //---------+---------//
     ),
 
-    [_SYM] = LAYOUT(
+    [_SYM] = LAYOUT_ortho_4x10_wrapper(
 //----------+---------+---------//
-    SYM__L2      ,      SYM__R2 ,
     SYM__L1      ,      SYM__R1 ,
+    SYM__L2      ,      SYM__R2 ,
     SYM__L3      ,      SYM__R3 ,
 //----------+---------+---------//
     _______ , _______ ,
-    SYMx_LT , SYMx__L , 
-    SYMx__R , SYMx_RT , 
+    SYMx__L , SYMx_LT ,  
+    SYMx_RT , SYMx__R ,  
     _______ , _______ 
 //---------+---------//
     ),
 
-    [_NUM] =  LAYOUT(
+    [_NUM] =  LAYOUT_ortho_4x10_wrapper(
 //----------+---------+---------//
     NUM__L1      ,      NUM__R1 ,
     NUM__L2      ,      NUM__R2 ,
     NUM__L3      ,      NUM__R3 ,
 //----------+---------+---------//
     _______ , _______ ,
-    NUMx_LT , NUMx__L , 
-    NUMx__R , NUMx_RT , 
+    NUMx__L , NUMx_LT ,  
+    NUMx_RT , NUMx__R ,  
     _______ , _______ 
 //---------+---------//
     ),
   
-    [_GUI] =  LAYOUT(
+    [_GUI] =  LAYOUT_ortho_4x10_wrapper(
 //----------+---------+---------//
     GUI__L1      ,      GUI__R1 , 
     GUI__L2      ,      GUI__R2 ,
     GUI__L3      ,      GUI__R3 ,
 //----------+---------+---------//
     _______ , _______ ,
-    GUIx_LT , GUIx__L , 
-    GUIx__R , GUIx_RT , 
+    GUIx__L , GUIx_LT ,  
+    GUIx_RT , GUIx__R ,  
     _______ , _______
 //---------+---------//
     ),
 
-    [_META] =  LAYOUT(
+    [_META] =  LAYOUT_ortho_4x10_wrapper(
 //----------+---------+---------//
     META_L1      ,      META_R1 ,
     META_L2      ,      META_R2 ,
     META_L3      ,      META_R3 ,
 //----------+---------+---------//
     _______ , _______ ,
-    METAxLT , METAx_L , 
-    METAx_R , METAxRT , 
+    METAx_L , METAxLT ,  
+    METAxRT , METAx_R ,  
     _______ , _______
 //---------+---------//
-    ),
+    )
 
 };
 
