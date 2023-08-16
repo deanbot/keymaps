@@ -9,22 +9,28 @@ Supported keyboards:
 - [ffkb](https://github.com/sadekbaroudi/qmk_firmware/tree/master/keyboards/fingerpunch/ffkb)
 - [sweeeeep](https://github.com/sadekbaroudi/qmk_firmware/tree/master/keyboards/fingerpunch/sweeeeep)
 - [cannonball](https://github.com/Taro-Hayashi/qmk_firmware/tree/tarohayashi/keyboards/tarohayashi/cannonball)
-- oxymoroon
+- [lesovoz](https://github.com/Tsquash/vial-qmk/tree/lesovoz/keyboards/lesovoz)
+- [draculad](https://github.com/qmk/qmk_firmware/tree/master/keyboards/draculad)
+- [reviung41]((https://github.com/qmk/qmk_firmware/tree/master/keyboards/reviung/reviung41)
+- oxymoron
+
+To support:
+- [rex60]
 
 # Install
 
 1. Install qmk & qmk cli: https://qmk.github.io/qmk_mkdocs/master/en/tutorial_getting_started/
-2. Initialize firmware submodule:
-  ```sh
-  cd /path/to/keymaps;
-  git submodule update --init --recursive
-  ```
+2. Clone qmk_firmware somewhere (i.e. `~/src/qmk_firmware`).
 3. Set qmk config
   ```sh
   qmk config user.qmk_home=~/path/to/keymaps/qmk_firmware
   ```
 4. Verify with `qmk doctor`
-5. clone [fingerpunch fork](https://github.com/sadekbaroudi/qmk_firmware) for ffkb and [Taro Hayashi fork](https://github.com/Taro-Hayashi/qmk_firmware) (ensure you check out tarohayashi branch) for cannonball.
+5. Clone out of tree sources 
+  - [fingerpunch](https://github.com/sadekbaroudi/qmk_firmware)
+  - [oxymoron](https://github.com/deanbot/oxymoron)
+  - [cannonball](https://github.com/Taro-Hayashi/qmk_firmware) and checkout `tarohayashi` branch
+  - [lesovoz](https://github.com/deanbot/lesovoz)
 6. Rename `local-install-template.sh` as `local-install.sh` and update paths.
 
 # Keymap
@@ -49,7 +55,7 @@ TODO
 ## Update qmk firmware
 
 ```sh
-git submodule foreach git pull origin master
+./update.sh
 ```
 
 ## Unlink
