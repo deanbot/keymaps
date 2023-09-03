@@ -1,5 +1,7 @@
 # Flash
 
+Link keyboards & userspace in separate qmk_firmware repo
+
 ## Flash supported keyboards
 
 Enter `make <keyboard>`
@@ -19,6 +21,18 @@ Supported keyboards:
 To support:
 - [fflx](https://github.com/sadekbaroudi/qmk_firmware/tree/master/keyboards/fingerpunch/fflx)
 - [rex60]
+
+### Fingerpunch
+
+Link keyboards & userspace in sadek's qmk_firmware.
+
+Install: `./local-install-sadek.sh`
+Uninstall: `./local-uninstall.sadek.sh`
+
+Enter make commands:
+
+- ffkb: `make fingerpunch/ffkb/atmega/v1:deanbot PIMORONI_TRACKBALL_ENABLE=no OLED_ENABLE=no FP_EC11_CENTER=yes FP_EVQ_UNDER_PALMS=yes RGBLIGHT_ENABLE=yes`
+- fflx: `make fingerpunch/fflx:deanbot CIRQUE_ENABLE=NO RGBLIGHT_ENABLE=yes FP_EC11_UNDER_PALMS=no FP_EVQ_UNDER_PALMS=yes`
 
 ## Update qmk firmware
 
