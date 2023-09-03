@@ -18,10 +18,6 @@
 #define BOUT_R2 _______
 #define BOUT_R3 _______
 //              +--------+---------+---------+---------+--------+
-#define MIOUT_1 _BKSPC_
-#define MIOUT_2 _SPACE_
-#define MIOUT_3 _O_SFT_
-//              +--------+---------+---------+---------+--------+
 #define NAV__L1 _ACTIO_, __CUT__, _COPY__, _PASTE_, _HINT__
 #define NAV__L2 _O_GUI_, _O_CTL_, _O_ALT_, _O_SFT_, _LEAD__
 #define NAV__L3 _DRTAN_, _CAPSW_, _REDO__, _UNDO__, _COLS__
@@ -97,7 +93,7 @@
 
 // tertiary
 #define BASExLT __MB1__
-#define BASExRT _MODBG_
+#define BASExRT _T_DBG_
 
 #define BASExL3 BASEx_L , BASExLT
 #define BASExR3 BASExRT , BASEx_R

@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     BASE_L2      ,      BASE_R2 ,
     BASE_L3      ,      BASE_R3 ,
 //----------+---------+---------//
-    _TAB_L_ , _TAB_R_ , 
+    _PRTSF_ , __MB2__ , 
     BASEx_L , BASExLT ,
     BASExRT , BASEx_R ,  
     _PG_UP_ , _PGDWN_

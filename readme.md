@@ -1,6 +1,8 @@
 # Flash
 
-Flash: `make <keyboard>`
+## Flash supported keyboards
+
+Enter `make <keyboard>`
 
 Supported keyboards:
 
@@ -8,14 +10,29 @@ Supported keyboards:
 - [ferris](https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris)
 - [ffkb](https://github.com/sadekbaroudi/qmk_firmware/tree/master/keyboards/fingerpunch/ffkb)
 - [sweeeeep](https://github.com/sadekbaroudi/qmk_firmware/tree/master/keyboards/fingerpunch/sweeeeep)
-- [cannonball](https://github.com/Taro-Hayashi/qmk_firmware/tree/tarohayashi/keyboards/tarohayashi/cannonball)
 - [lesovoz](https://github.com/Tsquash/vial-qmk/tree/lesovoz/keyboards/lesovoz)
 - [draculad](https://github.com/qmk/qmk_firmware/tree/master/keyboards/draculad)
 - [reviung41]((https://github.com/qmk/qmk_firmware/tree/master/keyboards/reviung/reviung41)
+- [cannonball](https://github.com/Taro-Hayashi/qmk_firmware/tree/tarohayashi/keyboards/tarohayashi/cannonball)
 - oxymoron
 
 To support:
+- [fflx](https://github.com/sadekbaroudi/qmk_firmware/tree/master/keyboards/fingerpunch/fflx)
 - [rex60]
+
+## Update qmk firmware
+
+```sh
+./update.sh
+```
+
+## Unlink
+
+Remove symlinks in qmk firmware:
+
+```sh
+make unlink
+```
 
 # Install
 
@@ -33,11 +50,7 @@ To support:
   - [lesovoz](https://github.com/deanbot/lesovoz)
 6. Rename `local-install-template.sh` as `local-install.sh` and update paths.
 
-# Keymap
-
-TODO
-
-# Mentions
+# Reference
 
 - (Article) [Separate keymap repo for QMK](https://medium.com/@patrick.elmquist/separate-keymap-repo-for-qmk-136ff5a419bd)
 - Keymap/features/userspace
@@ -49,19 +62,3 @@ TODO
   - [manna-harbour/miryoku_qmk](https://github.com/manna-harbour/miryoku_qmk/tree/miryoku/users/manna-harbour_miryoku)
 - Keymap Visualization
   - [BrokenFlows/keymap](https://github.com/BrokenFlows/keymap)
-
-# Development
-
-## Update qmk firmware
-
-```sh
-./update.sh
-```
-
-## Unlink
-
-Remove symlinks in qmk firmware:
-
-```sh
-make unlink
-```

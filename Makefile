@@ -13,7 +13,13 @@ ffkb: setup
 
 	cd ~/src/qmk_firmware;
 
-	# make fingerpunch/ffkb/atmega/v1:deanbot PIMORONI_TRACKBALL_ENABLE=no OLED_ENABLE=no FP_EC11_CENTER=yes FP_EVQ_UNDER_PALMS=yes RGBLIGHT_ENABLE=yes
+	make fingerpunch/ffkb/atmega/v1:deanbot PIMORONI_TRACKBALL_ENABLE=no OLED_ENABLE=no FP_EC11_CENTER=yes FP_EVQ_UNDER_PALMS=yes RGBLIGHT_ENABLE=yes
+
+fflx: setup
+
+	cd ~/src/qmk_firmware;
+
+	make fingerpunch/fflx:deanbot CIRQUE_ENABLE=NO RGBLIGHT_ENABLE=yes FP_EC11_UNDER_PALMS=no FP_EVQ_UNDER_PALMS=yes
 
 draculad: setup
 
@@ -23,7 +29,6 @@ draculad: setup
 
 	qmk flash -kb draculad -km deanbot
 
-#qmk lint -kb tsquash/lesovoz -km default
 lesovoz: setup
 
 	cd ~/src/qmk_firmware;
@@ -88,6 +93,7 @@ setup: install
 	test -L ~/src/qmk_firmware/keyboards/tsquash/lesovoz/keymaps/deanbot || ln -s $(shell pwd)/lesovoz ~/src/qmk_firmware/keyboards/tsquash/lesovoz/keymaps/deanbot
 	
 	test -L ~/src/qmk_firmware/keyboards/fingerpunch/ffkb/atmega/v1/keymaps/deanbot || ln -s $(shell pwd)/ffkb ~/src/qmk_firmware/keyboards/fingerpunch/ffkb/atmega/v1/keymaps/deanbot
+	test -L ~/src/qmk_firmware/keyboards/fingerpunch/fflx/keymaps/deanbot || ln -s $(shell pwd)/fflx ~/src/qmk_firmware/keyboards/fingerpunch/fflx/keymaps/deanbot
 	test -L ~/src/qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot || ln -s $(shell pwd)/sweeeeep ~/src/qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot
 	
 	test -L ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot || ln -s $(shell pwd)/oxymoron ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot
