@@ -1,4 +1,4 @@
-.PHONY: ffkb
+.PHONY: fflx
 
 #qmk lint -kb fingerpunch/sweeeeep/rgblight_oled -km deanbot --strict
 sweeeeep: setup
@@ -15,11 +15,12 @@ ffkb: setup
 
 	make fingerpunch/ffkb/atmega/v1:deanbot PIMORONI_TRACKBALL_ENABLE=no OLED_ENABLE=no FP_EC11_CENTER=yes FP_EVQ_UNDER_PALMS=yes RGBLIGHT_ENABLE=yes
 
-fflx: setup
+# cd ~/src/qmk_firmware;e
+fflx: 
 
-	cd ~/src/qmk_firmware;
+	cd ~/src/sadekbaroudi/qmk_firmware
 
-	make fingerpunch/fflx:deanbot CIRQUE_ENABLE=NO RGBLIGHT_ENABLE=yes FP_EC11_UNDER_PALMS=no FP_EVQ_UNDER_PALMS=yes
+	make fingerpunch/fflx:deanbot CIRQUE_ENABLE=yes RGBLIGHT_ENABLE=no FP_EC11_UNDER_PALMS=no FP_EVQ_UNDER_PALMS=yes CONVERT_TO=stemcell
 
 draculad: setup
 
@@ -102,6 +103,9 @@ install:
 	# init submodule
 	# git submodule update --init --recursive
 	./local-install.sh
+
+installSadek:
+	./local-install-sadek.sh
 
 unlink:
 	rm -rf ~/src/qmk_firmware/keyboards/tarohayashi/

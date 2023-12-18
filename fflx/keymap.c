@@ -21,7 +21,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    BOUT_L2 , BASE_L2           ,           BASE_R2 , BOUT_R2 ,
    BOUT_L3 , BASE_L3           ,           BASE_R3 , BOUT_R3 ,
 //---------+---------                     ---------+---------//
-   BASExLQ , BASEx_L, BASExLT  , BASExRT , BASEx_R , BASExRQ
+//   BASExLQ , BASEx_L, BASExLT  , BASExRT , BASEx_R , BASExRQ
+   ___A___ , BASEx_L, BASExLT  , BASExRT , BASEx_R , ___A___ 
 //---------+---------                     ---------+---------//
 ),
 
@@ -99,55 +100,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    // default behavior if undefined
+    // under left palm
     if (index == 0) {
         if (clockwise) {
             switch (biton32(layer_state)) {
-                case _GUI:
-                    tap_code16(_MWDWN_);
-                    break;
-                case _SYM:
-                    tap_code16(_REDO__);
-                    break;
-                default:
-                    tap_code(KC_VOLU);
-                    break;
-            }
-        } else {
-            switch (biton32(layer_state)) {
-                case _GUI:
-                    tap_code16(_MWUP__);
-                    break;
-                case _SYM:
-                    tap_code16(_UNDO__);
-                    break;
+                // case _NAV:
                 default:
                     tap_code(KC_VOLD);
                     break;
             }
-        }
-    } else if (index == 1) {
-        if (clockwise) {
-            switch (biton32(layer_state)) {
-                case _NAV:
-                    tap_code(KC_PGDN);
-                    break;
-                default:
-                    tap_code(_BRUP__);
-                    break;
-            }
         } else {
             switch (biton32(layer_state)) {
-                case _NAV:
-                    tap_code(KC_PGUP);
-                    break;
                 default:
-                    tap_code(_BRDWN_);
+                    tap_code(KC_VOLU);
                     break;
             }
         }
-    } else if (index == 3) {
-        // center feature
+    } 
+    // under right palm
+    else if (index == 1) {
         if (clockwise) {
             switch (biton32(layer_state)) {
                 default:
@@ -162,6 +133,71 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             }
         }
     }
+
+
+    // // default behavior if undefined
+    // if (index == 0) {
+    //     if (clockwise) {
+    //         switch (biton32(layer_state)) {
+    //             case _GUI:
+    //                 tap_code16(_MWDWN_);
+    //                 break;
+    //             case _SYM:
+    //                 tap_code16(_REDO__);
+    //                 break;
+    //             default:
+    //                 tap_code(KC_VOLU);
+    //                 break;
+    //         }
+    //     } else {
+    //         switch (biton32(layer_state)) {
+    //             case _GUI:
+    //                 tap_code16(_MWUP__);
+    //                 break;
+    //             case _SYM:
+    //                 tap_code16(_UNDO__);
+    //                 break;
+    //             default:
+    //                 tap_code(KC_VOLD);
+    //                 break;
+    //         }
+    //     }
+    // } else if (index == 1) {
+    //     if (clockwise) {
+    //         switch (biton32(layer_state)) {
+    //             case _NAV:
+    //                 tap_code(KC_PGDN);
+    //                 break;
+    //             default:
+    //                 tap_code(_BRUP__);
+    //                 break;
+    //         }
+    //     } else {
+    //         switch (biton32(layer_state)) {
+    //             case _NAV:
+    //                 tap_code(KC_PGUP);
+    //                 break;
+    //             default:
+    //                 tap_code(_BRDWN_);
+    //                 break;
+    //         }
+    //     }
+    // } else if (index == 3) {
+    //     // center feature
+    //     if (clockwise) {
+    //         switch (biton32(layer_state)) {
+    //             default:
+    //                 tap_code16(_REDO__);
+    //                 break;
+    //         }
+    //     } else {
+    //         switch (biton32(layer_state)) {
+    //             default:
+    //                 tap_code16(_UNDO__);
+    //                 break;
+    //         }
+    //     }
+    // }
 
     return true;
 }
