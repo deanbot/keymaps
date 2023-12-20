@@ -28,6 +28,8 @@ oneshot_mod get_modifier_for_trigger_key(uint16_t keycode) {
     switch (keycode) {
         case _O_SFT_:
             return ONESHOT_LSFT;
+        case _ORSFT_:
+            return ONESHOT_RSFT;
         case _O_CTL_:
             return ONESHOT_LCTL;
         case _O_ALT_:

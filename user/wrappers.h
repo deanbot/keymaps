@@ -11,12 +11,12 @@
 #define BASE_R2 ___M___, ___N___, ___E___, ___I___, ___O___
 #define BASE_R3 ___K___, ___H___, _COMMA_, __DOT__, _SCOLN_
 //              +--------+---------+---------+---------+--------+
-#define BOUT_L1 _______
-#define BOUT_L2 _______
-#define BOUT_L3 _______
-#define BOUT_R1 _______
-#define BOUT_R2 _______
-#define BOUT_R3 _______
+#define BOUT_L1 __ESC__
+#define BOUT_L2 _CAPSW_
+#define BOUT_L3 __MB2__
+#define BOUT_R1 _BKSPC_
+#define BOUT_R2 _ENTER_
+#define BOUT_R3 __MB1__
 //              +--------+---------+---------+---------+--------+
 #define NAV__L1 _ACTIO_, __CUT__, _COPY__, _PASTE_, _HINT__
 #define NAV__L2 _O_GUI_, _O_CTL_, _O_ALT_, _O_SFT_, _LEAD__

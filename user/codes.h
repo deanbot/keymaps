@@ -44,6 +44,7 @@ enum keycodes
   _O_ALT_,
   _O_GUI_,
   _O_CTL_,
+  _ORSFT_,
 
   // repeat
   __RPT__,

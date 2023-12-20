@@ -98,27 +98,61 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+layer_state_t layer_state_set_user(layer_state_t state) {
+    return update_tri_layer_state(state, _NAV, _SYM, _NUM);
+}
+
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    // under left palm
+    // default behavior if undefined
     if (index == 0) {
         if (clockwise) {
             switch (biton32(layer_state)) {
-                // case _NAV:
-                default:
-                    tap_code(KC_VOLD);
+                case _GUI:
+                    tap_code16(_MWDWN_);
                     break;
-            }
-        } else {
-            switch (biton32(layer_state)) {
+                case _SYM:
+                    tap_code16(_REDO__);
+                    break;
                 default:
                     tap_code(KC_VOLU);
                     break;
             }
+        } else {
+            switch (biton32(layer_state)) {
+                case _GUI:
+                    tap_code16(_MWUP__);
+                    break;
+                case _SYM:
+                    tap_code16(_UNDO__);
+                    break;
+                default:
+                    tap_code(KC_VOLD);
+                    break;
+            }
         }
-    } 
-    // under right palm
-    else if (index == 1) {
+    } else if (index == 1) {
+        if (clockwise) {
+            switch (biton32(layer_state)) {
+                case _NAV:
+                    tap_code(KC_PGDN);
+                    break;
+                default:
+                    tap_code(_BRUP__);
+                    break;
+            }
+        } else {
+            switch (biton32(layer_state)) {
+                case _NAV:
+                    tap_code(KC_PGUP);
+                    break;
+                default:
+                    tap_code(_BRDWN_);
+                    break;
+            }
+        }
+    } else if (index == 3) {
+        // center feature
         if (clockwise) {
             switch (biton32(layer_state)) {
                 default:
@@ -134,75 +168,6 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         }
     }
 
-
-    // // default behavior if undefined
-    // if (index == 0) {
-    //     if (clockwise) {
-    //         switch (biton32(layer_state)) {
-    //             case _GUI:
-    //                 tap_code16(_MWDWN_);
-    //                 break;
-    //             case _SYM:
-    //                 tap_code16(_REDO__);
-    //                 break;
-    //             default:
-    //                 tap_code(KC_VOLU);
-    //                 break;
-    //         }
-    //     } else {
-    //         switch (biton32(layer_state)) {
-    //             case _GUI:
-    //                 tap_code16(_MWUP__);
-    //                 break;
-    //             case _SYM:
-    //                 tap_code16(_UNDO__);
-    //                 break;
-    //             default:
-    //                 tap_code(KC_VOLD);
-    //                 break;
-    //         }
-    //     }
-    // } else if (index == 1) {
-    //     if (clockwise) {
-    //         switch (biton32(layer_state)) {
-    //             case _NAV:
-    //                 tap_code(KC_PGDN);
-    //                 break;
-    //             default:
-    //                 tap_code(_BRUP__);
-    //                 break;
-    //         }
-    //     } else {
-    //         switch (biton32(layer_state)) {
-    //             case _NAV:
-    //                 tap_code(KC_PGUP);
-    //                 break;
-    //             default:
-    //                 tap_code(_BRDWN_);
-    //                 break;
-    //         }
-    //     }
-    // } else if (index == 3) {
-    //     // center feature
-    //     if (clockwise) {
-    //         switch (biton32(layer_state)) {
-    //             default:
-    //                 tap_code16(_REDO__);
-    //                 break;
-    //         }
-    //     } else {
-    //         switch (biton32(layer_state)) {
-    //             default:
-    //                 tap_code16(_UNDO__);
-    //                 break;
-    //         }
-    //     }
-    // }
-
-    return true;
+   return false;
 }
 #endif
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, _NAV, _SYM, _NUM);
-}
