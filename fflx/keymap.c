@@ -104,8 +104,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    // default behavior if undefined
     if (index == 0) {
+        // left palm
         if (clockwise) {
             switch (biton32(layer_state)) {
                 case _GUI:
@@ -132,6 +132,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             }
         }
     } else if (index == 1) {
+        // right palm
         if (clockwise) {
             switch (biton32(layer_state)) {
                 case _NAV:
