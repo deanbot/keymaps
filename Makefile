@@ -1,5 +1,10 @@
 .PHONY: fflx
 
+infernum: setup
+    cd ~/src/qmk_firmware
+
+	qmk flash -kb haizeus0411/infernum -km deanbot --strict
+
 #qmk lint -kb fingerpunch/sweeeeep/rgblight_oled -km deanbot --strict
 sweeeeep: setup
 
@@ -94,6 +99,8 @@ setup: install
 
 	test -L ~/src/qmk_firmware/keyboards/tsquash/lesovoz/keymaps/deanbot || ln -s $(shell pwd)/lesovoz ~/src/qmk_firmware/keyboards/tsquash/lesovoz/keymaps/deanbot
 	
+	test -L ~/src/qmk_firmware/keyboards/haizeus0411/infernum/keymaps/deanbot || ln -s $(shell pwd)/infernum ~/src/qmk_firmware/keyboards/haizeus0411/infernum/keymaps/deanbot
+	
 	test -L ~/src/qmk_firmware/keyboards/fingerpunch/ffkb/atmega/v1/keymaps/deanbot || ln -s $(shell pwd)/ffkb ~/src/qmk_firmware/keyboards/fingerpunch/ffkb/atmega/v1/keymaps/deanbot
 	test -L ~/src/qmk_firmware/keyboards/fingerpunch/fflx/keymaps/deanbot || ln -s $(shell pwd)/fflx ~/src/qmk_firmware/keyboards/fingerpunch/fflx/keymaps/deanbot
 	test -L ~/src/qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot || ln -s $(shell pwd)/sweeeeep ~/src/qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot
@@ -112,6 +119,7 @@ unlink:
 	rm -rf ~/src/qmk_firmware/keyboards/tarohayashi/
 	rm -rf ~/src/qmk_firmware/keyboards/fingerpunch/
 	rm -rf ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron
+	rm -rf ~/src/qmk_firmware/keyboards/haizeus0411
 	rm -rf ~/src/qmk_firmware/keyboards/tsquash
 	rm ~/src/qmk_firmware/keyboards/draculad/keymaps/deanbot
 	rm ~/src/qmk_firmware/keyboards/reviung/reviung41/keymaps/deanbot
