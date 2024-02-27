@@ -8,7 +8,7 @@ Enter `make <keyboard>`
 
 Supported keyboards:
 
-- [infurnum](https://github.com/HaiZeus0411/Infernum-Files)
+- [infernum](https://github.com/HaiZeus0411/Infernum-Files)
 - [naked48](https://github.com/qmk/qmk_firmware/tree/master/keyboards/naked48)
 - [ferris](https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris)
 - [ffkb](https://github.com/sadekbaroudi/qmk_firmware/tree/master/keyboards/fingerpunch/ffkb)
