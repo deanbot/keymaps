@@ -61,9 +61,10 @@ oxymoron: setup
 
 	qmk flash -kb rainkeebs/oxymoron -km deanbot
 
+# qmk lint -kb ferris/0_2/bling -km deanbot --strict
 ferris: setup
 
-	cd ~/src/qmk_firmware; qmk lint -kb ferris/0_2/bling -km deanbot --strict
+	cd ~/src/qmk_firmware; 
 
 	qmk flash -kb ferris/0_2/bling -km deanbot
 

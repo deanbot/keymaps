@@ -1,7 +1,10 @@
-#include QMK_KEYBOARD_H
-
 #include "deanbot.h"
+
+#ifdef COMBO_ENABLE
 #include "g/keymap_combo.h"
+#endif
+
+#include QMK_KEYBOARD_H
 
 // clang-format off
 
@@ -32,16 +35,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    BASE_L3           ,           BASE_R3 ,
 //---------                     ---------//
              BASEx_L , BASEx_R
-          //---------+---------//
-),
-
-[_MIR] = LAYOUT_ferris(
-//---------                     ---------//
-   MIR__L1           ,           MIR__R1 ,
-   MIR__L2           ,           MIR__R2 ,
-   MIR__L3           ,           MIR__R3 ,
-//---------                     ---------//
-             _____BLANKx______
           //---------+---------//
 ),
 
@@ -85,16 +78,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           //---------+---------//
 ),
 
-[_DBG] = LAYOUT_ferris(
-//---------                     ---------//
-   DBG__L1           ,           DBG__R1 ,
-   DBG__L2           ,           DBG__R2 ,
-   DBG__L3           ,           DBG__R3 ,
-//---------                     ---------//
-             DBGx__L , DBGx__R
-          //---------+---------//
-),
-
 [_META] = LAYOUT_ferris(
 //---------                     ---------//
    META_L1           ,           META_R1 ,
@@ -106,3 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 };
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    return update_tri_layer_state(state, _NAV, _SYM, _NUM);
+}
