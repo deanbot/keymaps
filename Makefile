@@ -1,9 +1,11 @@
 .PHONY: fflx
 
+#qmk lint -kb haizeus0411/infernum -km deanbot --strict
 infernum: setup
-    cd ~/src/qmk_firmware
 
-	qmk flash -kb haizeus0411/infernum -km deanbot --strict
+	cd ~/src/qmk_firmware;
+	
+	qmk flash -kb haizeus0411/infernum -km deanbot
 
 #qmk lint -kb fingerpunch/sweeeeep/rgblight_oled -km deanbot --strict
 sweeeeep: setup
