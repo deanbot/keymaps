@@ -16,11 +16,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT_INFERNUM(
 //---------+---------+----*----+---------+---------//
-   BASE_L1           , BOUT_L1 ,           BASE_R1 ,
+   BASE_L1           , _PRTSF_ ,           BASE_R1 ,
    BASE_L2                ,                BASE_R2 ,
    BASE_L3                ,                BASE_R3 ,
 //---------+---------+----*----+---------+---------//
-   BASExL3           , BASExLQ ,           BASExR3
+   BASExLT , BASEx_L , BASExLQ , BASEx_R , BASExRT
 //---------+---------+----*----+---------+---------//
 ),
 
@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    NAV__L2                ,                NAV__R2 ,
    NAV__L3                ,                NAV__R3 ,
 //---------+---------+----*----+---------+---------//
-   NAV_xL3           , _______ ,           NAV_xR3
+   NAVx_LT , NAVx__L , _______ , NAVx__R , NAVx_RT
 //---------+---------+----*----+---------+---------//
 ),
 
@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    SYM__L2                ,                SYM__R2 ,
    SYM__L3                ,                SYM__R3 ,
 //---------+---------+----*----+---------+---------//
-   SYM_xL3           , _______ ,           SYM_xR3
+   SYMx_LT , SYMx__L , _______ , SYMx__R , SYMx_RT
 //---------+---------+----*----+---------+---------//
 ),
 
@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    NUM__L2                ,                NUM__R2 ,
    NUM__L3                ,                NUM__R3 ,
 //---------+---------+----*----+---------+---------//
-                       BLANKx_
+   NUMx_LT , NUMx__L , _______ , NUMx__R , NUMx_RT 
 //---------+---------+----*----+---------+---------//
 ),
 
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    DBG__L2                ,                DBG__R2 ,
    DBG__L3                ,                DBG__R3 ,
 //---------+---------+----*----+---------+---------//
-   DBG_xL3           , _______ ,           DBG_xR3
+   GUIx_LT , GUIx__L , _______ , GUIx__R , GUIx_RT
 //---------+---------+----*----+---------+---------//
 ),
 
@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    META_L2                ,                META_R2 ,
    META_L3                ,                META_R3 ,
 //---------+---------+----*----+---------+---------//
-                       BLANKx_
+   METAxLT , METAx_L , _______ , METAx_R , METAxRT
 //---------+---------+----*----+---------+---------//
 ),
 
