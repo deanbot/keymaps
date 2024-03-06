@@ -287,63 +287,63 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-#ifdef ENCODER_ENABLE
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        // left palm
-        switch (biton32(layer_state)) {
-            case _GUI:
-                if (clockwise) {
-                    tap_code16(_MWDWN_);
-                } else {
-                    tap_code16(_MWUP__);
-                }
-                break;
-            case _SYM:
-                if (clockwise) {
-                    tap_code16(_UNDO__);
-                } else {
-                    tap_code16(_REDO__);
-                }
-                break;
-            default:
-                if (clockwise) { 
-                    tap_code(KC_VOLD);
-                } else {
-                    tap_code(KC_VOLU);
-                }    
-                break;
-        }
-    } else if (index == 1) {
-        // right palm
-        switch (biton32(layer_state)) {
-            case _NAV:
-                if (clockwise) { 
-                    tap_code(KC_PGUP);
-                } else {
-                    tap_code(KC_PGDN);
-                }
-                break;
-            default:
-                if (clockwise) { 
-                    tap_code16(_STAB__);
-                } else {                    
-                    tap_code16(__TAB__);
-                }   
-                break;
-        }
-    } else if (index == 3) {
-        // center feature
-        switch (biton32(layer_state)) {
-            default:
-                if (clockwise) { 
-                    tap_code16(_REDO__);
-                } else {
-                    tap_code16(_UNDO__);
-                }
-                break;
-        }
-    }
-    return false;
-}
-#endif
+// #ifdef ENCODER_ENABLE
+// bool encoder_update_user(uint8_t index, bool clockwise) {
+//     if (index == 0) {
+//         // left palm
+//         switch (biton32(layer_state)) {
+//             case _GUI:
+//                 if (clockwise) {
+//                     tap_code16(_MWDWN_);
+//                 } else {
+//                     tap_code16(_MWUP__);
+//                 }
+//                 break;
+//             case _SYM:
+//                 if (clockwise) {
+//                     tap_code16(_UNDO__);
+//                 } else {
+//                     tap_code16(_REDO__);
+//                 }
+//                 break;
+//             default:
+//                 if (clockwise) { 
+//                     tap_code(KC_VOLD);
+//                 } else {
+//                     tap_code(KC_VOLU);
+//                 }    
+//                 break;
+//         }
+//     } else if (index == 1) {
+//         // right palm
+//         switch (biton32(layer_state)) {
+//             case _NAV:
+//                 if (clockwise) { 
+//                     tap_code(KC_PGUP);
+//                 } else {
+//                     tap_code(KC_PGDN);
+//                 }
+//                 break;
+//             default:
+//                 if (clockwise) { 
+//                     tap_code16(_STAB__);
+//                 } else {                    
+//                     tap_code16(__TAB__);
+//                 }   
+//                 break;
+//         }
+//     } else if (index == 3) {
+//         // center feature
+//         switch (biton32(layer_state)) {
+//             default:
+//                 if (clockwise) { 
+//                     tap_code16(_REDO__);
+//                 } else {
+//                     tap_code16(_UNDO__);
+//                 }
+//                 break;
+//         }
+//     }
+//     return false;
+// }
+// #endif

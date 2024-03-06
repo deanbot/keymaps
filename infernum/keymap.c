@@ -16,11 +16,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT_INFERNUM(
 //---------+---------+----*----+---------+---------//
-   BASE_L1           , _PRTSF_ ,           BASE_R1 ,
+   BASE_L1           , KC_MUTE ,           BASE_R1 ,
    BASE_L2                ,                BASE_R2 ,
    BASE_L3                ,                BASE_R3 ,
 //---------+---------+----*----+---------+---------//
-   BASExLT , BASEx_L , BASExLQ , BASEx_R , BASExRT
+   _LOPT__ , BASEx_L , BASExLT , BASEx_R , BASExRT
 //---------+---------+----*----+---------+---------//
 ),
 
