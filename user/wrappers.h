@@ -36,7 +36,7 @@
 #define SYM__L1 _TILDE_, _LCBRC_, _LBRAC_, _LPARN_, _ARROW_
 #define SYM__L2 _MINUS_, _PLUS__, _EQUAL_, _UNDRS_, _HASH__
 #define SYM__L3 _ASTER_, _PIPE__, __AT___, _SLASH_, _PERCT_
-//              +--------+---------+---------+---------+--------+
+//              +--------+---------+---------+---------+--------+ 
 #define SYM__R1 _CIRCF_, _RPARN_, _RBRAC_, _RCBRC_, _GRAVE_
 #define SYM__R2 _DOLLR_, _O_SFT_, _O_ALT_, _O_CTL_, _O_GUI_
 #define SYM__R3 _TYPE__, _BSLSH_, _AMPRS_, _EXCLM_, _QUEST_
@@ -65,7 +65,7 @@
 #define MSE__R2 __MB2__, _MLFT__, _MDWN__, __MUP__, _MRGT__
 #define MSE__R3 _ADDRS_, _T_LFT_, _T_TOP_, _T_BTM_, _T_RGT_
 //              +--------+---------+---------+---------+--------+
-#define DBG__L1 _______, _______, _______, _______, _______
+#define DBG__L1 ___7___, ___5___, ___3___, ___1___, ___9___
 #define DBG__L2 _______, _DSOUT_, _DS_IN_, _DT_OV_, _RESUM_
 #define DBG__L3 _______, _______, _______, _______, _______
 //              +--------+----- ----+---------+---------+--------+

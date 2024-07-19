@@ -82,6 +82,13 @@ naked48: setup
 
 	qmk flash -kb naked48 -km deanbot
 
+# qmk lint -kb dz60 -km deanbot --strict
+dz60: setup
+
+	cd ~/src/qmk_firmware; 
+
+	qmk flash -kb dz60 -km deanbot
+
 reviung41: setup
 
 	cd ~/src/qmk_firmware; qmk lint -kb reviung/reviung41 -km deanbot --strict
@@ -108,6 +115,8 @@ setup: install
 	test -L ~/src/qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot || ln -s $(shell pwd)/sweeeeep ~/src/qmk_firmware/keyboards/fingerpunch/sweeeeep/keymaps/deanbot
 	
 	test -L ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot || ln -s $(shell pwd)/oxymoron ~/src/qmk_firmware/keyboards/rainkeebs/oxymoron/keymaps/deanbot
+
+	test -L ~/src/qmk_firmware/keyboards/dz60/keymaps/deanbot || ln -s $(shell pwd)/dz60 ~/src/qmk_firmware/keyboards/dz60/keymaps/deanbot
 
 install:
 	# init submodule
