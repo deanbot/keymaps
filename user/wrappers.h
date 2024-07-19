@@ -66,12 +66,12 @@
 #define MSE__R3 _ADDRS_, _T_LFT_, _T_TOP_, _T_BTM_, _T_RGT_
 //              +--------+---------+---------+---------+--------+
 #define DBG__L1 ___7___, ___5___, ___3___, ___1___, ___9___
-#define DBG__L2 _______, _DSOUT_, _DS_IN_, _DT_OV_, _RESUM_
-#define DBG__L3 _______, _______, _______, _______, _______
-//              +--------+----- ----+---------+---------+--------+
-#define DBG__R1 _RSTRT_, _______, _______, _______, _______
-#define DBG__R2 _RLOAD_, _TOGBR_, _START_, _STOP__, _______
-#define DBG__R3 _RESUM_, _DT_OV_, _DS_IN_, _DSOUT_, _______
+#define DBG__L2 ___7___, ___5___, ___3___, ___1___, ___9___
+#define DBG__L3 _______, _O_CTL_, _O_ALT_, _O_SFT_, __F11__
+//              +--------+---------+---------+---------+--------+
+#define DBG__R1 ___8___, ___0___, ___2___, ___4___, ___6___
+#define DBG__R2 ___8___, ___0___, ___2___, ___4___, ___6___
+#define DBG__R3 _______, _O_SFT_, _O_ALT_, _O_CTL_, _O_GUI_
 //              +--------+---------+---------+---------+--------+
 #define META_L1 _SLEEP_, _______, _______, CM_TOGG, _______
 #define META_L2 _PSCRL_, _BRUP__, _BRDWN_, _TMSMU_, _______
@@ -93,7 +93,7 @@
 
 // tertiary
 #define BASExLT __MB1__
-#define BASExRT _T_DBG_
+#define BASExRT _TOTBG_
 
 #define BASExL3 BASEx_L , BASExLT
 #define BASExR3 BASExRT , BASEx_R

@@ -75,6 +75,7 @@ enum keycodes
 #define _MOMSE_ MO(_MSE)
 #define _MMETA_ MO(_META)
 #define _MODBG_ MO(_DBG)
+#define _TOTBG_ TG(_DBG)
 #define _SPGUI_ LT(_GUI, KC_SPACE) // tap: space hold: gui layer
 #define _L_MIR_ LT(_MIR, _LEADF_) // tap: leader hold: mirror layer
 #define _T_DBG_ LT(_DBG, KC_TAB) // tap: tab hold: debug layer
