@@ -76,7 +76,7 @@ ferris: setup
 	qmk flash -kb ferris/0_2/bling -km deanbot
 
 # qmk flash -kb naked48 -km deanbot -bl dfu
-naked48: setup
+naked48: setupDSKDSLkfl;s;SDFKsdkfl;a;D]fs'l;fksfs]fs]]]s[s[[s[[s]]]]]
 
 	cd ~/src/qmk_firmware; qmk lint -kb naked48 -km deanbot --strict
 
